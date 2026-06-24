@@ -179,11 +179,12 @@
   .pending-block{border:2px dashed var(--pending-line);background:var(--pending-bg);border-radius:8px;padding:14px 16px;font-size:.92rem;color:var(--pending)}
 
   /* header */
-  header{background:#fff;border-bottom:1px solid var(--line);padding:16px 0}
+  header{background:#F0F5FA;padding:16px 0}
   header .wrap{display:flex;align-items:center;justify-content:space-between}
-  .wordmark{font-weight:800;color:var(--navy);font-size:1.05rem;letter-spacing:.04em;text-decoration:none}
-  .wordmark span{color:var(--accent)}
-  header a.phone{color:var(--navy);font-weight:600;text-decoration:none;font-size:.95rem}
+  header .header-nav {display:flex; gap:32px; align-items:center;}
+  header .header-nav a {color:var(--navy); text-decoration:none; font-size:0.95rem; font-weight:400;}
+  header .header-nav a small {font-size:0.6rem; color:#888; margin-left:4px;}
+  @media(max-width:900px){ header .header-nav {display:none;} }
 
   /* hero */
   .hero{background:linear-gradient(160deg,var(--navy) 0%,var(--navy-deep) 100%);color:#fff;padding:72px 0 60px}
@@ -269,8 +270,19 @@
 
 <header>
   <div class="wrap">
-    <a class="wordmark" href="https://www.centerstreetlending.com/"><img src="logo1.svg" alt="Center Street Lending" style="height: 40px; width: auto; display: block;"></a>
-    <a class="phone" href="tel:949-244-1090">949-244-1090</a>
+    <a class="wordmark" href="https://www.centerstreetlending.com/"><img src="logo1.svg" alt="Center Street Lending" style="height: 36px; width: auto; display: block;"></a>
+    
+    <div class="header-nav">
+      <a href="https://www.centerstreetlending.com/fix-and-flip-loans/">Loan Programs <small>▼</small></a>
+      <a href="https://www.centerstreetlending.com/about-us/">About <small>▼</small></a>
+      <a href="https://www.centerstreetlending.com/who-we-serve-fix-and-flip/">Who We Serve <small>▼</small></a>
+      <a href="https://www.centerstreetlending.com/manage-my-loans/">Manage My Loans <small>▼</small></a>
+    </div>
+
+    <div class="header-right" style="display:flex; align-items:center; gap:24px;">
+      <a class="phone" href="tel:949-676-5617" style="color:#5D6871; font-weight:400; text-decoration:none; font-size:0.95rem;">Call 949-676-5617</a>
+      <a class="btn" href="https://centerstreetlending.com/apply" style="padding:10px 24px; font-size:0.95rem; background:#4683B3; border-radius:2px;">Apply Now</a>
+    </div>
   </div>
 </header>
 
