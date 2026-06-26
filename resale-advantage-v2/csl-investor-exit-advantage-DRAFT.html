@@ -1,1 +1,872 @@
-placeholder
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSL Resale Advantage | Center Street Lending</title>
+<meta name="description" content="An optional resale, marketing, escrow, and payoff coordination resource for Center Street Lending borrowers.">
+<!--
+  ============================================================
+  CSL INVESTOR EXIT ADVANTAGE — LANDING PAGE DRAFT (INTERNAL)
+  Target URL: centerstreetlending.com/investor-exit-advantage
+  Built: 2026-06-10 · Status: DRAFT — pending approvals
+  Source: CSL_Investor_Exit_Advantage_Announcement_Readiness.docx
+
+  PENDING ITEMS (search "PENDING" in this file):
+   1. 1% listing option — final terms not confirmed (benefit card #1)
+   2. Optional escrow pricing sentence — hidden until approved (id=pricing-sentence)
+   3. Eligibility definition (FAQ item)
+   4. Opt-in follow-up owner — who calls within 24h (How It Works, step 2)
+   5. Contact-consent checkbox language — needs legal review
+   6. Form routing — webhook/CRM destination TBD (see handleSubmit in JS)
+   7. RESOLVED 2026-06-10: brand tokens matched to live CSL Webflow site (steel blue #4683B3, dark slate #2C3842, Roboto)
+   8. Disclosure block is LOCKED COPY from the readiness doc — do not edit ad hoc
+   9. RESOLVED 2026-06-10: InnoLaunch gallery images embedded as base64 JPEG (sources: E:\Projects\InnoHQ M1-M4 + iPhoneInnoLaunch 4)
+  10. Honest Escrow section — confirm honestescrow.com is live/connected before publish; Honest to approve description + claims
+  13. 2026-06-10: timeline runner animation (gliding dot + first-dot pulse); Honest 5-star reviews block added — quotes are REAL reviews copied from honestescrow.com homepage (5.0/10 reviews: Weisberger, DeVille, Cho)
+  12. 2026-06-10: exit timeline strip added at end of "Who this is for" (id=exit-timeline, animated line draw + staggered milestones)
+  11. 2026-06-10: gallery = stacked-tile carousel (4 tiles, next images peek behind, 2.2s auto-advance, swipe/arrows/dots); iPad Market Debut shown standalone above it; scroll-reveal + hover animations (respects prefers-reduced-motion)
+
+  DELETE the <div id="internal-review-strip"> block before publish.
+  ============================================================
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* Brand tokens matched to live centerstreetlending.com (Webflow) 2026-06-10:
+       #4683B3 steel blue (CTA buttons), #2C3842 dark slate (text/footer),
+       #3D6A8D hover blue, #EFF6FE light blue tint, #5D6871 muted, font Roboto */
+    --navy:#2C3842;
+    --navy-deep:#1F2830;
+    --accent:#4683B3;
+    --accent-dark:#3D6A8D;
+    --ink:#2C3842;
+    --muted:#5D6871;
+    --bg:#FFFFFF;
+    --bg-soft:#EFF6FE;
+    --line:#DCE5EC;
+    --pending:#B45309;
+    --pending-bg:#FFF7E6;
+    --pending-line:#F0C36D;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Roboto','Segoe UI',-apple-system,BlinkMacSystemFont,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  h1,h2,h3{font-weight:700;line-height:1.2;color:var(--navy)}
+  h2{font-size:1.7rem;margin-bottom:.5rem}
+  .sub{color:var(--muted);max-width:640px}
+  section{padding:56px 0}
+  .btn{display:inline-block;background:var(--accent);color:#fff;font-weight:600;padding:14px 32px;border-radius:6px;text-decoration:none;border:none;font-size:1rem;cursor:pointer;transition:background .15s}
+  .btn:hover{background:var(--accent-dark)}
+  .btn-ghost{display:inline-block;color:var(--navy);font-weight:600;padding:14px 20px;text-decoration:none}
+  .hero .btn-ghost{color:rgba(255,255,255,.92)}
+  .hero .btn-ghost:hover{color:#fff;text-decoration:underline}
+
+  /* innolaunch showcase — compact two-column */
+  .inno-grid{display:grid;grid-template-columns:2fr 3fr;gap:40px;align-items:center;margin-top:28px}
+  .carousel{position:relative}
+  .debut-feature{margin:0;text-align:center}
+  .debut-feature img{width:100%;height:auto;border-radius:12px;box-shadow:0 8px 24px rgba(44,56,66,.12)}
+  .debut-feature figcaption{margin-top:10px;font-size:.84rem;color:var(--muted)}
+  .deck{position:relative;height:340px}
+  .slide{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;transform:translateX(90px) scale(.84);transition:transform .5s cubic-bezier(.22,.61,.36,1),opacity .5s ease;z-index:0;pointer-events:none}
+  .slide img{max-height:calc(100% - 38px);max-width:72%;width:auto;height:auto;border-radius:10px;box-shadow:0 8px 22px rgba(44,56,66,.14);user-select:none;-webkit-user-drag:none}
+  .slide figcaption{margin-top:10px;font-size:.82rem;color:var(--muted);text-align:center;max-width:460px;opacity:0;transition:opacity .4s ease}
+  .slide.pos0{opacity:1;transform:none;z-index:30;pointer-events:auto}
+  .slide.pos0 figcaption{opacity:1}
+  .slide.pos1{opacity:.45;transform:translateX(42px) scale(.93);z-index:20}
+  .slide.pos2{opacity:.18;transform:translateX(78px) scale(.87);z-index:10}
+  .car-btn{position:absolute;top:42%;transform:translateY(-50%);width:34px;height:34px;border-radius:50%;background:#fff;color:var(--navy);border:1px solid var(--line);cursor:pointer;font-size:1.1rem;line-height:1;display:flex;align-items:center;justify-content:center;transition:border-color .2s,color .2s;z-index:40}
+  .car-btn:hover{border-color:var(--accent);color:var(--accent)}
+  .car-prev{left:-6px}.car-next{right:-6px}
+  .car-dots{display:flex;gap:7px;justify-content:center;margin-top:8px}
+  .car-dot{width:7px;height:7px;border-radius:99px;background:var(--line);border:none;cursor:pointer;padding:0;transition:width .3s,background .3s}
+  .car-dot.active{width:22px;background:var(--accent)}
+  .gallery-note{font-size:.78rem;color:var(--muted);margin-top:14px;text-align:center}
+  @media(max-width:760px){.inno-grid{grid-template-columns:1fr;gap:24px}.debut-feature{max-width:360px;margin:0 auto}}
+  /* exit timeline strip */
+  .tl{margin-top:52px}
+  .tl-eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);text-align:center;margin-bottom:22px}
+  .tl-track{position:relative;display:grid;grid-template-columns:repeat(5,1fr)}
+  .tl-track::before{content:"";position:absolute;top:7px;left:10%;right:10%;height:2px;background:var(--line)}
+  .tl-line{position:absolute;top:7px;left:10%;width:0;height:2px;background:var(--accent);transition:width 1.6s cubic-bezier(.22,.61,.36,1) .2s}
+  .tl.in .tl-line{width:80%}
+  .tl-step{text-align:center;position:relative;opacity:0;transform:translateY(10px);transition:opacity .5s ease,transform .5s ease}
+  .tl-step.in{opacity:1;transform:none}
+  .tl-dot{display:block;width:14px;height:14px;border-radius:50%;background:#fff;border:3px solid var(--accent);margin:0 auto 12px;position:relative;z-index:2;box-sizing:border-box;transform:scale(0);transition:transform .45s cubic-bezier(.34,1.56,.64,1);transition-delay:inherit}
+  .tl-step.in .tl-dot{transform:scale(1)}
+  .tl-step:last-child .tl-dot{background:var(--accent)}
+  .tl-step h4{font-size:.9rem;color:var(--navy);font-weight:700;margin:0;line-height:1.3}
+  .tl-step p{font-size:.76rem;color:var(--muted);margin-top:3px;padding:0 8px}
+  @media(max-width:640px){
+    .tl{margin-top:40px}
+    .tl-track{grid-template-columns:1fr;gap:0}
+    .tl-track::before{left:6px;top:6px;bottom:6px;width:2px;height:auto;right:auto}
+    .tl-line{left:6px;top:6px;width:2px;height:0;transition:height 1.4s cubic-bezier(.22,.61,.36,1) .2s}
+    .tl.in .tl-line{width:2px;height:calc(100% - 12px)}
+    .tl-step{display:block;text-align:left;position:relative;padding:0 0 26px 30px}
+    .tl-step:last-child{padding-bottom:0}
+    .tl-dot{position:absolute;left:0;top:2px;margin:0}
+    .tl-step h4{margin:0}
+    .tl-step p{padding:0;margin-top:2px}
+    .tl-runner{display:none}
+  }
+
+  /* timeline runner + pulse */
+  .tl-runner{position:absolute;top:3px;left:10%;width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(70,131,179,.15);z-index:1;opacity:0}
+  .tl.in .tl-runner{animation:tl-run 6s ease-in-out 1.8s infinite}
+  @keyframes tl-run{0%{left:10%;opacity:0}10%{opacity:1}85%{opacity:1}100%{left:calc(90% - 9px);opacity:0}}
+  .tl-step:first-child .tl-dot::after{content:"";position:absolute;inset:-3px;border-radius:50%;border:2px solid var(--accent);opacity:0}
+  .tl.in .tl-step:first-child .tl-dot::after{animation:tl-pulse 2.8s ease-out 1.5s infinite}
+  @keyframes tl-pulse{0%{transform:scale(.6);opacity:.7}70%{transform:scale(1.8);opacity:0}100%{transform:scale(1.8);opacity:0}}
+
+  /* honest escrow five-star reviews */
+  .he-reviews{margin-top:36px}
+  .he-stars{text-align:center;margin-bottom:4px}
+  .he-stars span{display:inline-block;color:#F2BD63;font-size:1.3rem;margin:0 2px;opacity:0;transform:scale(.4);transition:opacity .35s ease,transform .35s cubic-bezier(.34,1.56,.64,1)}
+  .he-stars span:nth-child(2){transition-delay:.08s}
+  .he-stars span:nth-child(3){transition-delay:.16s}
+  .he-stars span:nth-child(4){transition-delay:.24s}
+  .he-stars span:nth-child(5){transition-delay:.32s}
+  .he-stars.in span{opacity:1;transform:scale(1)}
+  .he-stars-label{text-align:center;font-size:.82rem;color:#60727A;margin-bottom:20px}
+  .he-stars-label strong{color:#105060}
+  .he-quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+  .he-quote{background:#fff;border:1px solid #F3EADC;border-radius:10px;padding:18px 20px}
+  .he-quote .q-stars{color:#F2BD63;font-size:.8rem;letter-spacing:2px;margin-bottom:8px}
+  .he-quote p{font-size:.88rem;color:#1E2930;margin:0}
+  .he-quote .who{font-size:.76rem;color:#60727A;margin-top:10px;font-weight:600}
+
+  /* modern card polish + subtle motion */
+  .benefit{display:flex;flex-direction:column;transition:transform .25s ease,box-shadow .25s ease}
+  .benefit:hover{transform:translateY(-3px);box-shadow:0 10px 22px rgba(44,56,66,.08)}
+  .benefit p a,.card p a{white-space:nowrap}
+  .card,.step{transition:transform .25s ease,box-shadow .25s ease}
+  .card:hover,.step:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(44,56,66,.06)}
+  .pending-inline{display:inline-block;font-size:.8rem;color:var(--pending);background:var(--pending-bg);border:1px dashed var(--pending-line);border-radius:6px;padding:8px 14px;margin-top:12px}
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+  .hero .eyebrow,.hero h1,.hero p.lead,.hero p.optional,.hero a.btn,.hero a.btn-ghost,.hero .trustbar{animation:fadeUp .7s ease both}
+  .hero h1{animation-delay:.08s}.hero p.lead{animation-delay:.16s}.hero p.optional{animation-delay:.24s}.hero a.btn{animation-delay:.32s}.hero a.btn-ghost{animation-delay:.36s}.hero .trustbar{animation-delay:.48s}
+  @media(max-width:640px){.deck{height:270px}.slide img{max-width:66%}.slide.pos1{opacity:.45;transform:translateX(26px) scale(.93)}.slide.pos2{opacity:.18;transform:translateX(48px) scale(.87)}.car-btn{width:30px;height:30px}}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.slide{transition:none}.hero .eyebrow,.hero h1,.hero p.lead,.hero p.optional,.hero a.btn,.hero a.btn-ghost,.hero .trustbar{animation:none}.benefit,.card,.step{transition:none}.tl-step,.tl-dot,.tl-line{transition:none;opacity:1;transform:none}.tl-runner,.tl-step:first-child .tl-dot::after{animation:none;display:none}.he-stars span{opacity:1;transform:none;transition:none}.hero{animation:none}.hero::before,.hero::after,.hero-glow3{animation:none}.hero h1 .hl{animation:none}}
+
+  /* honest escrow brand moment (Honest's own palette: teal #105060, gold #F2BD63, cream #FFFAF4) */
+  .honest{background:#FFFAF4;border-top:1px solid #F3EADC;border-bottom:1px solid #F3EADC}
+  .honest .panel{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:48px;align-items:start}
+  .he-eyebrow{display:inline-block;background:#F2BD63;color:#1E2930;border-radius:999px;padding:4px 16px;font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px}
+  .honest h2{font-family:'Cormorant Garamond',Georgia,serif;color:#105060;font-size:2.3rem;font-weight:700}
+  .honest .he-sub{color:#60727A;max-width:560px}
+  .he-points{list-style:none;margin:20px 0 26px;display:grid;gap:10px}
+  .he-points li{position:relative;padding-left:28px;font-size:.95rem;color:#1E2930}
+  .he-points li::before{content:"\2713";position:absolute;left:0;top:0;color:#105060;background:#F2BD63;border-radius:50%;width:19px;height:19px;display:inline-flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700}
+  .btn-he{display:inline-block;background:#105060;color:#FFFAF4;font-weight:600;padding:14px 30px;border-radius:6px;text-decoration:none;font-size:.98rem;transition:background .15s}
+  .btn-he:hover{background:#0B3B47}
+  .btn-he-ghost{display:inline-block;border:2px solid #105060;color:#105060;font-weight:600;padding:12px 24px;border-radius:6px;text-decoration:none;font-size:.95rem;margin-left:12px}
+  .he-road{background:#fff;border:1px solid #F3EADC;border-radius:12px;padding:28px}
+  .he-road .he-road-title{font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#60727A;margin-bottom:4px}
+  .he-road h3{font-family:'Cormorant Garamond',Georgia,serif;color:#105060;font-size:1.5rem;margin-bottom:18px}
+  .he-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:16px}
+  .he-step{border:none;background:#FFFAF4;border-radius:8px;padding:12px 8px;font-family:inherit;font-size:.78rem;font-weight:600;color:#60727A;cursor:pointer;text-align:center;border-bottom:3px solid transparent}
+  .he-step span{display:block;font-size:.95rem;color:#105060;font-weight:700;margin-bottom:2px}
+  .he-step.active{background:#E7F4F6;color:#105060;border-bottom:3px solid #F2BD63}
+  .he-road-note{font-size:.9rem;color:#1E2930;background:#FFFAF4;border-left:3px solid #F2BD63;border-radius:0;padding:12px 14px;min-height:72px}
+  .he-fineprint{font-size:.8rem;color:#60727A;margin-top:18px}
+  @media(max-width:640px){.he-steps{grid-template-columns:repeat(2,1fr)}.btn-he-ghost{margin-left:0;margin-top:10px}}
+
+  /* internal review strip — DELETE BEFORE PUBLISH */
+  #internal-review-strip{background:var(--pending-bg);border-bottom:2px dashed var(--pending-line);padding:12px 24px;font-size:.85rem;color:var(--pending)}
+  #internal-review-strip strong{text-transform:uppercase;letter-spacing:.05em}
+
+  .pending-chip{display:inline-block;background:var(--pending-bg);color:var(--pending);border:1px dashed var(--pending-line);border-radius:4px;font-size:.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;margin-bottom:8px}
+  .pending-block{border:2px dashed var(--pending-line);background:var(--pending-bg);border-radius:8px;padding:14px 16px;font-size:.92rem;color:var(--pending)}
+
+  /* header */
+  header{background:#fff;border-bottom:1px solid var(--line);padding:16px 0}
+  header .wrap{display:flex;align-items:center;justify-content:space-between}
+  .wordmark{font-weight:800;color:var(--navy);font-size:1.05rem;letter-spacing:.04em;text-decoration:none}
+  .wordmark span{color:var(--accent)}
+  header a.phone{color:var(--navy);font-weight:600;text-decoration:none;font-size:.95rem}
+
+  /* hero */
+  .hero{background:linear-gradient(135deg,#2C3842 0%,#1E2A34 45%,#2A4357 100%);background-size:200% 200%;animation:heroFlow 18s ease-in-out infinite;color:#fff;padding:72px 0 60px}
+  .hero .eyebrow{display:inline-block;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:5px 16px;font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px}
+  .hero h1{color:#fff;font-size:3.1rem;line-height:1.1;letter-spacing:-.01em;max-width:680px;margin-bottom:16px}
+  .hero p.lead{font-size:1.15rem;color:rgba(255,255,255,.85);max-width:620px;margin-bottom:12px}
+  .hero p.optional{font-size:.95rem;color:rgba(255,255,255,.7);max-width:620px;margin-bottom:28px}
+  .trustbar{display:flex;gap:40px;margin-top:36px;flex-wrap:wrap}
+  .trustbar .stat strong{display:block;font-size:1.6rem;color:#fff}
+  .trustbar .stat span{font-size:.85rem;color:rgba(255,255,255,.65)}
+
+  /* who it's for */
+  .grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:28px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:24px}
+  .card h3{font-size:1.1rem;margin-bottom:8px}
+  .card p{font-size:.95rem;color:var(--muted)}
+  .soft{background:var(--bg-soft)}
+
+  /* benefits */
+  .grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;margin-top:28px}
+  .benefit{background:#fff;border:1px solid var(--line);border-radius:10px;padding:24px;border-top:3px solid var(--accent)}
+  .benefit h3{font-size:1.05rem;margin-bottom:8px}
+  .benefit p{font-size:.95rem;color:var(--muted)}
+  .benefit.is-pending{border:2px dashed var(--pending-line);border-top:4px solid var(--pending-line);background:var(--pending-bg)}
+
+  /* how it works */
+  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:28px}
+  .step{position:relative;padding:24px;background:#fff;border:1px solid var(--line);border-radius:10px}
+  .step .num{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:var(--navy);color:#fff;font-weight:700;margin-bottom:14px}
+  .step h3{font-size:1.05rem;margin-bottom:8px}
+  .step p{font-size:.95rem;color:var(--muted)}
+  .step .pending-note{margin-top:12px;font-size:.8rem}
+
+  /* form */
+  #optin{background:var(--navy);color:#fff}
+  #optin h2{color:#fff}
+  #optin .sub{color:rgba(255,255,255,.75)}
+  .form-card{background:#fff;border-radius:12px;padding:28px;margin-top:28px;color:var(--ink);max-width:720px}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .field{margin-bottom:16px}
+  .field label{display:block;font-size:.85rem;font-weight:600;color:var(--navy);margin-bottom:5px}
+  .field label .opt{font-weight:400;color:var(--muted)}
+  .field input[type=text],.field input[type=email],.field input[type=tel],.field select{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:6px;font-size:.95rem;font-family:inherit;background:#fff}
+  .field input:focus,.field select:focus{outline:2px solid var(--accent);outline-offset:0;border-color:var(--accent)}
+  fieldset{border:1px solid var(--line);border-radius:8px;padding:16px;margin-bottom:16px}
+  legend{font-size:.85rem;font-weight:600;color:var(--navy);padding:0 6px}
+  .radio-row{display:flex;align-items:flex-start;gap:10px;padding:8px 4px;cursor:pointer}
+  .radio-row input{margin-top:4px;accent-color:var(--accent)}
+  .radio-row span{font-size:.95rem}
+  .consent{display:flex;gap:10px;align-items:flex-start;font-size:.82rem;color:var(--muted);margin-bottom:20px}
+  .consent input{margin-top:3px;accent-color:var(--accent)}
+  .form-note{font-size:.82rem;color:var(--muted);margin-top:14px}
+  #success-panel{display:none;background:#EDF7EE;border:1px solid #9CCFA2;border-radius:8px;padding:20px;margin-top:8px}
+  #success-panel h3{color:#1E6B2E;font-size:1.05rem;margin-bottom:6px}
+  #success-panel p{font-size:.92rem;color:#2F5238}
+  .hp{position:absolute;left:-9999px;opacity:0}
+
+  /* faq */
+  details{border:1px solid var(--line);border-radius:8px;margin-top:12px;background:#fff}
+  summary{padding:14px 18px;font-weight:600;color:var(--navy);cursor:pointer;list-style:none}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";float:right;color:var(--accent);font-weight:700}
+  details[open] summary::after{content:"\2212"}
+  details .a{padding:0 20px 16px;font-size:.95rem;color:var(--muted)}
+
+  /* disclosure + footer */
+  .disclosure{background:var(--bg-soft);border-top:1px solid var(--line)}
+  .disclosure h2{font-size:1.1rem}
+  .disclosure p{font-size:.85rem;color:var(--muted);max-width:880px;margin-top:12px}
+  footer{background:var(--navy-deep);color:rgba(255,255,255,.65);padding:40px 0;font-size:.8rem}
+  footer .wrap{display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap}
+  footer .wordmark{color:#fff}
+  footer .licenses{line-height:1.9}
+  @media(max-width:640px){
+    .hero h1{font-size:2rem}
+    .form-row{grid-template-columns:1fr}
+    section{padding:40px 0}
+  }
+  /* ===== sexy hero rework 2026-06-24 ===== */
+  .offer-bar{background:var(--navy-deep);color:#fff;text-align:center;padding:9px 16px;font-size:.8rem;letter-spacing:.05em}
+  .offer-bar b{color:#F2BD63;font-weight:700;text-transform:uppercase}
+  .hero{position:relative;overflow:hidden}
+  .hero::after,.hero::before{content:"";position:absolute;border-radius:50%;pointer-events:none;z-index:0;filter:blur(38px)}
+  .hero::after{top:-160px;right:-110px;width:500px;height:500px;background:radial-gradient(circle,rgba(70,131,179,.62),transparent 68%);animation:blobA 14s ease-in-out infinite}
+  .hero::before{bottom:-190px;left:-100px;width:470px;height:470px;background:radial-gradient(circle,rgba(242,189,99,.28),transparent 70%);animation:blobB 19s ease-in-out infinite}
+  .hero-glow3{position:absolute;top:24%;left:42%;width:380px;height:380px;border-radius:50%;filter:blur(46px);background:radial-gradient(circle,rgba(95,165,220,.40),transparent 70%);pointer-events:none;z-index:0;animation:blobC 20s ease-in-out infinite}
+  .hero h1 .hl{animation:goldPulse 3.4s ease-in-out infinite}
+  @keyframes heroFlow{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+  @keyframes blobA{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-66px,42px) scale(1.26)}}
+  @keyframes blobB{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(70px,-44px) scale(1.3)}}
+  @keyframes blobC{0%,100%{transform:translate(0,0) scale(1);opacity:.8}50%{transform:translate(-50px,-46px) scale(1.3);opacity:1}}
+  @keyframes goldPulse{0%,100%{text-shadow:0 0 0 rgba(242,189,99,0)}50%{text-shadow:0 0 22px rgba(242,189,99,.55)}}
+  .hero .wrap{position:relative;z-index:1}
+  .hero-grid{display:grid;grid-template-columns:1.55fr 1fr;gap:44px;align-items:center}
+  .hero h1 .hl{color:#F2BD63}
+  .hero-savings{display:flex;gap:14px;flex-wrap:wrap;margin:22px 0 26px}
+  .save{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:12px;padding:12px 18px;min-width:92px}
+  .save strong{display:block;font-size:1.7rem;font-weight:800;color:#F2BD63;line-height:1}
+  .save span{display:block;font-size:.68rem;color:rgba(255,255,255,.72);text-transform:uppercase;letter-spacing:.04em;margin-top:5px}
+  .hero-cta{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+  .hero-ticker{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);border-radius:18px;padding:26px 22px;text-align:center}
+  .tk-label{display:block;font-size:.7rem;text-transform:uppercase;letter-spacing:.09em;color:rgba(255,255,255,.7)}
+  .tk-num{display:block;font-size:3.8rem;font-weight:800;color:#fff;line-height:1.05;margin:8px 0 4px}
+  .tk-sub{font-size:.84rem;color:rgba(255,255,255,.82);line-height:1.4}
+  .hero .trustbar{border-top:1px solid rgba(255,255,255,.13);margin-top:40px;padding-top:26px;gap:34px}
+  .hero-foot{font-size:.68rem;color:rgba(255,255,255,.45);margin-top:14px}
+  .hero sup{font-size:.55em;color:#F2BD63}
+  @media(max-width:860px){.hero-grid{grid-template-columns:1fr;gap:26px}.hero-ticker{max-width:340px}.hero h1{font-size:2.2rem}}
+  .inno-points{list-style:none;margin:18px 0 0;display:grid;gap:9px;max-width:560px}
+  .inno-points li{position:relative;padding-left:28px;font-size:.95rem;color:var(--muted)}
+  .inno-points li strong{color:var(--navy)}
+  .inno-points li::before{content:"✓";position:absolute;left:0;top:1px;color:#fff;background:var(--accent);border-radius:50%;width:18px;height:18px;display:inline-flex;align-items:center;justify-content:center;font-size:.62rem;font-weight:700}
+</style>
+</head>
+<body>
+
+
+<div class="offer-bar"><b>Exclusive offer</b> &mdash; pre-negotiated for CSL borrowers</div>
+
+<header>
+  <div class="wrap">
+    <a class="wordmark" href="https://www.centerstreetlending.com/">CENTER STREET <span>LENDING</span></a>
+    <a class="phone" href="tel:949-244-1090">949-244-1090</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <span class="hero-glow3" aria-hidden="true"></span>
+  <div class="wrap hero-grid">
+    <div class="hero-main">
+      <span class="eyebrow">Pre-negotiated exclusively for CSL borrowers</span>
+      <h1>We made it <span class="hl">cheaper</span> to exit your investment.</h1>
+      <p class="lead">You found it, improved it, and rehabbed it &mdash; now list it at <strong>1%</strong> and close for less. We pre-negotiated an exclusive deal with <strong>Innovate Realty</strong> and <strong>Honest Escrow</strong>, just for CSL borrowers.</p>
+      <div class="hero-savings">
+        <div class="save"><strong>1%</strong><span>Exclusive listing fee</span></div>
+        <div class="save"><strong>$500</strong><span>Seller escrow, as low as</span></div>
+        <div class="save"><strong>20K</strong><span>Buyer views in 21 days</span></div>
+      </div>
+      <div class="hero-cta">
+        <a class="btn" href="#optin">Request Information</a>
+        <a class="btn-ghost" href="tel:949-244-1090">or call 949-244-1090</a>
+      </div>
+      <p class="optional">Entirely optional &mdash; you're always free to choose your own broker, escrow company, and other providers.</p>
+    </div>
+    <aside class="hero-ticker">
+      <span class="tk-label">Borrowers using the program</span>
+      <span class="tk-num" id="deal-ticker" data-target="100">0</span>
+      <span class="tk-sub">homes sold through CSL Resale Advantage<sup>&Dagger;</sup></span>
+    </aside>
+  </div>
+  <div class="wrap">
+    <div class="trustbar">
+      <div class="stat"><strong>$7.6B</strong><span>Funded by Center Street Lending</span></div>
+      <div class="stat"><strong>$2.4M<sup>&Dagger;</sup></strong><span>Saved by CSL borrowers</span></div>
+      <div class="stat"><strong>3,200+<sup>&Dagger;</sup></strong><span>Homes sold by Innovate Realty</span></div>
+      <div class="stat"><strong>$1.1B<sup>&Dagger;</sup></strong><span>Closed by Honest Escrow</span></div>
+    </div>
+    <p class="hero-foot">&Dagger; Placeholder figures &mdash; pending confirmed numbers.</p>
+  </div>
+</div>
+
+<!-- WHO IT'S FOR -->
+<section>
+  <div class="wrap">
+    <h2>Who this is for</h2>
+    <p class="sub">Resale Advantage is built for CSL borrowers thinking about the sale side of their project.</p>
+    <div class="grid-3">
+      <div class="card">
+        <h3>Approaching resale or maturity</h3>
+        <p>If your project is 60&ndash;120 days from listing or loan maturity, early coordination gives you the most room to plan the exit on your terms.</p>
+      </div>
+      <div class="card">
+        <h3>Repeat borrowers</h3>
+        <p>Selling one project to move into the next? A coordinated listing-to-payoff process helps each cycle run smoother than the last.</p>
+      </div>
+      <div class="card">
+        <h3>No agent or escrow lined up yet</h3>
+        <p>If you haven't selected a listing agent or escrow company, you can request introductions to options familiar with CSL projects &mdash; with no obligation to use them.</p>
+      </div>
+    </div>
+    <div class="tl" id="exit-timeline">
+      <p class="tl-eyebrow">Your exit, mapped</p>
+      <div class="tl-track">
+        <div class="tl-line"></div>
+        <div class="tl-runner"></div>
+        <div class="tl-step"><span class="tl-dot"></span><h4>120 days out</h4><p>Opt in and start planning early</p></div>
+        <div class="tl-step"><span class="tl-dot"></span><h4>Listing</h4><p>Agent and marketing lined up</p></div>
+        <div class="tl-step"><span class="tl-dot"></span><h4>In escrow</h4><p>Everyone working from one plan</p></div>
+        <div class="tl-step"><span class="tl-dot"></span><h4>Payoff</h4><p>CSL payoff coordinated</p></div>
+        <div class="tl-step"><span class="tl-dot"></span><h4>Closed</h4><p>On to the next project</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="soft">
+  <div class="wrap">
+    <h2>What you can request through the program</h2>
+    <p class="sub">Eligible CSL borrowers can ask for information about any of the following. Everything is optional &mdash; pick what's useful to you.</p>
+    <div class="grid-2">
+
+      <!-- 1% listing terms confirmed 2026-06-24 -->
+      <div class="benefit">
+        <h3>Exclusive 1% listing fee</h3>
+        <p>A pre-negotiated 1% listing commission through Innovate Realty &mdash; versus the typical 2.5&ndash;3% &mdash; with InnoLaunch marketing included when you list with an Innovate agent.</p>
+      </div>
+
+      <div class="benefit">
+        <h3>Listing marketing support</h3>
+        <p>InnoLaunch marketing support to help put your property in front of more buyers &mdash; Innovate can even begin marketing before construction is finished, so you reach the market sooner. Included when you list with an Innovate Realty agent. <a href="#innolaunch" style="color:var(--accent);font-weight:600">See samples below &darr;</a></p>
+      </div>
+
+      <div class="benefit">
+        <h3>Southern California agent network</h3>
+        <p>Access to Innovate's Southern California agent network for your listing.</p>
+      </div>
+
+      <div class="benefit">
+        <h3>An escrow option that knows CSL</h3>
+        <p>Honest Escrow is familiar with CSL payoff and closing requirements. For CSL borrowers, seller&#8209;side escrow fees are reduced &mdash; as low as $500 per seller; buyer&#8209;side fees remain standard. <a href="https://www.honestescrow.com" target="_blank" rel="noopener" style="color:var(--accent);font-weight:600">Learn more &rarr;</a></p>
+        <p class="pending-inline">Pending escrow-law / legal review: an advertised escrow fee reduction must be disclosed in writing and reflected in the escrow instructions.</p>
+      </div>
+
+      <div class="benefit">
+        <h3>Earlier resale planning</h3>
+        <p>Start planning the resale before your project is fully complete, so listing, escrow, and payoff line up instead of stacking up.</p>
+      </div>
+
+      <div class="benefit">
+        <h3>One coordinated process</h3>
+        <p>A more coordinated process between you, your lender, your agent, and the escrow team &mdash; designed to reduce friction at closing.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON TABLE - structure inspired by the alt renderings, rebuilt in CSL branding + compliance-safe wording -->
+<style>
+  #compare .cmp-wrap{margin-top:28px;overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);border-radius:10px}
+  #compare table.cmp{width:100%;border-collapse:collapse;font-size:.95rem;min-width:520px}
+  #compare .cmp th,#compare .cmp td{text-align:left;padding:15px 18px;border-bottom:1px solid var(--line);vertical-align:top}
+  #compare .cmp tr:last-child th,#compare .cmp tr:last-child td{border-bottom:none}
+  #compare .cmp thead th{font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:700;background:#fff}
+  #compare .cmp tbody th{font-weight:700;color:var(--navy);width:24%;background:#fff}
+  #compare .cmp td.alone{color:var(--muted)}
+  #compare .cmp td.csl{color:var(--navy);background:var(--bg-soft)}
+  #compare .cmp thead th.csl{color:var(--accent);background:var(--bg-soft)}
+  #compare .cmp .ck{color:var(--accent);font-weight:800;margin-right:7px}
+  #compare .cmp-chip{display:inline-block;font-size:.6rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--pending);background:var(--pending-bg);border:1px dashed var(--pending-line);border-radius:3px;padding:1px 6px;margin-right:5px;vertical-align:middle}
+  @media(max-width:640px){
+    #compare .cmp-wrap{overflow-x:visible;border:none;border-radius:0}
+    #compare table.cmp{min-width:0}
+    #compare .cmp thead{display:none}
+    #compare .cmp tbody tr{display:block;border:1px solid var(--line);border-radius:10px;margin-bottom:14px;background:#fff;overflow:hidden}
+    #compare .cmp tbody th{display:block;width:auto;background:var(--navy);color:#fff;font-size:.95rem;padding:11px 16px;border:none}
+    #compare .cmp tbody td{display:block;width:auto;border:none;border-top:1px solid var(--line);padding:11px 16px;font-size:.92rem}
+    #compare .cmp td.csl{background:var(--bg-soft)}
+    #compare .cmp td.alone::before{content:"Going it alone";display:block;font-size:.66rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+    #compare .cmp td.csl::before{content:"With CSL Resale Advantage";display:block;font-size:.66rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--accent);margin-bottom:4px}
+  }
+</style>
+<section id="compare">
+  <div class="wrap">
+    <h2>What changes when you use the program</h2>
+    <p class="sub">Same project, different exit. Here's how a coordinated path compares with handling the sale on your own.</p>
+    <div class="cmp-wrap">
+      <table class="cmp">
+        <thead>
+          <tr><th>&nbsp;</th><th>Going it alone</th><th class="csl">With CSL Resale Advantage</th></tr>
+        </thead>
+        <tbody>
+          <tr><th>Listing commission</th><td class="alone">Standard 2.5&ndash;3% listing commission</td><td class="csl"><span class="ck">&checkmark;</span>Pre&#8209;negotiated 1% listing commission through Innovate Realty</td></tr>
+          <tr><th>Escrow familiarity &amp; fees</th><td class="alone">May not know CSL payoffs &mdash; standard escrow fees</td><td class="csl"><span class="ck">&checkmark;</span>Honest Escrow knows CSL payoffs &mdash; seller escrow as low as $500</td></tr>
+          <tr><th>Marketing</th><td class="alone">Standard MLS listing, after completion</td><td class="csl"><span class="ck">&checkmark;</span>InnoLaunch marketing (incl. pre&#8209;completion) &mdash; with an Innovate listing agent</td></tr>
+          <tr><th>Coordination</th><td class="alone">You manage agent, escrow &amp; lender separately</td><td class="csl"><span class="ck">&checkmark;</span>One coordinated process across borrower, lender, agent &amp; escrow</td></tr>
+          <tr><th>When you can start</th><td class="alone">After the project is fully complete</td><td class="csl"><span class="ck">&checkmark;</span>Plan earlier &mdash; 60&ndash;120 days out</td></tr>
+          <tr><th>Your obligation</th><td class="alone">&mdash;</td><td class="csl"><span class="ck">&checkmark;</span>Fully optional &mdash; always your choice of providers</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- INNOLAUNCH SHOWCASE -->
+<section id="innolaunch">
+  <div class="wrap">
+    <h2>What an InnoLaunch debut looks like</h2>
+    <p class="sub">Sample marketing materials prepared for an Innovate Realty listing &mdash; the kind of launch support included when you list with an Innovate Realty agent.</p>
+    <ul class="inno-points">
+      <li><strong>20,000 buyer views in 21 days</strong> &mdash; a coordinated launch built to get eyes on your property fast</li>
+      <li>Email marketing &amp; targeted digital ads</li>
+      <li>A dedicated property website</li>
+      <li>Printed brochures, flyers &amp; postcards</li>
+      <li>Marketing can begin before construction is complete &mdash; for a head start</li>
+    </ul>
+    <div class="inno-grid">
+    <figure class="debut-feature"><img src="innolaunch-ipad-debut.jpg" alt="InnoLaunch Market Debut title screen on a tablet: your property's premiere, perfected" loading="lazy"><figcaption>InnoLaunch Market Debut &mdash; your property's premiere, perfected</figcaption></figure>
+    <div class="carousel" id="inno-carousel" aria-roledescription="carousel" aria-label="InnoLaunch sample materials">
+      <div class="deck" id="car-track">
+      <figure class="slide"><img src="innolaunch-brochure.jpg" alt="Innovate Realty printed listing brochure: Coastal Luxury on Little Balboa" loading="lazy"><figcaption>Printed listing brochure for the property debut</figcaption></figure>
+      <figure class="slide"><img src="innolaunch-campaign-app.jpg" alt="InnoLaunch campaign tracking app showing marketing campaign completion on a phone" loading="lazy"><figcaption>Live campaign tracking &mdash; assets, metrics, showings, and open houses in one view</figcaption></figure>
+      <figure class="slide"><img src="innolaunch-postcard.jpg" alt="Innovate Realty New to Market postcard for 214 Abalone Ave, Newport Beach" loading="lazy"><figcaption>New-to-market announcement sent to the surrounding area</figcaption></figure>
+      <figure class="slide"><img src="innolaunch-flyer.jpg" alt="Innovate Realty open-house property flyer in an acrylic stand" loading="lazy"><figcaption>Open-house property flyers</figcaption></figure>
+      </div>
+      <button type="button" class="car-btn car-prev" id="car-prev" aria-label="Previous slide">&#8249;</button>
+      <button type="button" class="car-btn car-next" id="car-next" aria-label="Next slide">&#8250;</button>
+      <div class="car-dots" id="car-dots"></div>
+    </div>
+    </div>
+    <p class="gallery-note">Swipe, drag, or use the arrows to browse. Sample materials shown for illustration. Marketing plans vary by property and listing agreement.</p>
+  </div>
+</section>
+
+<!-- HONEST ESCROW BRAND MOMENT — PENDING #10: confirm honestescrow.com live + Honest approves copy -->
+<section class="honest">
+  <div class="wrap">
+    <div class="panel">
+      <div>
+        <span class="he-eyebrow">Your escrow option</span>
+        <h2>Meet Honest Escrow.</h2>
+        <p class="he-sub">An independent Southern California escrow team that keeps the closing process clear, calm, and human &mdash; and is familiar with CSL payoff and closing requirements.</p>
+        <ul class="he-points">
+          <li>Escrow officers with more than 15 years of experience</li>
+          <li>Clear communication at every milestone, from opening to closing</li>
+          <li>Familiar with CSL payoff demands and closing coordination</li>
+          <li>Optional &mdash; you are always free to choose your own escrow company</li>
+        </ul>
+        <a class="btn-he" href="https://www.honestescrow.com" target="_blank" rel="noopener">Explore Honest Escrow &rarr;</a>
+        <a class="btn-he-ghost" href="#optin" id="he-escrow-cta">Request escrow info</a>
+        <p class="he-fineprint">Clicking &ldquo;Request escrow info&rdquo; pre-fills the form below &mdash; no commitment, just information.</p>
+      </div>
+      <div class="he-road">
+        <p class="he-road-title">California escrow timeline</p>
+        <h3>A clear path from open to close.</h3>
+        <div class="he-steps">
+          <button type="button" class="he-step active" data-he-copy="Agreement is signed, escrow opens, and earnest money is deposited securely."><span>01</span>Opening</button>
+          <button type="button" class="he-step" data-he-copy="Buyer reviews disclosures, completes inspections, secures financing, and escrow coordinates title and paperwork."><span>02</span>Contingencies</button>
+          <button type="button" class="he-step" data-he-copy="Buyer signs loan and closing documents, then wires remaining funds to escrow."><span>03</span>Signing</button>
+          <button type="button" class="he-step" data-he-copy="Conditions are verified, the deed records, liens are paid, and seller funds are released &mdash; including your CSL payoff."><span>04</span>Closing</button>
+        </div>
+        <p class="he-road-note" id="he-road-note">Agreement is signed, escrow opens, and earnest money is deposited securely.</p>
+      </div>
+    </div>
+    <!-- Reviews below are real published reviews from the Honest Escrow site (5.0, 10 reviews) -->
+    <div class="he-reviews">
+      <p class="he-stars" aria-label="Rated 5 out of 5 stars"><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span></p>
+      <p class="he-stars-label"><strong>5.0</strong> &middot; 10 client reviews</p>
+      <div class="he-quotes">
+        <div class="he-quote"><div class="q-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>&ldquo;Stacie answered her cell phone every time I had a question. She helped make sure we had a very smooth escrow.&rdquo;</p><p class="who">Jeffrey Weisberger</p></div>
+        <div class="he-quote"><div class="q-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>&ldquo;Honest Escrow's team is supportive, responsive, and genuinely cares about making each transaction smooth and stress-free.&rdquo;</p><p class="who">Cierra DeVille</p></div>
+        <div class="he-quote"><div class="q-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>&ldquo;Their team is professional, responsive, and honest, with clear communication and no surprises.&rdquo;</p><p class="who">Howard Cho</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section>
+  <div class="wrap">
+    <h2>How it works</h2>
+    <div class="steps">
+      <div class="step">
+        <span class="num">1</span>
+        <h3>Tell us where you are</h3>
+        <p>Complete the short form below &mdash; about 60 seconds. Choose the kind of information you'd like to receive.</p>
+      </div>
+      <div class="step">
+        <span class="num">2</span>
+        <h3>We reach out within 24 hours</h3>
+        <p>A team member follows up with the details you asked for. No obligation, no pressure.</p>
+        <!-- PENDING #4: confirm who owns the opt-in follow-up (CSL / Innovate / Honest) -->
+        <p class="pending-note pending-block">Pending: confirm which team owns this follow-up before launch.</p>
+      </div>
+      <div class="step">
+        <span class="num">3</span>
+        <h3>Explore a coordinated exit plan</h3>
+        <p>From listing through escrow, payoff, and closing &mdash; using the providers you choose.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OPT-IN FORM -->
+<section id="optin">
+  <div class="wrap">
+    <h2>Request information</h2>
+    <p class="sub">No obligation. Use of any introduced provider is optional &mdash; you always choose your own providers.</p>
+
+    <form class="form-card" id="exit-advantage-form" novalidate>
+      <div class="form-row">
+        <div class="field">
+          <label for="first-name">First name</label>
+          <input type="text" id="first-name" name="first_name" autocomplete="given-name" required>
+        </div>
+        <div class="field">
+          <label for="last-name">Last name</label>
+          <input type="text" id="last-name" name="last_name" autocomplete="family-name" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" autocomplete="email" required>
+        </div>
+        <div class="field">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" autocomplete="tel" required>
+        </div>
+      </div>
+      <div class="field">
+        <label for="property-address">Property address <span class="opt">(optional)</span></label>
+        <input type="text" id="property-address" name="property_address" autocomplete="street-address">
+      </div>
+      <div class="form-row">
+        <div class="field">
+          <label for="loan-number">CSL loan number <span class="opt">(optional)</span></label>
+          <input type="text" id="loan-number" name="loan_number">
+        </div>
+        <div class="field">
+          <label for="timeline">When do you expect to sell?</label>
+          <select id="timeline" name="timeline" required>
+            <option value="">Select one&hellip;</option>
+            <option value="now">I'm ready to list now</option>
+            <option value="1-3mo">In 1&ndash;3 months</option>
+            <option value="3-6mo">In 3&ndash;6 months</option>
+            <option value="6mo+">6+ months out</option>
+            <option value="unsure">Not sure yet</option>
+          </select>
+        </div>
+      </div>
+
+      <fieldset>
+        <legend>What would you like?</legend>
+        <label class="radio-row"><input type="radio" name="intent" id="intent-details" value="details" required><span>Yes &mdash; send me details about the program</span></label>
+        <label class="radio-row"><input type="radio" name="intent" id="intent-escrow" value="escrow"><span>I already have an agent, but I'd like escrow information</span></label>
+        <label class="radio-row"><input type="radio" name="intent" id="intent-later" value="later"><span>I'm not ready yet &mdash; follow up with me later</span></label>
+      </fieldset>
+
+      <!-- PENDING #5: consent language needs legal review before launch -->
+      <label class="consent">
+        <input type="checkbox" name="consent" id="consent" required>
+        <span>I agree that Center Street Lending and its affiliates may contact me about the CSL Resale Advantage program by phone, email, or text at the information provided. Consent is not a condition of any loan. <em>(Pending legal review.)</em></span>
+      </label>
+
+      <!-- honeypot anti-spam field -->
+      <input class="hp" type="text" name="company_website" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+      <button type="submit" class="btn" id="submit-btn">Request information</button>
+
+      <div id="success-panel" role="status">
+        <h3>Thank you &mdash; we've received your request.</h3>
+        <p>A team member will reach out within 24 hours with the information you asked for. There's no obligation, and you're always free to choose your own providers.</p>
+      </div>
+
+      <p class="form-note">Subject to final eligibility. Any fee information will be provided in writing. You are free to choose your own real estate broker, escrow company, and other service providers.</p>
+    </form>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="soft">
+  <div class="wrap">
+    <h2>Common questions</h2>
+    <details>
+      <summary>Am I required to use Innovate Realty or Honest Escrow?</summary>
+      <div class="a">No. Use of any introduced provider is completely optional. You are free to choose your own real estate broker, escrow company, title company, lender, and other service providers.</div>
+    </details>
+    <details>
+      <summary>Does opting in affect my CSL loan?</summary>
+      <div class="a">No. Use of any introduced provider is not required as a condition of obtaining, maintaining, or paying off a CSL loan. Requesting information has no effect on your loan terms or servicing.</div>
+    </details>
+    <details>
+      <summary>What does it cost to request information?</summary>
+      <div class="a">Nothing. Requesting information is free. If you later choose to work with any provider, applicable fees are subject to eligibility, transaction details, party agreement, written disclosure, and escrow instructions.</div>
+    </details>
+    <details>
+      <summary>What happens after I submit the form?</summary>
+      <div class="a">A team member reaches out within 24 hours with the information you selected. If you chose &ldquo;follow up later,&rdquo; we'll simply check back closer to your timeline.</div>
+    </details>
+    <details>
+      <summary>Who is eligible?</summary>
+      <!-- PENDING #3: replace with the approved eligibility definition before launch -->
+      <div class="a"><span class="pending-chip">Pending</span> Eligibility definition to be confirmed by leadership before launch (active borrowers vs. past investors; geographic scope).</div>
+    </details>
+  </div>
+</section>
+
+<!-- DISCLOSURE — LOCKED COPY from readiness doc. Do not edit ad hoc. -->
+<section class="disclosure">
+  <div class="wrap">
+    <h2>Important disclosure</h2>
+    <p>CSL, Innovate Realty, Honest Escrow, and/or related ownership parties may have affiliated business relationships. If you request an introduction, additional disclosures, fee information, and service details may be provided. Use of any affiliated or introduced provider is optional. You are free to choose your own real estate broker, escrow company, title company, lender, and other service providers. Any escrow fees or program pricing are subject to eligibility, transaction details, party agreement, written disclosure, and escrow instructions. Use of any introduced provider is not required as a condition of obtaining, maintaining, or paying off a CSL loan.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <a class="wordmark" href="https://www.centerstreetlending.com/">CENTER STREET <span>LENDING</span></a>
+      <p style="margin-top:12px">949-244-1090<br>&copy; 2026 Center Street Lending. All rights reserved.</p>
+    </div>
+    <div class="licenses">
+      CFL License No. 60DBO-57755 &middot; NMLS 905781<br>
+      CA DRE License #01883377 &middot; AZ MBL# 0930263<br>
+      OR Lic #ML-5838 &middot; FL Mortgage Lender Servicer #MLD1180
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // --- Intent pre-select via query param (?intent=details|escrow|later) ---
+  // Email CTA buttons should link to:
+  //   /investor-exit-advantage?intent=details
+  //   /investor-exit-advantage?intent=escrow
+  //   /investor-exit-advantage?intent=later
+  var intentMap = { details:'intent-details', escrow:'intent-escrow', later:'intent-later' };
+  var intent = new URLSearchParams(window.location.search).get('intent');
+  if (intent && intentMap[intent]) {
+    var radio = document.getElementById(intentMap[intent]);
+    if (radio) {
+      radio.checked = true;
+      document.getElementById('optin').scrollIntoView();
+    }
+  }
+
+  // --- Honest Escrow mini timeline ---
+  document.querySelectorAll('.he-step').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.querySelectorAll('.he-step').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.getElementById('he-road-note').textContent = btn.getAttribute('data-he-copy');
+    });
+  });
+
+  // --- "Request escrow info" CTA pre-selects the escrow intent radio ---
+  var heCta = document.getElementById('he-escrow-cta');
+  if (heCta) {
+    heCta.addEventListener('click', function(){
+      document.getElementById('intent-escrow').checked = true;
+    });
+  }
+
+  // --- InnoLaunch stacked-tile carousel (2s auto-advance, swipe, dots) ---
+  var deck = document.getElementById('car-track');
+  var reducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (deck) {
+    var slides = deck.children, n = slides.length, idx = 0, timer = null;
+    var dotsBox = document.getElementById('car-dots');
+    for (var i = 0; i < n; i++) {
+      (function(k){
+        var d = document.createElement('button');
+        d.type = 'button';
+        d.className = 'car-dot' + (k === 0 ? ' active' : '');
+        d.setAttribute('aria-label', 'Go to slide ' + (k + 1));
+        d.addEventListener('click', function(){ go(k); start(); });
+        dotsBox.appendChild(d);
+      })(i);
+    }
+    function go(k) {
+      idx = (k + n) % n;
+      for (var i = 0; i < n; i++) {
+        var rel = (i - idx + n) % n;
+        slides[i].className = 'slide' + (rel < 3 ? ' pos' + rel : '');
+      }
+      for (var j = 0; j < dotsBox.children.length; j++) {
+        dotsBox.children[j].className = 'car-dot' + (j === idx ? ' active' : '');
+      }
+    }
+    function stop() { if (timer) { clearInterval(timer); timer = null; } }
+    function start() { stop(); if (reducedMotion) return; timer = setInterval(function(){ go(idx + 1); }, 2200); }
+    var car = document.getElementById('inno-carousel');
+    car.addEventListener('mouseenter', stop);
+    car.addEventListener('mouseleave', start);
+    document.getElementById('car-prev').addEventListener('click', function(){ go(idx - 1); start(); });
+    document.getElementById('car-next').addEventListener('click', function(){ go(idx + 1); start(); });
+    var swipeX = null;
+    deck.addEventListener('pointerdown', function(e){ swipeX = e.clientX; e.preventDefault(); });
+    deck.addEventListener('pointerup', function(e){
+      if (swipeX === null) return;
+      var dx = e.clientX - swipeX; swipeX = null;
+      if (dx < -40) { go(idx + 1); start(); }
+      else if (dx > 40) { go(idx - 1); start(); }
+    });
+    go(0); start();
+  }
+
+  // --- Scroll-reveal: cards fade up as they enter the viewport ---
+  var revealEls = document.querySelectorAll('.benefit,.card,.step,.he-road,details,.carousel,.he-quote,.he-stars');
+  revealEls.forEach(function(el, i){ el.classList.add('reveal'); el.style.transitionDelay = ((i % 3) * 90) + 'ms'; });
+  if ('IntersectionObserver' in window && !reducedMotion) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(function(el){ io.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add('in'); });
+  }
+
+  // --- Exit timeline: line draws + milestones pop in sequence ---
+  var tl = document.getElementById('exit-timeline');
+  if (tl) {
+    var tlSteps = tl.querySelectorAll('.tl-step');
+    tlSteps.forEach(function(s, i){ s.style.transitionDelay = (200 + i * 160) + 'ms'; });
+    if ('IntersectionObserver' in window && !reducedMotion) {
+      var tio = new IntersectionObserver(function(entries){
+        entries.forEach(function(en){
+          if (en.isIntersecting) {
+            tl.classList.add('in');
+            tlSteps.forEach(function(s){ s.classList.add('in'); });
+            tio.disconnect();
+          }
+        });
+      }, { threshold: 0.35 });
+      tio.observe(tl);
+    } else {
+      tl.classList.add('in');
+      tlSteps.forEach(function(s){ s.classList.add('in'); });
+    }
+  }
+
+  // --- Form submit ---
+  document.getElementById('exit-advantage-form').addEventListener('submit', function(e){
+    e.preventDefault();
+    var form = e.target;
+    if (!form.reportValidity()) return;
+    if (form.company_website.value) return; // honeypot: silently drop bots
+
+    var data = new FormData(form);
+    var payload = {};
+    data.forEach(function(v,k){ if(k!=='company_website') payload[k]=v; });
+    payload.source = 'CSL Resale Advantage Landing Page';
+    payload.page_url = window.location.href;
+    payload.submitted_at = new Date().toISOString();
+
+    // PENDING #6: FORM ROUTING TBD.
+    // Once the destination is decided (GHL inbound webhook vs CSL CRM endpoint),
+    // POST the payload here, e.g.:
+    // fetch('REPLACE_WITH_WEBHOOK_URL', {
+    //   method:'POST',
+    //   headers:{'Content-Type':'application/json'},
+    //   body: JSON.stringify(payload)
+    // });
+    console.log('Exit Advantage opt-in payload (routing TBD):', payload);
+
+    // GA4 / GTM event
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'exit_advantage_optin',
+      ea_intent: payload.intent,
+      ea_timeline: payload.timeline
+    });
+
+    form.querySelectorAll('input,select,button').forEach(function(el){ el.disabled = true; });
+    document.getElementById('submit-btn').style.display = 'none';
+    document.getElementById('success-panel').style.display = 'block';
+    document.getElementById('success-panel').scrollIntoView({block:'center'});
+  });
+})();
+</script>
+<script>
+(function(){
+  var el=document.getElementById('deal-ticker'); if(!el) return;
+  var target=parseInt(el.getAttribute('data-target'),10)||0;
+  if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches){ el.textContent=target; return; }
+  var dur=4000, raf=null;
+  function run(){ if(raf) cancelAnimationFrame(raf); var start=null; (function step(ts){ if(!start)start=ts; var p=Math.min((ts-start)/dur,1); var e=1-Math.pow(1-p,3); el.textContent=Math.round(target*e); if(p<1) raf=requestAnimationFrame(step); })(performance.now()); }
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){ entries.forEach(function(en){ if(en.isIntersecting){ run(); } else { if(raf) cancelAnimationFrame(raf); el.textContent='0'; } }); }, {threshold:0.4});
+    io.observe(el);
+  } else { run(); }
+})();
+</script>
+</body>
+</html>
