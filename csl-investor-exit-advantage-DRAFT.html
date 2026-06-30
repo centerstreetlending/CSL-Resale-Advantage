@@ -754,39 +754,98 @@
   // --- Form submit ---
   document.getElementById('exit-advantage-form').addEventListener('submit', function(e){
     e.preventDefault();
-    var form = e.target;
-    if (!form.reportValidity()) return;
-    if (form.company_website.value) return; // honeypot: silently drop bots
+    try {
+      var form = e.target;
+      if (!form.reportValidity()) return;
+      if (form.company_website.value) {
+        alert("Spam trap triggered!");
+        return; 
+      }
 
-    var data = new FormData(form);
-    var payload = {};
-    data.forEach(function(v,k){ if(k!=='company_website') payload[k]=v; });
-    payload.source = 'CSL Investor Exit Advantage Landing Page';
-    payload.page_url = window.location.href;
-    payload.submitted_at = new Date().toISOString();
+      var timelineSelect = form.querySelector('#timeline');
+      var timelineText = timelineSelect.options[timelineSelect.selectedIndex].text;
+      if (timelineSelect.value === "") timelineText = ""; 
+      
+      var intentRadio = form.querySelector('input[name="intent"]:checked');
+      var intentText = intentRadio ? intentRadio.nextElementSibling.innerText : "";
+      
+      var consentText = "I agree that Center Street Lending and its affiliates may contact me about the Investor Exit Advantage program by phone, email, or text at the information provided. Consent is not a condition of any loan. (Pending legal review.)";
+      
+      var formData = new URLSearchParams();
+      formData.append("entry.1281752874", form.first_name.value);
+      formData.append("entry.511625773", form.last_name.value);
+      formData.append("entry.1714112113", form.email.value);
+      formData.append("entry.1515225399", form.phone.value);
+      formData.append("entry.964880898", form.property_address.value);
+      formData.append("entry.510331880", form.loan_number.value);
+      formData.append("entry.289374821", timelineText);
+      formData.append("entry.1894957803", intentText);
+      if (form.consent.checked) formData.append("entry.2092099687", consentText);
 
-    // PENDING #6: FORM ROUTING TBD.
-    // Once the destination is decided (GHL inbound webhook vs CSL CRM endpoint),
-    // POST the payload here, e.g.:
-    // fetch('REPLACE_WITH_WEBHOOK_URL', {
-    //   method:'POST',
-    //   headers:{'Content-Type':'application/json'},
-    //   body: JSON.stringify(payload)
-    // });
-    console.log('Exit Advantage opt-in payload (routing TBD):', payload);
+      // Check for team member URL parameter (e.g. ?rep=gmontoya or ?source=gmontoya)
+      var urlParams = new URLSearchParams(window.location.search);
+      var repCode = (urlParams.get('rep') || urlParams.get('source') || '').toLowerCase();
+      var repName = "";
+      
+      if (repCode === 'gmontoya') {
+        repName = 'Greg Montoya';
+      } else if (repCode) {
+        repName = repCode; // If it's a code we don't recognize, just pass the code through!
+      }
+      
+      // We are hijacking the original "utm_source" field in your Google Form (entry.524098454) to store the Rep Name!
+      if (repName) {
+        formData.append("entry.524098454", repName);
+      }
 
-    // GA4 / GTM event
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      event: 'exit_advantage_optin',
-      ea_intent: payload.intent,
-      ea_timeline: payload.timeline
-    });
+      var GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSfhmb86XIYUTqYeA531lC3j4WxLtnye4eh3dgd1JKC9rWcIXg/formResponse';
 
-    form.querySelectorAll('input,select,button').forEach(function(el){ el.disabled = true; });
-    document.getElementById('submit-btn').style.display = 'none';
-    document.getElementById('success-panel').style.display = 'block';
-    document.getElementById('success-panel').scrollIntoView({block:'center'});
+      // 100% foolproof cross-origin submission using a hidden iframe
+      var iframeId = 'hidden_iframe';
+      var iframe = document.getElementById(iframeId);
+      if (!iframe) {
+        iframe = document.createElement('iframe');
+        iframe.name = iframeId;
+        iframe.id = iframeId;
+        iframe.style.display = 'none';
+        document.body.appendChild(iframe);
+      }
+
+      var hiddenForm = document.createElement('form');
+      hiddenForm.method = 'POST';
+      hiddenForm.action = GOOGLE_FORM_URL;
+      hiddenForm.target = iframeId;
+      hiddenForm.style.display = 'none';
+
+      formData.forEach(function(value, key) {
+        var input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = key;
+        input.value = value;
+        hiddenForm.appendChild(input);
+      });
+      document.body.appendChild(hiddenForm);
+
+      iframe.onload = function() {
+        console.log('Exit Advantage opt-in submitted directly to Google Forms via iframe');
+        
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: 'exit_advantage_optin',
+          ea_intent: intentRadio ? intentRadio.value : '',
+          ea_timeline: timelineSelect.value
+        });
+
+        form.querySelectorAll('input,select,button').forEach(function(el){ el.disabled = true; });
+        document.getElementById('submit-btn').style.display = 'none';
+        document.getElementById('success-panel').style.display = 'block';
+        document.getElementById('success-panel').scrollIntoView({block:'center'});
+      };
+
+      hiddenForm.submit();
+    } catch (err) {
+      alert("Error: " + err.message);
+    }
   });
 })();
 </script>
