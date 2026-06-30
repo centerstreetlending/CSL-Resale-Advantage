@@ -838,8 +838,13 @@
         ea_timeline: timelineSelect.value
       });
 
-      form.querySelectorAll('input,select,button').forEach(function(el){ el.disabled = true; });
-      document.getElementById('submit-btn').style.display = 'none';
+      // Hide all form elements except the success panel
+      Array.from(form.children).forEach(function(el) {
+        if (el.id !== 'success-panel') {
+          el.style.display = 'none';
+        }
+      });
+      
       document.getElementById('success-panel').style.display = 'block';
       document.getElementById('success-panel').scrollIntoView({block:'center'});
     } catch (err) {
