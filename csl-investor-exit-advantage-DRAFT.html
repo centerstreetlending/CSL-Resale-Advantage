@@ -826,23 +826,22 @@
       });
       document.body.appendChild(hiddenForm);
 
-      iframe.onload = function() {
-        console.log('Exit Advantage opt-in submitted directly to Google Forms via iframe');
-        
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
-          event: 'exit_advantage_optin',
-          ea_intent: intentRadio ? intentRadio.value : '',
-          ea_timeline: timelineSelect.value
-        });
-
-        form.querySelectorAll('input,select,button').forEach(function(el){ el.disabled = true; });
-        document.getElementById('submit-btn').style.display = 'none';
-        document.getElementById('success-panel').style.display = 'block';
-        document.getElementById('success-panel').scrollIntoView({block:'center'});
-      };
-
       hiddenForm.submit();
+
+      // Show success message instantly instead of waiting for cross-origin onload event
+      console.log('Exit Advantage opt-in submitted directly to Google Forms via iframe');
+      
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'exit_advantage_optin',
+        ea_intent: intentRadio ? intentRadio.value : '',
+        ea_timeline: timelineSelect.value
+      });
+
+      form.querySelectorAll('input,select,button').forEach(function(el){ el.disabled = true; });
+      document.getElementById('submit-btn').style.display = 'none';
+      document.getElementById('success-panel').style.display = 'block';
+      document.getElementById('success-panel').scrollIntoView({block:'center'});
     } catch (err) {
       alert("Error: " + err.message);
     }
