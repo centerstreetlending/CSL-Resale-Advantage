@@ -534,7 +534,7 @@
         </div>
         <div class="field">
           <label for="phone">Phone <span style="color:#d32f2f;">*</span></label>
-          <input type="tel" id="phone" name="phone" autocomplete="tel" required>
+          <input type="tel" id="phone" name="phone" autocomplete="tel" required pattern="^(\+\d{1,2}\s?)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$" title="Please enter a valid 10-digit phone number (e.g. 555-123-4567)">
         </div>
       </div>
       <div class="field">
