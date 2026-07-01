@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSL Investor Exit Advantage - Form</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy:#2C3842;
+    --accent:#4683B3;
+    --accent-dark:#3D6A8D;
+    --ink:#2C3842;
+    --muted:#5D6871;
+    --bg:#FFFFFF;
+    --line:#DCE5EC;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Roboto','Segoe UI',-apple-system,sans-serif; color:var(--ink); background:var(--navy); line-height:1.6; padding: 24px; }
+  .wrap { max-width:1080px; margin:0 auto; }
+  h2 { font-size:1.7rem; margin-bottom:.5rem; font-weight:700; line-height:1.2; color:#fff; }
+  .sub { color:rgba(255,255,255,.75); max-width:640px; }
+  .btn { display:inline-block; background:var(--accent); color:#fff; font-weight:600; padding:14px 32px; border-radius:6px; text-decoration:none; border:none; font-size:1rem; cursor:pointer; transition:background .15s; width: auto; }
+  .btn:hover { background:var(--accent-dark); }
+  .btn:disabled { opacity: 0.7; cursor: not-allowed; }
+  #optin { background:var(--navy); color:#fff; }
+  .form-card { background:#fff; border-radius:12px; padding:28px; margin-top:28px; color:var(--ink); max-width:720px; }
+  .form-row { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  .field { margin-bottom:16px; }
+  .field label { display:block; font-size:.85rem; font-weight:600; color:var(--navy); margin-bottom:5px; }
+  .field label .opt { font-weight:400; color:var(--muted); }
+  .field input[type=text], .field input[type=email], .field input[type=tel], .field select { width:100%; padding:11px 12px; border:1px solid var(--line); border-radius:6px; font-size:.95rem; font-family:inherit; background:#fff; }
+  .field input:focus, .field select:focus { outline:2px solid var(--accent); outline-offset:0; border-color:var(--accent); }
+  fieldset { border:1px solid var(--line); border-radius:8px; padding:16px; margin-bottom:16px; }
+  legend { font-size:.85rem; font-weight:600; color:var(--navy); padding:0 6px; }
+  .radio-row { display:flex; align-items:flex-start; gap:10px; padding:8px 4px; cursor:pointer; }
+  .radio-row input { margin-top:4px; accent-color:var(--accent); }
+  .radio-row span { font-size:.95rem; }
+  .consent { display:flex; gap:10px; align-items:flex-start; font-size:.82rem; color:var(--muted); margin-bottom:20px; }
+  .consent input { margin-top:3px; accent-color:var(--accent); }
+  .form-note { font-size:.82rem; color:var(--muted); margin-top:14px; }
+  #success-panel { display:none; background:#EDF7EE; border:1px solid #9CCFA2; border-radius:8px; padding:40px; margin-top:8px; text-align: center; }
+  #success-panel h3 { color:#1E6B2E; font-size:1.4rem; margin-bottom:12px; }
+  #success-panel p { font-size:1.1rem; color:#2F5238; }
+  .hp { position:absolute; left:-9999px; opacity:0; }
+  @media(max-width:640px){
+    .form-row { grid-template-columns:1fr; }
+    body { padding: 16px 0; }
+  }
+</style>
+</head>
+<body>
+
+<section id="optin">
+  <div class="wrap">
+    
+    <!-- IFRAME TARGET FOR GOOGLE FORMS SUBMISSION -->
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) { showSuccess(); }"></iframe>
+    
+    <div id="form-container">
+      <h2>Request information</h2>
+      <p class="sub">Complete the fields below to request information about the CSL Investor Exit Advantage program. A team member will reach out to discuss your project.</p>
+      
+      <div class="form-card">
+        <form id="csl-exit-form" action="https://docs.google.com/forms/d/e/1FAIpQLSfhmb86XIYUTqYeA531lC3j4WxLtnye4eh3dgd1JKC9rWcIXg/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true; document.getElementById('submit-btn').innerText='Sending...'; document.getElementById('submit-btn').disabled=true;">
+          
+          <div class="form-row">
+            <div class="field">
+              <label for="first-name">First name <span style="color:#d32f2f;">*</span></label>
+              <input type="text" id="first-name" name="entry.1281752874" autocomplete="given-name" required>
+            </div>
+            <div class="field">
+              <label for="last-name">Last name <span style="color:#d32f2f;">*</span></label>
+              <input type="text" id="last-name" name="entry.511625773" autocomplete="family-name" required>
+            </div>
+          </div>
+          
+          <div class="form-row">
+            <div class="field">
+              <label for="email">Email <span style="color:#d32f2f;">*</span></label>
+              <input type="email" id="email" name="entry.1714112113" autocomplete="email" required>
+            </div>
+            <div class="field">
+              <label for="phone">Phone <span style="color:#d32f2f;">*</span></label>
+              <input type="tel" id="phone" name="entry.316885376" autocomplete="tel" required pattern="^(\+\d{1,2}\s?)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$" title="Please enter a valid 10-digit phone number (e.g. 555-123-4567)">
+            </div>
+          </div>
+          
+          <div class="field">
+            <label for="address">Property address <span class="opt">(optional)</span></label>
+            <input type="text" id="address" name="entry.198270188" autocomplete="street-address">
+          </div>
+          
+          <div class="field">
+            <label for="loan-num">CSL loan number <span class="opt">(optional)</span></label>
+            <input type="text" id="loan-num" name="entry.289006900">
+          </div>
+          
+          <fieldset>
+            <legend>When do you expect to sell?</legend>
+            <label class="radio-row"><input type="radio" name="entry.1691238497" value="Within 30 days" required> <span>Within 30 days</span></label>
+            <label class="radio-row"><input type="radio" name="entry.1691238497" value="30-60 days"> <span>30&ndash;60 days</span></label>
+            <label class="radio-row"><input type="radio" name="entry.1691238497" value="60-90 days"> <span>60&ndash;90 days</span></label>
+            <label class="radio-row"><input type="radio" name="entry.1691238497" value="90+ days"> <span>90+ days</span></label>
+            <label class="radio-row"><input type="radio" name="entry.1691238497" value="Currently listed"> <span>Currently listed</span></label>
+          </fieldset>
+          
+          <fieldset>
+            <legend>What would you like?</legend>
+            <label class="radio-row"><input type="radio" name="entry.309088898" value="A call with an agent to discuss the listing option" required> <span>A call with an agent to discuss the listing option</span></label>
+            <label class="radio-row"><input type="radio" name="entry.309088898" value="More information on the Honest Escrow program"> <span>More information on the Honest Escrow program</span></label>
+            <label class="radio-row"><input type="radio" name="entry.309088898" value="Both"> <span>Both</span></label>
+          </fieldset>
+          
+          <div class="consent">
+            <input type="checkbox" id="consent" name="entry.834484913" value="Yes" required>
+            <label for="consent">I authorize Center Street Lending to share my contact information with Innovate Realty and Honest Escrow to contact me regarding my request.</label>
+          </div>
+          
+          <!-- Hidden inputs for tracking parameters -->
+          <input type="hidden" id="utm_source" name="entry.2066807217" value="">
+          <input type="hidden" id="referrer" name="entry.1481177694" value="">
+          <!-- Honeypot field for spam prevention -->
+          <input type="text" name="entry.123456789_hp" class="hp" tabindex="-1" autocomplete="off">
+          
+          <button type="submit" id="submit-btn" class="btn">Submit Request</button>
+          
+        </form>
+      </div>
+    </div>
+    
+    <div id="success-panel">
+      <h3>Thank you &mdash; we've received your request.</h3>
+      <p>A team member will reach out within 24 hours with the information you asked for.<br><br>There's no obligation, and you're always free to choose your own providers.</p>
+    </div>
+    
+  </div>
+</section>
+
+<script>
+  // Global flag for form submission
+  var submitted = false;
+
+  // Function to hide form and show success message
+  function showSuccess() {
+    document.getElementById('form-container').style.display = 'none';
+    document.getElementById('success-panel').style.display = 'block';
+    
+    // Optional: Let parent window know form was submitted successfully (useful for Google Analytics if Jonah wants to track it)
+    try {
+      if (window.parent && window.parent !== window) {
+        window.parent.postMessage('csl_form_submitted', '*');
+      }
+    } catch(e) {}
+  }
+
+  // Parse URL parameters for tracking 
+  document.addEventListener("DOMContentLoaded", function() {
+    // We check the parent window's URL first (in case it's embedded as an iframe)
+    var searchStr = window.location.search;
+    try {
+      if (window.parent && window.parent.location.search) {
+        searchStr = window.parent.location.search;
+      }
+    } catch(e) {}
+    
+    var urlParams = new URLSearchParams(searchStr);
+    
+    // 1. UTM Source
+    if(urlParams.has('utm_source')) {
+      document.getElementById('utm_source').value = urlParams.get('utm_source');
+    } else if(urlParams.has('source')) {
+      document.getElementById('utm_source').value = urlParams.get('source');
+    }
+    
+    // 2. Referrer / Rep
+    if(urlParams.has('rep')) {
+      document.getElementById('referrer').value = urlParams.get('rep');
+    } else if(urlParams.has('referrer')) {
+      document.getElementById('referrer').value = urlParams.get('referrer');
+    }
+  });
+</script>
+</body>
+</html>
