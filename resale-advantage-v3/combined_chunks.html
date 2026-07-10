@@ -1,45 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CSL Resale Advantage | Center Street Lending</title>
-<meta name="description" content="An optional resale, marketing, escrow, and payoff coordination resource for Center Street Lending borrowers.">
-<!--
-  ============================================================
-  CSL INVESTOR EXIT ADVANTAGE — LANDING PAGE DRAFT (INTERNAL)
-  Target URL: centerstreetlending.com/investor-exit-advantage
-  Built: 2026-06-10 · Status: DRAFT — pending approvals
-  Source: CSL_Investor_Exit_Advantage_Announcement_Readiness.docx
-
-  PENDING ITEMS (search "PENDING" in this file):
-   1. 1% listing option — final terms not confirmed (benefit card #1)
-   2. Optional escrow pricing sentence — hidden until approved (id=pricing-sentence)
-   3. Eligibility definition (FAQ item)
-   4. Opt-in follow-up owner — who calls within 24h (How It Works, step 2)
-   5. Contact-consent checkbox language — needs legal review
-   6. Form routing — webhook/CRM destination TBD (see handleSubmit in JS)
-   7. RESOLVED 2026-06-10: brand tokens matched to live CSL Webflow site (steel blue #4683B3, dark slate #2C3842, Roboto)
-   8. Disclosure block is LOCKED COPY from the readiness doc — do not edit ad hoc
-   9. RESOLVED 2026-06-10: InnoLaunch gallery images embedded as base64 JPEG (sources: E:\Projects\InnoHQ M1-M4 + iPhoneInnoLaunch 4)
-  10. Honest Escrow section — confirm honestescrow.com is live/connected before publish; Honest to approve description + claims
-  13. 2026-06-10: timeline runner animation (gliding dot + first-dot pulse); Honest 5-star reviews block added — quotes are REAL reviews copied from honestescrow.com homepage (5.0/10 reviews: Weisberger, DeVille, Cho)
-  12. 2026-06-10: exit timeline strip added at end of "Who this is for" (id=exit-timeline, animated line draw + staggered milestones)
-  11. 2026-06-10: gallery = stacked-tile carousel (4 tiles, next images peek behind, 2.2s auto-advance, swipe/arrows/dots); iPad Market Debut shown standalone above it; scroll-reveal + hover animations (respects prefers-reduced-motion)
-
-  DELETE the <div id="internal-review-strip"> block before publish.
-  ============================================================
--->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Cormorant+Garamond:wght@600;700&family=Bebas+Neue&family=Inter:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://use.typekit.net/sjt3vdj.css">
 <style>
-  @font-face {
-    font-family: 'Arteria Std Compress';
-    src: local('Arteria Std Compress');
-    font-display: swap;
-  }
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Cormorant+Garamond:wght@600;700&family=Bebas+Neue&family=Inter:wght@400;700&display=swap');
+@import url('https://use.typekit.net/sjt3vdj.css');
+
+
 
 
   :root{
@@ -276,6 +239,9 @@
     margin-top: 10px;
     width: fit-content;
   }
+</style>
+<style>
+
   .tl-benefit-badge strong {
     color: var(--accent);
     font-weight: 700;
@@ -526,6 +492,9 @@
       max-width: 480px;
     }
   }
+</style>
+<style>
+
 
   /* internal review strip — DELETE BEFORE PUBLISH */
   #internal-review-strip{background:var(--pending-bg);border-bottom:2px dashed var(--pending-line);padding:12px 24px;font-size:var(--text-small);color:var(--pending)}
@@ -630,6 +599,9 @@
   details[open] summary::after { transform: rotate(45deg); }
   details[open] summary { color: var(--accent); }
   details .a { padding: 0 16px 32px 16px; font-size: 16px; line-height: 1.65; color: #4A5568; }
+</style>
+<style>
+
 
   /* disclosure + footer */
   .disclosure{background:var(--bg-soft);border-top:1px solid var(--line)}
@@ -946,6 +918,9 @@
       background: rgba(0, 0, 0, 0.45); /* Uniform dark overlay so centered text is readable */
     }
   }
+</style>
+<style>
+
   @media (max-width: 480px) {
     .trust-img-card {
       height: 300px;
@@ -1012,12 +987,12 @@
 
 
 
-  .hero { background: linear-gradient(90deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.15) 100%), url('Frame 129.png') no-repeat center center; background-size: cover; padding: 72px 0 60px; display: flex; flex-direction: column; align-items: center; gap: 64px; animation: none; color: #fff; }
+  .hero { background: linear-gradient(90deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.15) 100%), url('https://cdn.prod.website-files.com/6875101e8b0848abe318fec3/6a515bd6440e3e36c2027a6c_Frame%20129.png') no-repeat center center; background-size: cover; padding: 72px 0 60px; display: flex; flex-direction: column; align-items: center; gap: 64px; animation: none; color: #fff; }
   .hero-main-row { display: flex; align-items: center; justify-content: space-between; width: 100%; max-width: 1200px; }
   .hero-left { flex: 1; max-width: 800px; display: flex; flex-direction: column; gap: 24px; }
   .hero-left-top { display: flex; flex-direction: column; }
   
-  .hero h1 { font-family: 'Arteria Std Compress', 'Bebas Neue', sans-serif; font-size: 72px; font-weight: 300; line-height: 1.15; color: #fff; margin: 0 0 8px 0; letter-spacing: 0.02em; }
+  .hero h1 { font-family: 'Bebas Neue', 'Roboto', sans-serif; font-size: 72px; font-weight: 300; line-height: 1.15; color: #fff; margin: 0 0 8px 0; letter-spacing: 0.02em; }
   .hero h1 span.hl { 
     color: var(--accent); 
     font-weight: 400; 
@@ -1162,8 +1137,11 @@
     .hero { padding: 40px 0; }
     .hero-main-row { flex-direction: column; align-items: center; }
     .hero-right { width: 100%; max-width: 572px; padding: 40px 24px; margin-top: 24px; }
-    .hero h1 { font-family: 'Arteria Std Compress', 'Bebas Neue', sans-serif; font-size: 52px; line-height: 52px; }
+    .hero h1 { font-family: 'Bebas Neue', 'Roboto', sans-serif; font-size: 52px; line-height: 52px; }
   }
+</style>
+<style>
+
   @media(max-width:640px){
     header a.wordmark img { height: 26px !important; }
     .program-title-sub { font-size: 0.65rem; }
@@ -1219,17 +1197,14 @@
     header a.phone { font-size: var(--text-micro); }
     .offer-bar { font-size: var(--text-micro); padding: 8px 10px; }
   }
+
 </style>
-</head>
-<body>
-
-
 <div class="offer-bar"><a href="#optin"><span style="display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;"><span class="offer-pulse"></span><b>EXCLUSIVE OFFER</b></span> &mdash; PRE-NEGOTIATED FOR CSL BORROWERS</a></div>
 
 <header id="sticky-header">
   <div class="wrap">
     <div class="nav-left">
-      <a class="wordmark" href="https://www.centerstreetlending.com/"><img src="logo1.svg" alt="Center Street Lending" style="height: 36px; width: auto; display: block;"></a>
+      <a class="wordmark" href="https://www.centerstreetlending.com/"><img src="https://cdn.prod.website-files.com/6875101e8b0848abe318fec3/6a515d82df26519519abc412_logo1.svg" alt="Center Street Lending" style="height: 36px; width: auto; display: block;"></a>
     </div>
   </div>
 </header>
@@ -1239,7 +1214,7 @@
   <div class="wrap hero-main-row">
     <div class="hero-left">
       <div class="hero-left-top">
-        <h1 style="font-family:'Arteria Std Compress', 'Bebas Neue', sans-serif;"><span style="display: inline-block; white-space: nowrap;">WE MADE IT <span class="hl">EASIER & CHEAPER</span></span><br><span style="display: inline-block; white-space: nowrap;">TO EXIT YOUR INVESTMENT.</span></h1>
+        <h1 style="font-family:'Bebas Neue', 'Roboto', sans-serif;"><span style="display: inline-block; white-space: nowrap;">WE MADE IT <span class="hl">EASIER & CHEAPER</span></span><br><span style="display: inline-block; white-space: nowrap;">TO EXIT YOUR INVESTMENT.</span></h1>
         
         <h2 class="hero-subheading">The CSL Resale Advantage</h2>
         
@@ -1330,7 +1305,7 @@
     </div>
 
     <div class="who-right">
-      <img src="Rectangle 22.png" alt="Happy couple in new home">
+      <img src="https://cdn.prod.website-files.com/6875101e8b0848abe318fec3/6a515bd6ab320d0c10421561_Rectangle%2022.png" alt="Happy couple in new home">
     </div>
 
   </div>
@@ -1343,21 +1318,21 @@
     <!-- LEFT: property image cards with nested logos -->
     <div class="trust-images">
       <div class="trust-img-card">
-        <img src="Frame 166.png" alt="Interior living space" />
+        <img src="https://cdn.prod.website-files.com/6875101e8b0848abe318fec3/6a515bd69f565305fecfe7f3_Frame%20166.png" alt="Interior living space" />
         <div class="trust-img-stat">
           <span class="trust-stat-num">$7.6B+</span>
           <span class="trust-stat-label">Funded by<br>Center Street Lending</span>
         </div>
       </div>
       <div class="trust-img-card">
-        <img src="Frame 169.png" alt="Modern home exterior at dusk" />
+        <img src="https://cdn.prod.website-files.com/6875101e8b0848abe318fec3/6a515bd6f9871e13803a5386_Frame%20169.png" alt="Modern home exterior at dusk" />
         <div class="trust-img-stat">
           <span class="trust-stat-num">3,200+</span>
           <span class="trust-stat-label">Homes sold<br>by Innovate Realty</span>
         </div>
       </div>
       <div class="trust-img-card">
-        <img src="Frame 170.png" alt="Contemporary home with outdoor seating" />
+        <img src="https://cdn.prod.website-files.com/6875101e8b0848abe318fec3/6a515bd660aba88be11b2bcb_Frame%20170.png" alt="Contemporary home with outdoor seating" />
         <div class="trust-img-stat">
           <span class="trust-stat-num">$1.1B+</span>
           <span class="trust-stat-label">Closed by<br>Honest Escrow</span>
@@ -1372,14 +1347,15 @@
       <p class="trust-body">CSL Resale Advantage gives Center Street Lending borrowers access to preferred pricing and trusted real estate and escrow professionals who already know the CSL process, <strong>making the final stage of your project simpler, more coordinated, and more cost-effective.</strong></p>
       
       <div class="trust-logos-row" style="display: flex; gap: 40px; align-items: center; margin-top: 40px;">
-        <img src="Company Logo.svg" alt="Center Street Lending" style="height: 64px; filter: brightness(0) invert(1);" />
-        <img src="Innovate.svg" alt="Innovate Realty" style="height: 52px; filter: brightness(0) invert(1);" />
-        <img src="HonestEscrow.svg" alt="Honest Escrow" style="height: 46px; filter: brightness(0) invert(1);" />
+        <img src="https://cdn.prod.website-files.com/6875101e8b0848abe318fec3/6a515fc78379809575373d48_Company%20Logo.svg" alt="Center Street Lending" style="height: 64px; filter: brightness(0) invert(1);" />
+        <img src="https://cdn.prod.website-files.com/6875101e8b0848abe318fec3/6a515fc7b5dc722117959432_Innovate-1.svg" alt="Innovate Realty" style="height: 52px; filter: brightness(0) invert(1);" />
+        <img src="https://cdn.prod.website-files.com/6875101e8b0848abe318fec3/6a515fc78379809575373d62_HonestEscrow.svg" alt="Honest Escrow" style="height: 46px; filter: brightness(0) invert(1);" />
       </div>
     </div>
 
   </div>
 </section>
+
 
 
 
@@ -1482,7 +1458,8 @@
         <p>Honest Escrow is familiar with CSL payoff and closing requirements. For CSL borrowers, seller&#8209;side escrow fees are reduced &mdash; as low as $500 per seller; buyer&#8209;side fees remain standard.*</p>
       </div>
 
-      <div class="benefit">
+      </div></div></section>
+<section class="soft" style="padding-top:0"><div class="wrap"><div class="grid-2"><div class="benefit">
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:16px;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
         <h3>Earlier resale planning</h3>
         <p>Start planning the resale before your project is fully complete, so listing, escrow, and payoff line up instead of stacking up.</p>
@@ -1504,11 +1481,7 @@
 
 <!-- COMPARISON TABLE - structure inspired by the alt renderings, rebuilt in CSL branding + compliance-safe wording -->
 <style>
-  @font-face {
-    font-family: 'Arteria Std Compress';
-    src: local('Arteria Std Compress');
-    font-display: swap;
-  }
+
 
 
   #compare {
@@ -1819,6 +1792,7 @@
     }
   }
 </style>
+
 <section id="compare">
   <div class="wrap">
     <p class="section-eyebrow">Side by Side</p>
@@ -1881,7 +1855,7 @@
       <div class="honest-brand-left">
         <p class="section-eyebrow">Your escrow option</p>
         <h2 class="he-brand-heading">Meet Honest Escrow.</h2>
-        <img src="HonestEscrow.svg" alt="Honest Escrow" class="he-brand-logo" />
+        <img src="https://cdn.prod.website-files.com/6875101e8b0848abe318fec3/6a515fc78379809575373d62_HonestEscrow.svg" alt="Honest Escrow" class="he-brand-logo" />
         <p class="he-brand-text">An independent Southern California escrow team that keeps the closing process clear, calm, and human — and is familiar with CSL payoff and closing requirements.</p>
         
         <div class="he-brand-cta-group">
@@ -1895,7 +1869,7 @@
       <!-- Right side: image and floating checklist badges -->
       <div class="honest-brand-right">
         <div class="he-img-wrap">
-          <img src="Rectangle 22.png" alt="Modern kitchen interior showcasing home styling" />
+          <img src="https://cdn.prod.website-files.com/6875101e8b0848abe318fec3/6a515bd6ab320d0c10421561_Rectangle%2022.png" alt="Modern kitchen interior showcasing home styling" />
           
           <div class="he-badges-list">
             
@@ -1956,12 +1930,12 @@
     <!-- Left: Image Grid -->
     <div style="flex: 1; min-width: 320px;">
       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
-        <img src="innolaunch-campaign-app.jpg" alt="Campaign App" style="width: 100%; aspect-ratio: 4/3; object-fit: cover;" />
-        <img src="innolaunch-brochure.jpg" alt="Brochure" style="width: 100%; aspect-ratio: 4/3; object-fit: cover;" />
-        <img src="Frame 129.png" alt="Living Room" style="width: 100%; aspect-ratio: 4/3; object-fit: cover;" />
-        <img src="innolaunch-postcard.jpg" alt="Postcard" style="width: 100%; aspect-ratio: 4/3; object-fit: cover;" />
-        <img src="innolaunch-ipad-debut.jpg" alt="iPad Debut" style="width: 100%; aspect-ratio: 4/3; object-fit: cover;" />
-        <img src="innolaunch-flyer.jpg" alt="Flyer Stand" style="width: 100%; aspect-ratio: 4/3; object-fit: cover;" />
+        <img src="https://cdn.prod.website-files.com/6875101e8b0848abe318fec3/6a515bd66aee0d0a81fa8ee8_innolaunch-campaign-app.jpg" alt="Campaign App" style="width: 100%; aspect-ratio: 4/3; object-fit: cover;" />
+        <img src="https://cdn.prod.website-files.com/6875101e8b0848abe318fec3/6a515bd6c3758e22331cfa5a_innolaunch-brochure.jpg" alt="Brochure" style="width: 100%; aspect-ratio: 4/3; object-fit: cover;" />
+        <img src="https://cdn.prod.website-files.com/6875101e8b0848abe318fec3/6a515bd6440e3e36c2027a6c_Frame%20129.png" alt="Living Room" style="width: 100%; aspect-ratio: 4/3; object-fit: cover;" />
+        <img src="https://cdn.prod.website-files.com/6875101e8b0848abe318fec3/6a515bd611a6c9167e8f3406_innolaunch-postcard.jpg" alt="Postcard" style="width: 100%; aspect-ratio: 4/3; object-fit: cover;" />
+        <img src="https://cdn.prod.website-files.com/6875101e8b0848abe318fec3/6a515bd6ab320d0c10421547_innolaunch-ipad-debut.jpg" alt="iPad Debut" style="width: 100%; aspect-ratio: 4/3; object-fit: cover;" />
+        <img src="https://cdn.prod.website-files.com/6875101e8b0848abe318fec3/6a515bd6df26519519ab2c10_innolaunch-flyer.jpg" alt="Flyer Stand" style="width: 100%; aspect-ratio: 4/3; object-fit: cover;" />
       </div>
     </div>
 
@@ -1969,7 +1943,7 @@
     <div style="flex: 1; min-width: 320px; max-width: 520px; padding-top: 16px;">
       <p class="section-eyebrow" style="color: var(--accent); text-align: left; margin-bottom: 16px; letter-spacing: 0.1em; text-transform: uppercase;">Marketing and sales expertise</p>
       <h2 style="font-size: 36px; font-weight: 700; color: var(--navy-darkest); margin-bottom: 24px; font-family: 'Roboto', sans-serif; letter-spacing: -0.02em;">Meet Innovate Realty.</h2>
-      <img src="Innovate.svg" alt="Innovate Realty" style="height: 64px; margin-bottom: 24px; display: block;" />
+      <img src="https://cdn.prod.website-files.com/6875101e8b0848abe318fec3/6a515fc7b5dc722117959432_Innovate-1.svg" alt="Innovate Realty" style="height: 64px; margin-bottom: 24px; display: block;" />
       
       <p style="font-size: 16px; line-height: 1.6; color: var(--navy-darkest); margin-bottom: 24px;">These sample marketing materials prepared for an Innovate Realty listing demonstrate the kind of launch support included when you list with an Innovate Realty agent.</p>
       
@@ -1986,6 +1960,7 @@
 </section>
 
 <!-- FAQ -->
+
 <section style="padding: 80px 0;">
   <div class="wrap">
     <div style="text-align: center; margin-bottom: 48px;">
@@ -2108,25 +2083,8 @@
   </div>
 </section>
 
-<footer>
-  <div class="wrap">
 
-    
-    <div class="licenses">
-      <div>CFL License No. 60DBO-57755</div>
-      <div>AZ MBL# 0930263</div>
-      <div>OR Lic #ML-5838</div>
-      <div>Florida Mortgage Lender<br>Servicer #MLD1180</div>
-      <div>CA DRE - License #01883377</div>
-      <div>NMLS 905781</div>
-    </div>
-    
-    <div class="divider"></div>
-    
-    <p style="margin:0;">&copy; 2025 Center Street Lending. All rights reserved.</p>
-  </div>
-</footer>
-
+<footer> <div class="wrap"> <div class="licenses"> <div>CFL License No. 60DBO-57755</div> <div>AZ MBL# 0930263</div> <div>OR Lic #ML-5838</div> <div>Florida Mortgage Lender<br>Servicer #MLD1180</div> <div>CA DRE - License #01883377</div> <div>NMLS 905781</div> </div> <div class="divider"></div> <p style="margin:0;">&copy; 2025 Center Street Lending. All rights reserved.</p> </div> </footer> <script> (function(){ // --- Intent pre-select via query param (?intent=details|escrow|later) --- // Email CTA buttons should link to: // /investor-exit-advantage?intent=details // /investor-exit-advantage?intent=escrow // /investor-exit-advantage?intent=later var intentMap = { details:'intent-details', escrow:'intent-escrow', later:'intent-later' }; var intent = new URLSearchParams(window.location.search).get('intent'); if (intent && intentMap[intent]) { var radio = document.getElementById(intentMap[intent]); if (radio) { radio.checked = true; document.getElementById('optin').scrollIntoView(); } } // --- InnoLaunch stacked-tile carousel (2s auto-advance, swipe, dots) --- var deck = document.getElementById('car-track'); var reducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches; if (deck) { var slides = deck.children, n = slides.length, idx = 0, timer = null; var dotsBox = document.getElementById('car-dots'); for (var i = 0; i < n; i++) { (function(k){ var d = document.createElement('button'); d.type = 'button'; d.className = 'car-dot' + (k === 0 ? ' active' : ''); d.setAttribute('aria-label', 'Go to slide ' + (k + 1)); d.addEventListener('click', function(){ go(k); start(); }); dotsBox.appendChild(d); })(i); } function go(k) { idx = (k + n) % n; for (var i = 0; i < n; i++) { var rel = (i - idx + n) % n; slides[i].className = 'slide' + (rel < 3 ? ' pos' + rel : ''); } for (var j = 0; j < dotsBox.children.length; j++) { dotsBox.children[j].className = 'car-dot' + (j === idx ? ' active' : ''); } } function stop() { if (timer) { clearInterval(timer); timer = null; } } function start() { stop(); if (reducedMotion) return; timer = setInterval(function(){ go(idx + 1); }, 2200); } var car = document.getElementById('inno-carousel'); car.addEventListener('mouseenter', stop); car.addEventListener('mouseleave', start); document.getElementById('car-prev').addEventListener('click', function(){ go(idx - 1); start(); }); document.getElementById('car-next').addEventListener('click', function(){ go(idx + 1); start(); }); var swipeX = null; deck.addEventListener('pointerdown', function(e){ swipeX = e.clientX; e.preventDefault(); }); deck.addEventListener('pointerup', function(e){ if (swipeX === null) return; var dx = e.clientX - swipeX; swipeX = null; if (dx < -40) { go(idx + 1); start(); } else if (dx > 40) { go(idx - 1); start(); } }); go(0); start(); } // --- Scroll-reveal: cards fade up as they enter the viewport --- var revealEls = document.querySelectorAll('.benefit,.card,.step,.he-road,details,.carousel,.he-quote,.he-stars'); revealEls.forEach(function(el, i){ el.classList.add('reveal'); el.style.transitionDelay = ((i % 3) * 90) + 'ms'; }); if ('IntersectionObserver' in window && !reducedMotion) { var io = new IntersectionObserver(function(entries){ entries.forEach(function(en){ if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } }); }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }); revealEls.forEach(function(el){ io.observe(el); }); } else { revealEls.forEach(function(el){ el.classList.add('in'); }); } // --- Exit timeline: line draws + milestones pop in sequence --- var tl = document.getElementById('exit-timeline'); if (tl) { var tlSteps = tl.querySelectorAll('.tl-step'); tlSteps.forEach(function(s, i){ s.style.transitionDelay = (200 + i * 160) + 'ms'; }); if ('IntersectionObserver' in window && !reducedMotion) { var tio = new IntersectionObserver(function(entries){ entries.forEach(function(en){ if (en.isIntersecting) { tl.classList.add('in'); tlSteps.forEach(function(s){ s.classList.add('in'); }); tio.disconnect(); } }); }, { threshold: 0.35 }); tio.observe(tl); } else { tl.classList.add('in'); tlSteps.forEach(function(s){ s.classList.add('in'); }); } } // --- Sticky Header Scroll Transition --- window.addEventListener('scroll', function() { var header = document.getElementById('sticky-header'); if (header) { if (window.scrollY > 120) { header.classList.add('scrolled'); } else { header.classList.remove('scrolled'); } } }); // --- Form submit (Direct to Google Forms via hidden iframe) --- document.getElementById('exit-advantage-form').addEventListener('submit', function(e){ e.preventDefault(); try { var form = e.target; if (!form.reportValidity()) return; if (form.company_website.value) { return; // honeypot } var timelineSelect = form.querySelector('#timeline'); var timelineText = timelineSelect.options[timelineSelect.selectedIndex].text; if (timelineSelect.value === "") timelineText = ""; var intentRadio = form.querySelector('input[name="intent"]:checked'); var intentText = intentRadio ? intentRadio.nextElementSibling.innerText : ""; var consentText = "I agree that Center Street Lending and its affiliates may contact me about the Investor Exit Advantage program by phone, email, or text at the information provided. Consent is not a condition of any loan. (Pending legal review.)"; var formData = new URLSearchParams(); formData.append("entry.1281752874", form.first_name.value); formData.append("entry.511625773", form.last_name.value); formData.append("entry.1714112113", form.email.value); formData.append("entry.1515225399", form.phone.value); formData.append("entry.964880898", form.property_address.value); formData.append("entry.510331880", form.loan_number.value); formData.append("entry.289374821", timelineText); formData.append("entry.1894957803", intentText); if (form.consent.checked) formData.append("entry.2092099687", consentText); // Check for team member URL parameter (e.g. ?rep=gmontoya or ?source=gmontoya) var urlParams = new URLSearchParams(window.location.search); var repCode = (urlParams.get('rep') || urlParams.get('source') || '').toLowerCase(); var repName = ""; if (repCode === 'gmontoya') { repName = 'Greg Montoya'; } else if (repCode) { repName = repCode; } // We are hijacking the original "utm_source" field in your Google Form (entry.524098454) to store the Rep Name! if (repName) { formData.append("entry.524098454", repName); } var GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSfhmb86XIYUTqYeA531lC3j4WxLtnye4eh3dgd1JKC9rWcIXg/formResponse'; // 100% foolproof cross-origin submission using a hidden iframe var iframeId = 'hidden_iframe'; var iframe = document.getElementById(iframeId); if (!iframe) { iframe = document.createElement('iframe'); iframe.name = iframeId; iframe.id = iframeId; iframe.style.display = 'none'; document.body.appendChild(iframe); } var hiddenForm = document.createElement('form'); hiddenForm.method = 'POST'; hiddenForm.action = GOOGLE_FORM_URL; hiddenForm.target = iframeId; hiddenForm.style.display = 'none'; formData.forEach(function(value, key) { var input = document.createElement('input'); input.type = 'hidden'; input.name = key; input.value = value; hiddenForm.appendChild(input); }); document.body.appendChild(hiddenForm); hiddenForm.submit(); // GA4 / GTM event window.dataLayer = window.dataLayer || []; window.dataLayer.push({ event: 'exit_advantage_optin', ea_intent: intentText, ea_timeline: timelineSelect.value }); // Hide all form fields, button, and notes, and show only the success panel Array.from(form.children).forEach(function(child) { if (child.id !== 'success-panel') { child.style.display = 'none'; } }); document.getElementById('success-panel').style.display = 'block'; document.getElementById('success-panel').scrollIntoView({block:'center'}); // Clean up the hidden form after submit setTimeout(function() { document.body.removeChild(hiddenForm); }, 1000); } catch(err) { console.error(err); alert("Something went wrong. Please try again later."); } }); })(); </script> <script> (function(){ var el=document.getElementById('deal-ticker'); if(!el) return; var target=parseInt(el.getAttribute('data-target'),10)||0; if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches){ el.textContent=target + '+'; return; } var dur=4000, raf=null; function run(){ if(raf) cancelAnimationFrame(raf); var start=null; (function step(ts){ if(!start)start=ts; var p=Math.min((ts-start)/dur,1); var e=1-Math.pow(1-p,3); el.textContent=Math.round(target*e) + '+'; if(p<1) raf=requestAnimationFrame(step); })(performance.now()); } if('IntersectionObserver' in window){ var io=new IntersectionObserver(function(entries){ entries.forEach(function(en){ if(en.isIntersecting){ run(); } else { if(raf) cancelAnimationFrame(raf); el.textContent='0+'; } }); }, {threshold:0.4}); io.observe(el); } else { run(); } })(); </script> 
 <script>
 (function(){
   // --- Intent pre-select via query param (?intent=details|escrow|later) ---
@@ -2343,18 +2301,3 @@
   });
 })();
 </script>
-<script>
-(function(){
-  var el=document.getElementById('deal-ticker'); if(!el) return;
-  var target=parseInt(el.getAttribute('data-target'),10)||0;
-  if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches){ el.textContent=target + '+'; return; }
-  var dur=4000, raf=null;
-  function run(){ if(raf) cancelAnimationFrame(raf); var start=null; (function step(ts){ if(!start)start=ts; var p=Math.min((ts-start)/dur,1); var e=1-Math.pow(1-p,3); el.textContent=Math.round(target*e) + '+'; if(p<1) raf=requestAnimationFrame(step); })(performance.now()); }
-  if('IntersectionObserver' in window){
-    var io=new IntersectionObserver(function(entries){ entries.forEach(function(en){ if(en.isIntersecting){ run(); } else { if(raf) cancelAnimationFrame(raf); el.textContent='0+'; } }); }, {threshold:0.4});
-    io.observe(el);
-  } else { run(); }
-})();
-</script>
-</body>
-</html>
