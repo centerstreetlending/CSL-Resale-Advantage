@@ -6,21 +6,11 @@
 ============================================================ -->
 
 <!-- ═══════════════════════════════════════════════
-     BLOCK 1 (6107 chars)
+     BLOCK 1 (5551 chars)
      → Add ONE Embed element in Webflow, paste below
 ═══════════════════════════════════════════════ -->
 
-<div class="offer-bar"><a href="#optin"><span style="display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;"><span class="offer-pulse"></span><b>EXCLUSIVE OFFER</b></span> &mdash; PRE-NEGOTIATED FOR CSL BORROWERS</a></div>
-
-<header id="sticky-header">
-  <div class="wrap">
-    <div class="nav-left">
-      <a class="wordmark" href="https://www.centerstreetlending.com/"><img src="logo1.svg" alt="Center Street Lending" style="height: 36px; width: auto; display: block;"></a>
-    </div>
-    <a class="phone" href="tel:5555555555">(555) 555-5555</a>
-  </div>
-</header>
-
+<div class="csl-landing-page">
 <!-- HERO -->
 <div class="hero">
   <div class="wrap hero-main-row">
@@ -743,7 +733,7 @@
 <!-- OPT-IN FORM -->
 
 <!-- ═══════════════════════════════════════════════
-     BLOCK 5 (7438 chars)
+     BLOCK 5 (6930 chars)
      → Add ONE Embed element in Webflow, paste below
 ═══════════════════════════════════════════════ -->
 
@@ -861,19 +851,7 @@
     <p>CSL, Innovate Realty, Honest Escrow, and/or related ownership parties may have affiliated business relationships. If you request an introduction, additional disclosures, fee information, and service details may be provided. Use of any affiliated or introduced provider is optional. You are free to choose your own real estate broker, escrow company, title company, lender, and other service providers. Any escrow fees or program pricing are subject to eligibility, transaction details, party agreement, written disclosure, and escrow instructions. Use of any introduced provider is not required as a condition of obtaining, maintaining, or paying off a CSL loan.</p>
   </div>
 </section>
-<footer>
-  <div class="wrap">
-    <div>
-      <a class="wordmark" href="https://www.centerstreetlending.com/">CENTER STREET <span>LENDING</span></a>
-      <p style="margin-top:12px">(555) 555-5555<br>&copy; 2026 Center Street Lending. All rights reserved.</p>
-    </div>
-    <div class="licenses">
-      CFL License No. 60DBO-57755 &middot; NMLS 905781<br>
-      CA DRE License #01883377 &middot; AZ MBL# 0930263<br>
-      OR Lic #ML-5838 &middot; FL Mortgage Lender Servicer #MLD1180
-    </div>
-  </div>
-</footer>
+</div>
 
 <!-- ═══════════════════════════════════════════════
      JS — PASTE INTO: Page Settings → Custom Code → Before </body>
@@ -978,17 +956,7 @@
     }
   }
 
-  // --- Sticky Header Scroll Transition ---
-  window.addEventListener('scroll', function() {
-    var header = document.getElementById('sticky-header');
-    if (header) {
-      if (window.scrollY > 120) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-    }
-  });
+  
 
   // --- Form submit (Direct to Google Forms via hidden iframe) ---
   document.getElementById('exit-advantage-form').addEventListener('submit', function(e){
