@@ -79,22 +79,26 @@ js_code = re.sub(r'// --- Sticky Header Scroll Transition ---.*?\}\);', '', js_c
 # Wrap the remaining content in a sandboxing div
 body_content = f'<div class="csl-landing-page">\n{body_content.strip()}\n</div>'
 
-# Split body content into blocks
-import re
-# We'll split on sections to keep chunks < 9000
-chunks = re.split(r'(?=<section)', body_content)
-chunks = [c.strip() for c in chunks if c.strip()]
+# Split body content into exactly 13 blocks
+def split_into_13(text):
+    n = 13
+    chunk_size = len(text) // n
+    chunks = []
+    start = 0
+    for i in range(n - 1):
+        target = start + chunk_size
+        # Find next newline or safe tag boundary
+        match = re.search(r'\n|<', text[target:])
+        if match:
+            split_point = target + match.start()
+        else:
+            split_point = target
+        chunks.append(text[start:split_point].strip())
+        start = split_point
+    chunks.append(text[start:].strip())
+    return chunks
 
-blocks = []
-current_block = ""
-for chunk in chunks:
-    if len(current_block) + len(chunk) < 8500:
-        current_block += "\n" + chunk
-    else:
-        blocks.append(current_block.strip())
-        current_block = chunk
-if current_block:
-    blocks.append(current_block.strip())
+blocks = split_into_13(body_content)
     
 with open("resale-advantage-v3/webflow-body-blocks.html", "w", encoding="utf-8") as out:
     out.write("<!-- ============================================================\n")
