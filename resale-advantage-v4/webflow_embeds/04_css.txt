@@ -1,0 +1,319 @@
+<style>
+
+
+  /* disclosure + footer */
+  .disclosure{background:var(--bg-soft);border-top:1px solid var(--line)}
+  .disclosure h2{font-size:var(--text-h2);color:var(--muted);max-width:880px;margin-top:12px}
+  footer{background:var(--navy-deep);color:rgba(255,255,255,.85);padding:64px 0;font-size:16px}
+  footer .wrap{display:flex;flex-direction:column;gap:32px;}
+  footer .wordmark{font-size:32px;font-weight:700;color:#fff;text-decoration:none;letter-spacing:-0.02em;}
+  footer .wordmark span{color:var(--accent);}
+  footer .divider{height:1px;background:rgba(255,255,255,0.2);width:100%;}
+  footer .licenses{display:grid;grid-template-columns:repeat(3, 1fr);gap:24px 16px;}
+  @media(max-width:640px){
+    footer .licenses{grid-template-columns:1fr;}
+  }
+  .offer-bar {
+    background: var(--navy-deep);
+    color: #fff; 
+    text-align: center; 
+    padding: 12px 16px; 
+    font-size: var(--text-body); 
+    letter-spacing: 0.06em; 
+    font-family: 'Roboto', sans-serif; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    margin: 0;
+    cursor: pointer;
+    transition: background 0.3s ease, border-color 0.3s ease;
+  }
+  .offer-bar:hover {
+    background: linear-gradient(90deg, #1b252e 0%, #2b3a47 50%, #1b252e 100%);
+    border-bottom-color: rgba(70, 131, 179, 0.2);
+  }
+  .offer-bar a {
+    color: inherit;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+  }
+  .offer-bar:hover .offer-pulse {
+    transform: scale(1.2);
+  }
+  .offer-bar b { color: var(--accent); font-weight: 700; text-transform: uppercase; }
+  .offer-pulse {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: var(--accent);
+    border-radius: 50%;
+    box-shadow: 0 0 0 0 rgba(70, 131, 179, 0.7);
+    }
+  }
+  @keyframes offer-glow {
+    0% {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 0 rgba(70, 131, 179, 0.7);
+    }
+    70% {
+      transform: scale(1);
+      box-shadow: 0 0 0 6px rgba(70, 131, 179, 0);
+    }
+    100% {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 0 rgba(70, 131, 179, 0);
+    }
+  }
+
+  header { 
+    background: #fff; 
+    margin: 0; 
+    padding: 16px 0; 
+    border-bottom: 1px solid var(--line); 
+    position: static;
+  }
+  header .wrap { max-width: 1080px; display: flex; align-items: center; justify-content: space-between; margin: 0 auto; padding: 0 24px; }
+  header a.phone { color: var(--navy); font-size: .95rem; font-weight: 700; text-decoration: none; transition: font-size 0.3s ease; }
+  header a.phone:hover { text-decoration: underline; }
+  header img { height: 33px; width: auto; display: block; transition: height 0.3s ease; }
+  
+  .nav-left { display: flex; align-items: center; }
+  
+  header.scrolled {
+    padding: 10px 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  /* Hero Text Layout Styles (BiggerPockets theme) */
+  .hero-subheading {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 24px 0 10px;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: -0.01em;
+  }
+  .hero-lead-para {
+    font-size: 1.08rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 16px;
+    font-family: 'Roboto', sans-serif;
+  }
+  .hero-savings {
+    display: flex;
+    gap: 28px; /* Tighter horizontal gap */
+    flex-wrap: wrap;
+    margin: 24px 0;
+  }
+  .save {
+    border: 1.5px solid rgba(255, 255, 255, 0.15); /* Elegant thin border */
+    background: rgba(255, 255, 255, 0.03); /* Subtle translucent background */
+    padding: 12px 18px; /* Padding inside the border */
+    border-radius: 8px; /* Clean rounded corners */
+    flex: none; /* Prevent stretching across the container width */
+  }
+  .save strong {
+    display: block;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--accent); /* Brand steel blue */
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  .save span {
+    display: block;
+    font-size: var(--text-micro);
+    color: rgba(255, 255, 255, 0.85);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-top: 8px;
+    line-height: 1.35;
+    font-family: 'Roboto', sans-serif;
+    white-space: nowrap; /* Force all text to stay on one single line */
+  }
+  .hero-note {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 20px 0 0 0;
+    font-family: 'Roboto', sans-serif;
+  }
+  .hero-note strong {
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 700;
+  }
+  .hero-rating-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 18px;
+    font-family: 'Roboto', sans-serif;
+    font-size: var(--text-body);
+  }
+  .rating-label {
+    font-weight: 700;
+    color: #fff;
+  }
+  .rating-stars {
+    color: #00b67a;
+    font-size: 1.15rem;
+    letter-spacing: 2px;
+  }
+  .rating-text {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  /* ── Trust / Partner Network Section ── */
+  .trust-section {
+    background: var(--navy);
+    padding: 80px 0;
+  }
+  .trust-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: 1.35fr 1fr; /* Stretched column for images */
+    gap: 64px;
+    align-items: center;
+  }
+  .trust-left-col {
+    display: flex;
+    flex-direction: column;
+    gap: 28px; /* Gap between images and logos */
+    width: 100%;
+  }
+  .trust-images {
+    display: flex;
+    gap: 12px;
+    align-items: stretch;
+    width: 100%;
+    height: 460px;
+  }
+  .trust-img-card {
+    flex: 1;
+    height: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 16px 36px rgba(0,0,0,0.3);
+  }
+  .trust-img-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+  .trust-img-card:hover img {
+    transform: scale(1.05);
+  }
+  .trust-img-stat {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 30px 12px 20px;
+    background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.4) 60%, transparent 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 6px;
+    z-index: 2;
+  }
+  .trust-stat-num {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+  }
+  .trust-stat-label {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.8);
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.4;
+    font-weight: 400;
+  }
+  .trust-copy {
+    color: #fff;
+    padding-top: 0;
+  }
+  .trust-eyebrow {
+    font-size: var(--text-small); /* Standardized to 13.6px (~14px) */
+    font-weight: 700;
+    letter-spacing: 0.15em; /* Standardized */
+    text-transform: uppercase;
+    color: #4683B3; /* Brand steel blue */
+    margin: 0 0 10px;
+    font-family: 'Roboto', sans-serif;
+  }
+  .trust-heading {
+    font-size: var(--text-h2);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.25;
+    margin: 0 0 24px;
+    letter-spacing: -0.02em;
+    font-family: 'Roboto', sans-serif;
+  }
+  .trust-body {
+    font-size: var(--text-body); /* Standardized to 15.2px */
+    color: rgba(255,255,255,0.85);
+    line-height: 1.6;
+    margin: 0 0 12px;
+    font-family: 'Roboto', sans-serif;
+  }
+  .trust-body strong {
+    color: #fff;
+    font-weight: 600;
+  }
+  .trust-img-stat .card-logo {
+    margin-top: 14px;
+    width: auto;
+    filter: brightness(0) invert(1);
+    opacity: 1;.85;
+    transition: opacity 0.3s ease;
+  }
+  .trust-img-stat .card-logo:hover {
+    opacity: 1;
+  }
+  .card-logo-csl { height: 42px !important; } /* Enlarged logo */
+  .card-logo-innovate { height: 34px !important; } /* Enlarged logo */
+  .card-logo-honest { height: 28px !important; } /* Enlarged logo */
+  @media (max-width: 900px) {
+    .trust-inner {
+      display: flex;
+      flex-direction: column-reverse; /* Puts the .trust-copy above the .trust-images */
+      gap: 40px;
+      padding: 0 24px;
+    }
+    .trust-images {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      height: auto;
+      width: 100%;
+    }
+    .trust-img-card {
+      width: 100%;
+      height: 260px !important;
+      flex: none; /* Prevents flexbox from stretching it vertically */
+    }
+    .trust-img-stat {
+      top: 0;
+      bottom: 0;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.45); /* Uniform dark overlay so centered text is readable */
+    }
+  }
+</style>

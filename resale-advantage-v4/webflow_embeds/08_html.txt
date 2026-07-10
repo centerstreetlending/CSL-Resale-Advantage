@@ -1,0 +1,98 @@
+<section class="timeline-section">
+  <div class="wrap">
+    <div class="tl" id="exit-timeline">
+
+      <p class="section-eyebrow">How It Works</p>
+      <h3 class="timeline-title">Your exit, coordinated under one roof</h3>
+      <div class="tl-track">
+        <div class="tl-line"></div>
+        
+        <div class="tl-step">
+          <span class="tl-dot">01</span>
+          <div class="tl-card">
+            <div class="tl-card-content">
+              <h4>Start Planning Your Exit Before Construction Wraps</h4>
+              <p>120 days is the sweet spot. Get your agent, title, and payoff timeline in order now — while you still have flexibility to make changes on your terms.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="tl-step">
+          <span class="tl-dot">02</span>
+          <div class="tl-card">
+            <div class="tl-card-content">
+              <h4>List at 1% Through <span class="co-name">Innovate Realty</span></h4>
+              <p>Your property gets pre-construction marketing through InnoLaunch — putting it in front of active buyers before your punch list is done. <span class="tl-benefit-badge"><strong>Saves ~1.5–2%</strong> vs. a standard 3% listing commission</span></p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="tl-step">
+          <span class="tl-dot">03</span>
+          <div class="tl-card">
+            <div class="tl-card-content">
+              <h4>Open Escrow with <span class="co-name">Honest Escrow</span>. Flat $500.</h4>
+              <p><span class="co-name">Honest Escrow</span> already knows <span class="co-name">Center Street Lending</span>'s payoff and closing requirements. Your agent, lender, and escrow officer all work from the same file. <span class="tl-benefit-badge"><strong>Flat $500</strong> vs. typical $1,500+ seller-side escrow fees</span></p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="tl-step">
+          <span class="tl-dot">04</span>
+          <div class="tl-card">
+            <div class="tl-card-content">
+              <h4><span class="co-name">Center Street Lending</span> Coordinates Your Payoff Directly</h4>
+              <p>No last-minute scramble for payoff demands. <span class="co-name">Center Street Lending</span> works directly with escrow so the numbers are ready when they're needed — no interest spikes from delays.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="tl-step">
+          <span class="tl-dot">05</span>
+          <div class="tl-card">
+            <div class="tl-card-content">
+              <h4>Close Clean. Collect Savings. Reinvest.</h4>
+              <p>With everyone aligned from day one, your close runs on schedule. Program savings land at the closing table — ready to fund your next deal.</p>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="soft">
+  <div class="wrap">
+    <p class="section-eyebrow" style="text-align: center;">Program Benefits</p>
+    <h2 class="section-title" style="text-align: center;">What you can request through the program</h2>
+    <p class="section-sub" style="text-align: center; margin-left: auto; margin-right: auto;">Eligible CSL borrowers can ask for information about any of the following. Everything is optional &mdash; pick what's useful to you.</p>
+    <div class="grid-2">
+
+      <!-- 1% listing terms confirmed 2026-06-24 -->
+      <div class="benefit">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:16px;"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+        <h3>Exclusive 1% listing fee</h3>
+        <p>A pre-negotiated 1% listing commission through Innovate Realty &mdash; versus the typical 2.5&ndash;3% &mdash; with InnoLaunch marketing included when you list with an Innovate agent.</p>
+      </div>
+
+      <div class="benefit">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:16px;"><polygon points="11 19 2 12 11 5 11 19"></polygon><path d="M22 12A10 10 0 0 0 11 2v20a10 10 0 0 0 11-10z"></path></svg>
+        <h3>Listing marketing support</h3>
+        <p>InnoLaunch marketing support to help put your property in front of more buyers &mdash; Innovate can even begin marketing before construction is finished, so you reach the market sooner. Included when you list with an Innovate Realty agent. <a href="#innolaunch" style="color:var(--accent);font-weight:600">See samples below &darr;</a></p>
+      </div>
+
+      <div class="benefit">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:16px;"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+        <h3>Southern California agent network</h3>
+        <p>Access to Innovate's Southern California agent network for your listing.</p>
+      </div>
+
+      <div class="benefit">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:16px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10"></polyline></svg>
+        <h3>An escrow option that knows CSL</h3>
+        <p>Honest Escrow is familiar with CSL payoff and closing requirements. For CSL borrowers, seller&#8209;side escrow fees are reduced &mdash; as low as $500 per seller; buyer&#8209;side fees remain standard.*</p>
+      </div>
+
+      </div></div></section>

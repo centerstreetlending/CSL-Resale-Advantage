@@ -1,0 +1,122 @@
+<section style="padding: 80px 0;">
+  <div class="wrap">
+    <div style="text-align: center; margin-bottom: 48px;">
+      <p class="section-eyebrow">FAQ</p>
+      <h2 class="section-title" style="margin-bottom: 0;">Common questions</h2>
+    </div>
+    <div class="faq-wrap">
+      <details>
+        <summary>Am I required to use Innovate Realty or Honest Escrow?</summary>
+        <div class="a">No. Use of any introduced provider is completely optional. You are free to choose your own real estate broker, escrow company, title company, lender, and other service providers.</div>
+      </details>
+      <details>
+        <summary>Does opting in affect my CSL loan?</summary>
+        <div class="a">No. Use of any introduced provider is not required as a condition of obtaining, maintaining, or paying off a CSL loan. Requesting information has no effect on your loan terms or servicing.</div>
+      </details>
+      <details>
+        <summary>What does it cost to request information?</summary>
+        <div class="a">Nothing. Requesting information is free. If you later choose to work with any provider, applicable fees are subject to eligibility, transaction details, party agreement, written disclosure, and escrow instructions.</div>
+      </details>
+      <details>
+        <summary>What happens after I submit the form?</summary>
+        <div class="a">A team member reaches out within 24 hours with the information you selected. If you chose &ldquo;follow up later,&rdquo; we'll simply check back closer to your timeline.</div>
+      </details>
+      <details>
+        <summary>Who is eligible?</summary>
+        <!-- PENDING #3: replace with the approved eligibility definition before launch -->
+        <div class="a"><span class="pending-chip">Pending</span> Eligibility definition to be confirmed by leadership before launch (active borrowers vs. past investors; geographic scope).</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- OPT-IN FORM -->
+<section id="optin">
+  <div class="wrap">
+    <div style="text-align: center; display: flex; flex-direction: column; align-items: center; margin-bottom: 48px;">
+      <p class="section-eyebrow" style="color:var(--accent);">CSL Resale Advantage</p>
+      <h2 style="font-family: 'Roboto', sans-serif; font-size: 42px; line-height: 1.2; margin-bottom: 16px;">Request program information</h2>
+      <p class="section-sub" style="color: rgba(255, 255, 255, 0.85); font-size: 18px; line-height: 1.5; margin-bottom: 0; max-width: 700px; text-align: center;">No obligation. You're always free to choose your own providers.</p>
+    </div>
+
+    <form class="form-card" id="exit-advantage-form" novalidate>
+      <div class="form-row">
+        <div class="field">
+          <label for="first-name">First name</label>
+          <input type="text" id="first-name" name="first_name" autocomplete="given-name" required>
+        </div>
+        <div class="field">
+          <label for="last-name">Last name</label>
+          <input type="text" id="last-name" name="last_name" autocomplete="family-name" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" autocomplete="email" required>
+        </div>
+        <div class="field">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" autocomplete="tel" required>
+        </div>
+      </div>
+      <div class="field">
+        <label for="property-address">Property address <span class="opt">(optional)</span></label>
+        <input type="text" id="property-address" name="property_address" autocomplete="street-address">
+      </div>
+      <div class="form-row">
+        <div class="field">
+          <label for="loan-number">CSL loan number <span class="opt">(optional)</span></label>
+          <input type="text" id="loan-number" name="loan_number">
+        </div>
+        <div class="field">
+          <label for="timeline">When do you expect to sell?</label>
+          <select id="timeline" name="timeline" required>
+            <option value="">Select one&hellip;</option>
+            <option value="now">I'm ready to list now</option>
+            <option value="1-3mo">In 1-3 months</option>
+            <option value="3-6mo">In 3-6 months</option>
+            <option value="6mo+">6+ months out</option>
+            <option value="unsure">Not sure yet</option>
+          </select>
+        </div>
+      </div>
+
+      <fieldset>
+        <legend>What would you like?</legend>
+        <label class="radio-row"><input type="radio" name="intent" id="intent-details" value="details" required><span>Yes &mdash; send me details about the program</span></label>
+        <label class="radio-row"><input type="radio" name="intent" id="intent-escrow" value="escrow"><span>I already have an agent, but I'd like escrow information</span></label>
+        <label class="radio-row"><input type="radio" name="intent" id="intent-later" value="later"><span>I'm not ready yet &mdash; follow up with me later</span></label>
+      </fieldset>
+
+      <!-- PENDING #5: consent language needs legal review before launch -->
+      <label class="consent">
+        <input type="checkbox" name="consent" id="consent" required>
+        <span>I agree that Center Street Lending and its affiliates may contact me about the CSL Resale Advantage program by phone, email, or text at the information provided. Consent is not a condition of any loan. <em>(Pending legal review.)</em></span>
+      </label>
+
+      <!-- honeypot anti-spam field -->
+      <input class="hp" type="text" name="company_website" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+      <button type="submit" class="btn" id="submit-btn">Request information</button>
+
+      <div id="success-panel" role="status">
+        <h3>Thank you &mdash; we've received your request.</h3>
+        <p>A team member will reach out within 24 hours with the information you asked for. There's no obligation, and you're always free to choose your own providers.</p>
+      </div>
+
+      <p class="form-note">Subject to final eligibility. Any fee information will be provided in writing. You are free to choose your own real estate broker, escrow company, and other service providers.</p>
+    </form>
+  </div>
+</section>
+
+
+
+<!-- DISCLOSURE — LOCKED COPY from readiness doc. Do not edit ad hoc. -->
+<section class="disclosure">
+  <div class="wrap">
+    <h2>Important disclosure</h2>
+    <p>CSL, Innovate Realty, Honest Escrow, and/or related ownership parties may have affiliated business relationships. If you request an introduction, additional disclosures, fee information, and service details may be provided. Use of any affiliated or introduced provider is optional. You are free to choose your own real estate broker, escrow company, title company, lender, and other service providers. Any escrow fees or program pricing are subject to eligibility, transaction details, party agreement, written disclosure, and escrow instructions. Use of any introduced provider is not required as a condition of obtaining, maintaining, or paying off a CSL loan.</p>
+  </div>
+</section>
+
