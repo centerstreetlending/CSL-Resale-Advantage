@@ -263,9 +263,9 @@
     .me-line-left { width: 16px; }
 
     
-    .hero-metrics { flex-wrap: wrap; gap: 24px 16px; justify-content: space-between; }
+    .hero-metrics { flex-wrap: wrap; gap: 24px 16px; justify-content: space-between; align-items: stretch; }
 
-    .metric { flex: 1 1 45%; min-width: 120px; }
+    .metric { flex: 1 1 45%; min-width: 120px; justify-content: flex-end; }
 
     .metric-num { font-size: 40px; }
 
