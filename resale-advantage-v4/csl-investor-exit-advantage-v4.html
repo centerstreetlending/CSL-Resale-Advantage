@@ -1175,6 +1175,8 @@
   .color-bar-white { height: 12px; background: #fff; }
   .color-bar-blue { height: 12px; background: var(--accent); }
   
+  .mobile-br { display: none; }
+  
   @media(max-width:1100px){
     header { padding: 16px 0; height: auto !important; }
     header .wrap { padding: 0 24px; }
@@ -1184,6 +1186,7 @@
     .hero h1 { font-family: 'Arteria Std Compress', 'Bebas Neue', sans-serif; font-size: 52px; line-height: 52px; }
   }
   @media(max-width:640px){
+    .mobile-br { display: block; }
     .hide-on-mobile { display: none !important; }
     header a.wordmark img { height: 26px !important; }
     .program-title-sub { font-size: 0.65rem; }
@@ -1283,7 +1286,7 @@
             </div>
             <div class="hero-metrics" style="margin-top: 0; gap: 32px;">
               <div class="metric">
-                <span class="metric-label">Seller escrow, as low as</span>
+                <span class="metric-label">Seller escrow, <br class="mobile-br">as low as</span>
                 <span class="metric-num">$500</span>
               </div>
               <div class="metric">
@@ -1302,7 +1305,7 @@
             </div>
             <div class="hero-metrics" style="margin-top: 0; gap: 32px;">
               <div class="metric">
-                <span class="metric-label">Exclusive listing fee</span>
+                <span class="metric-label">Exclusive listing <br class="mobile-br">fee</span>
                 <span class="metric-num">1%</span>
               </div>
               <div class="metric">
