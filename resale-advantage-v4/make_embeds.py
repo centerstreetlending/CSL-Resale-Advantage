@@ -1,7 +1,7 @@
 import os
 import re
 
-with open("csl-investor-exit-advantage-v3.html", "r") as f:
+with open("csl-investor-exit-advantage-v4.html", "r") as f:
     content = f.read()
 
 os.makedirs("webflow_embeds", exist_ok=True)

@@ -83,6 +83,25 @@
   .hero .btn-ghost{color:rgba(255,255,255,.92)}
   .hero .btn-ghost:hover{color:#fff;text-decoration:underline}
 
+  @media (max-width: 768px) {
+    :root {
+      --text-h1: 2.5rem;
+      --text-h2: 2rem;
+      --text-h3: 1.25rem;
+    }
+    section {
+      padding: 48px 0 !important;
+    }
+    .who-intro { white-space: normal !important; }
+    
+    .hero-left-top, .hero-cta, .hero-left {
+      text-align: center;
+      align-items: center !important;
+    }
+  }
+  
+  .who-intro { white-space: nowrap; }
+
   /* innolaunch showcase — compact two-column */
   .inno-points { margin: 24px 0 32px 20px; display: flex; flex-direction: column; gap: 12px; font-size: 1.05rem; color: #5D6871; }
   .inno-points li { padding-left: 8px; line-height: 1.5; }
@@ -809,7 +828,7 @@
     margin: 0 auto;
     padding: 0 40px;
     display: grid;
-    grid-template-columns: 1.35fr 1fr; /* Stretched column for images */
+    grid-template-columns: 1.6fr 1fr; /* Stretched column for images */
     gap: 64px;
     align-items: center;
   }
@@ -853,8 +872,9 @@
     background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.4) 60%, transparent 100%);
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
+    text-align: left;
+    padding-left: 20px;
     gap: 6px;
     z-index: 2;
   }
@@ -1242,7 +1262,7 @@
         
         <h2 class="hero-subheading">The CSL Resale Advantage</h2>
         
-        <p class="hero-lead-para">You found it and rehab/built it&mdash;now keep more of your profit. List for just 1% and close for less. We&rsquo;ve pre-negotiated exclusive rates with <strong>Innovate Realty</strong> and <strong>Honest Escrow</strong>, teams that specialize in real estate investor transactions, exclusively for CSL borrowers.</p>
+        <p class="hero-lead-para">You found it and rehab/built it&mdash;now keep more of your profit. List for discounted escrow costs and pay lower escrow fees. We&rsquo;ve pre-negotiated exclusive rates with <strong>Innovate Realty</strong> and <strong>Honest Escrow</strong>, teams that specialize in real estate investor transactions, exclusively for CSL's CA borrowers.</p>
         
       </div>
       <div class="hero-cta" style="display: flex; flex-direction: column; align-items: flex-start; gap: 32px;">
@@ -1261,12 +1281,12 @@
             </div>
             <div class="hero-metrics" style="margin-top: 0; gap: 32px;">
               <div class="metric">
-                <span class="metric-num">$500</span>
                 <span class="metric-label">Seller escrow, as low as</span>
+                <span class="metric-num">$500</span>
               </div>
               <div class="metric">
-                <span class="metric-num" id="deal-ticker" data-target="100">0+</span>
                 <span class="metric-label">Properties successfully closed</span>
+                <span class="metric-num" id="deal-ticker" data-target="100">0+</span>
               </div>
             </div>
           </div>
@@ -1280,12 +1300,12 @@
             </div>
             <div class="hero-metrics" style="margin-top: 0; gap: 32px;">
               <div class="metric">
-                <span class="metric-num">1%</span>
                 <span class="metric-label">Exclusive listing fee</span>
+                <span class="metric-num">1%</span>
               </div>
               <div class="metric">
-                <span class="metric-num">20K</span>
-                <span class="metric-label">Buyer views in 21 days</span>
+                <span class="metric-label">InnoLaunch generates on avg. over:</span>
+                <span class="metric-num">21K <span style="font-size: 0.5em; font-weight: 500;">Views</span></span>
               </div>
             </div>
           </div>
@@ -1307,9 +1327,9 @@
       <div class="who-left-top">
         <div>
           <p class="section-eyebrow">Who Qualifies</p>
-          <h2>CSL borrowers nearing the exit</h2>
+          <h2>CSL Borrowers Selling Their Properties</h2>
         </div>
-        <p class="who-intro">Resale Advantage is built for CSL borrowers thinking about the sale side of their project.</p>
+        <p class="who-intro">Resale Advantage is built for CSL borrowers thinking about the sale side of their property.</p>
       </div>
       
       <div class="who-items">
@@ -1318,12 +1338,12 @@
           <p>The earlier you start coordinating your exit, the more leverage you have — on timing, pricing, and savings. Don't wait until construction wraps to think about the sell.</p>
         </div>
         <div class="who-item">
-          <h3>You're selling this deal to fund the next one</h3>
+          <h3>You're selling this property deal to fund the next one</h3>
           <p>Every dollar saved on your exit is capital available for your next project. A clean, coordinated close keeps your momentum going — deal after deal.</p>
         </div>
         <div class="who-item">
           <h3>You don't have an agent or escrow lined up yet</h3>
-          <p>Get introductions to an agent and escrow team already familiar with CSL projects and payoff requirements — no awkward handoffs, no obligation to use them.</p>
+          <p>Get introductions to an experienced agent and escrow team who are experts with selling and payoff requirements of investment properties&mdash;no awkward handoffs between agent, escrow and lender.</p>
         </div>
       </div>
     </div>
@@ -1344,21 +1364,21 @@
       <div class="trust-img-card">
         <img src="Frame 166.png" alt="Interior living space" />
         <div class="trust-img-stat">
-          <span class="trust-stat-num">$7.6B+</span>
+          <span class="trust-stat-num" style="white-space: nowrap; font-size: 1.7rem;">$7.8B+ <span style="font-size: 0.5em; font-weight: 400; font-style: italic; color: rgba(255,255,255,0.85);">and counting...</span></span>
           <span class="trust-stat-label">Funded by<br>Center Street Lending</span>
         </div>
       </div>
       <div class="trust-img-card">
         <img src="Frame 169.png" alt="Modern home exterior at dusk" />
         <div class="trust-img-stat">
-          <span class="trust-stat-num">3,200+</span>
+          <span class="trust-stat-num" style="white-space: nowrap; font-size: 1.7rem;">3,200+ <span style="font-size: 0.5em; font-weight: 400; font-style: italic; color: rgba(255,255,255,0.85);">and counting...</span></span>
           <span class="trust-stat-label">Homes sold<br>by Innovate Realty</span>
         </div>
       </div>
       <div class="trust-img-card">
         <img src="Frame 170.png" alt="Contemporary home with outdoor seating" />
         <div class="trust-img-stat">
-          <span class="trust-stat-num">$1.1B+</span>
+          <span class="trust-stat-num" style="white-space: nowrap; font-size: 1.7rem;">$1.1B+ <span style="font-size: 0.5em; font-weight: 400; font-style: italic; color: rgba(255,255,255,0.85);">and counting...</span></span>
           <span class="trust-stat-label">Closed by<br>Honest Escrow</span>
         </div>
       </div>
@@ -1368,7 +1388,7 @@
     <div class="trust-copy">
       <p class="section-eyebrow" style="color:var(--accent)">Your Team</p>
       <h2 class="trust-heading">A trusted network of professionals</h2>
-      <p class="trust-body">CSL Resale Advantage gives Center Street Lending borrowers access to preferred pricing and trusted real estate and escrow professionals who already know the CSL process, <strong>making the final stage of your project simpler, more coordinated, and more cost-effective.</strong></p>
+      <p class="trust-body">CSL Resale Advantage gives Center Street Lending borrowers access to preferred pricing and trusted real estate and escrow professionals <strong>making the final stage of your project simpler, more coordinated, and more cost-effective.</strong></p>
       
       <div class="trust-logos-row" style="display: flex; gap: 40px; align-items: center; margin-top: 40px;">
         <img src="Company Logo.svg" alt="Center Street Lending" style="height: 64px; filter: brightness(0) invert(1);" />
@@ -1389,7 +1409,7 @@
     <div class="tl" id="exit-timeline">
 
       <p class="section-eyebrow">How It Works</p>
-      <h3 class="timeline-title">Your exit, coordinated under one roof</h3>
+      <h3 class="timeline-title">Your exit, coordinated under one team</h3>
       <div class="tl-track">
         <div class="tl-line"></div>
         
@@ -1408,7 +1428,7 @@
           <div class="tl-card">
             <div class="tl-card-content">
               <h4>List at 1% Through <span class="co-name">Innovate Realty</span></h4>
-              <p>Your property gets pre-construction marketing through InnoLaunch — putting it in front of active buyers before your punch list is done. <span class="tl-benefit-badge"><strong>Saves ~1.5–2%</strong> vs. a standard 3% listing commission</span></p>
+              <p>Your property gets pre-construction marketing through InnoLaunch (<a href="#innolaunch" style="color:var(--accent);font-weight:600;text-decoration:none;">InnoLaunch explained below &darr;</a>) — putting it in front of active buyers before your punch list is done. <span class="tl-benefit-badge"><strong>Saves ~1.5–2%</strong> vs. a standard 3% listing commission</span></p>
             </div>
           </div>
         </div>
@@ -1417,8 +1437,8 @@
           <span class="tl-dot">03</span>
           <div class="tl-card">
             <div class="tl-card-content">
-              <h4>Open Escrow with <span class="co-name">Honest Escrow</span>. Flat $500.</h4>
-              <p><span class="co-name">Honest Escrow</span> already knows <span class="co-name">Center Street Lending</span>'s payoff and closing requirements. Your agent, lender, and escrow officer all work from the same file. <span class="tl-benefit-badge"><strong>Flat $500</strong> vs. typical $1,500+ seller-side escrow fees</span></p>
+              <h4>Open Escrow with <span class="co-name">Honest Escrow</span>. Flat $500 Sale Side</h4>
+              <p><span class="co-name">Honest Escrow</span> already knows <span class="co-name">Center Street Lending</span>'s payoff and closing requirements. Your agent, lender, and escrow officer all work from the same file. <span class="tl-benefit-badge"><strong>Flat $500</strong> vs. typical $1,500+ sale side escrow fees</span></p>
             </div>
           </div>
         </div>
@@ -1428,7 +1448,7 @@
           <div class="tl-card">
             <div class="tl-card-content">
               <h4><span class="co-name">Center Street Lending</span> Coordinates Your Payoff Directly</h4>
-              <p>No last-minute scramble for payoff demands. <span class="co-name">Center Street Lending</span> works directly with escrow so the numbers are ready when they're needed — no interest spikes from delays.</p>
+              <p>No last-minute scramble for payoff demands. <span class="co-name">Center Street Lending</span> works directly with escrow so the numbers are ready when they're needed.</p>
             </div>
           </div>
         </div>
@@ -1437,8 +1457,18 @@
           <span class="tl-dot">05</span>
           <div class="tl-card">
             <div class="tl-card-content">
-              <h4>Close Clean. Collect Savings. Reinvest.</h4>
-              <p>With everyone aligned from day one, your close runs on schedule. Program savings land at the closing table — ready to fund your next deal.</p>
+              <h4>Close Clean. Collect Savings. Reinvest More</h4>
+              <p>With your agent, escrow, and lender aligned from Day 1, your close runs on schedule. Program savings land at the closing table — ready to fund your next deal.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="tl-step">
+          <span class="tl-dot">06</span>
+          <div class="tl-card">
+            <div class="tl-card-content">
+              <h4>If you like the results</h4>
+              <p>Use part or all of the team to find, close, and finance your next deal.</p>
             </div>
           </div>
         </div>
@@ -1453,7 +1483,7 @@
   <div class="wrap">
     <p class="section-eyebrow" style="text-align: center;">Program Benefits</p>
     <h2 class="section-title" style="text-align: center;">What you can request through the program</h2>
-    <p class="section-sub" style="text-align: center; margin-left: auto; margin-right: auto;">Eligible CSL borrowers can ask for information about any of the following. Everything is optional &mdash; pick what's useful to you.</p>
+    <p class="section-sub" style="text-align: center; margin-left: auto; margin-right: auto;">CSL's CA borrowers can ask for information about any of the following. Each service is optional &mdash; pick what's useful to you.</p>
     <div class="grid-2">
 
       <!-- 1% listing terms confirmed 2026-06-24 -->
@@ -1466,31 +1496,31 @@
       <div class="benefit">
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:16px;"><polygon points="11 19 2 12 11 5 11 19"></polygon><path d="M22 12A10 10 0 0 0 11 2v20a10 10 0 0 0 11-10z"></path></svg>
         <h3>Listing marketing support</h3>
-        <p>InnoLaunch marketing support to help put your property in front of more buyers &mdash; Innovate can even begin marketing before construction is finished, so you reach the market sooner. Included when you list with an Innovate Realty agent. <a href="#innolaunch" style="color:var(--accent);font-weight:600">See samples below &darr;</a></p>
+        <p>InnoLaunch, <a href="#innolaunch" style="color:var(--accent);font-weight:600;text-decoration:none;">explained below &darr;</a>, helps put your property in front of more buyers sooner. Innovate can even begin marketing before construction is finished, so you reach the market earlier. InnoLaunch is free when you list with an Innovate Realty agent.</p>
       </div>
 
       <div class="benefit">
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:16px;"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-        <h3>Southern California agent network</h3>
-        <p>Access to Innovate's Southern California agent network for your listing.</p>
+        <h3>California agent network</h3>
+        <p>Access to Innovate's California agent network for your property listing and next investment purchase.</p>
       </div>
 
       <div class="benefit">
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:16px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10"></polyline></svg>
         <h3>An escrow option that knows CSL</h3>
-        <p>Honest Escrow is familiar with CSL payoff and closing requirements. For CSL borrowers, seller&#8209;side escrow fees are reduced &mdash; as low as $500 per seller; buyer&#8209;side fees remain standard.*</p>
+        <p>Honest Escrow is experienced with investment property purchases and resales and all the details &mdash; as low as $500 sale-side fee; buyer&#8209;side fee remains standard.*</p>
       </div>
 
       <div class="benefit">
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:16px;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
         <h3>Earlier resale planning</h3>
-        <p>Start planning the resale before your project is fully complete, so listing, escrow, and payoff line up instead of stacking up.</p>
+        <p>Start planning the resale before your project is fully complete to maximize your property's value and minimize the sale, closing and payoff timeline.</p>
       </div>
 
       <div class="benefit">
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:16px;"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
         <h3>One coordinated process</h3>
-        <p>A more coordinated process between you, your lender, your agent, and the escrow team &mdash; designed to reduce friction at closing.</p>
+        <p>A more coordinated process designed to lower your costs, reduce your timing and maximize your sale price.</p>
       </div>
 
     </div>
@@ -1970,14 +2000,15 @@
       <h2 style="font-size: 36px; font-weight: 700; color: var(--navy-darkest); margin-bottom: 24px; font-family: 'Roboto', sans-serif; letter-spacing: -0.02em;">Meet Innovate Realty.</h2>
       <img src="Innovate.svg" alt="Innovate Realty" style="height: 64px; margin-bottom: 24px; display: block;" />
       
-      <p style="font-size: 16px; line-height: 1.6; color: var(--navy-darkest); margin-bottom: 24px;">These sample marketing materials prepared for an Innovate Realty listing demonstrate the kind of launch support included when you list with an Innovate Realty agent.</p>
+      <p style="font-size: 16px; line-height: 1.6; color: var(--navy-darkest); margin-bottom: 16px;">These sample marketing materials prepared for an Innovate Realty listing demonstrate the kind of launch support included when you list with an Innovate Realty agent.</p>
       
-      <ul style="list-style: disc; padding-left: 20px; margin: 0; color: var(--navy-darkest);">
-        <li style="margin-bottom: 12px; font-size: 16px; line-height: 1.6;"><strong>20,000 buyer views in 21 days</strong> &mdash; a coordinated launch built to get eyes on your property fast</li>
-        <li style="margin-bottom: 12px; font-size: 16px; line-height: 1.6;"><strong>Email marketing &amp; targeted digital ads</strong></li>
-        <li style="margin-bottom: 12px; font-size: 16px; line-height: 1.6;"><strong>A dedicated property website</strong></li>
-        <li style="margin-bottom: 12px; font-size: 16px; line-height: 1.6;"><strong>Printed brochures, flyers &amp; postcards</strong></li>
-        <li style="margin-bottom: 12px; font-size: 16px; line-height: 1.6;"><strong>Get a head start with marketing before construction is complete</strong></li>
+      <p style="font-size: 16px; line-height: 1.6; color: var(--navy-darkest); margin-bottom: 16px;"><strong>InnoLaunch, on average, produces 21,000 views resulting in sales that close 4 days quicker.</strong></p>
+      
+      <ul style="list-style: disc; padding-left: 40px; margin: 0; color: var(--navy-darkest);">
+        <li style="margin-bottom: 12px; font-size: 16px; line-height: 1.6;">Email marketing &amp; targeted digital ads</li>
+        <li style="margin-bottom: 12px; font-size: 16px; line-height: 1.6;">A dedicated property website</li>
+        <li style="margin-bottom: 12px; font-size: 16px; line-height: 1.6;">Printed brochures, flyers &amp; postcards</li>
+        <li style="margin-bottom: 12px; font-size: 16px; line-height: 1.6;">Early marketing launch before construction is complete</li>
       </ul>
     </div>
 
@@ -2110,7 +2141,36 @@
 <footer>
   <div class="wrap">
 
+    <div class="innovate-footer" style="text-align: left; margin-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 40px;">
+      <h3 style="color: #fff; font-size: 1.25rem; margin-bottom: 24px; font-weight: 700;">Innovate Realty</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; margin-bottom: 24px;">
+        <div>
+          <h4 style="color: rgba(255,255,255,0.6); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px;">Contact</h4>
+          <p style="color: rgba(255,255,255,0.8); font-size: 0.95rem; line-height: 1.6; margin: 0;">(949) 617-2875<br>info@innovaterealty.com</p>
+        </div>
+        <div>
+          <h4 style="color: rgba(255,255,255,0.6); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px;">Address</h4>
+          <p style="color: rgba(255,255,255,0.8); font-size: 0.95rem; line-height: 1.6; margin: 0;">18201 Von Karman Ave, Ste 480<br>Irvine CA 92612</p>
+        </div>
+      </div>
+      <div style="color: rgba(255,255,255,0.6); font-size: 0.85rem; line-height: 1.6; margin-bottom: 24px;">
+        E. Dora Austin &nbsp;|&nbsp; CA DRE# 01227878<br>
+        Innovate Realty, Inc. &nbsp;|&nbsp; CA DRE# 02215206
+      </div>
+      <p style="color: rgba(255,255,255,0.5); font-size: 0.75rem; line-height: 1.5; margin: 0; max-width: 900px;">
+        Bay East &copy;2026. CCAR &copy;2026. bridgeMLS &copy;2026. Information Deemed Reliable But Not Guaranteed. This information is being provided by the Bay East MLS, or CCAR MLS, or bridgeMLS. The listings presented here may or may not be listed by the Broker/Agent operating this website. This information is intended for the personal use of consumers and may not be used for any purpose other than to identify prospective properties consumers may be interested in purchasing. Data last updated March 13, 2026.
+      </p>
+    </div>
+
+    <div class="honest-escrow-footer" style="text-align: left; margin-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 40px;">
+      <h3 style="color: #fff; font-size: 1.25rem; margin-bottom: 16px; font-weight: 700;">Honest Escrow</h3>
+      <div style="color: rgba(255,255,255,0.6); font-size: 0.85rem; line-height: 1.6;">
+        &copy; 2026 Honest Escrow. All rights reserved.<br>
+        DFPI License Nos. 96DBO-188503 and 96DBO-216287. Irvine and Westlake Village, California.
+      </div>
+    </div>
     
+    <h3 style="color: #fff; font-size: 1.25rem; margin-bottom: 16px; font-weight: 700;">Center Street Lending</h3>
     <div class="licenses">
       <div>CFL License No. 60DBO-57755</div>
       <div>AZ MBL# 0930263</div>

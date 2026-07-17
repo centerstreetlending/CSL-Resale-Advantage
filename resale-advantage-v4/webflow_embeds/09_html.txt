@@ -1,26 +1,11 @@
-<section class="soft" style="padding-top:0"><div class="wrap"><div class="grid-2"><div class="benefit">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:16px;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-        <h3>Earlier resale planning</h3>
-        <p>Start planning the resale before your project is fully complete, so listing, escrow, and payoff line up instead of stacking up.</p>
-      </div>
-
-      <div class="benefit">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:16px;"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
-        <h3>One coordinated process</h3>
-        <p>A more coordinated process between you, your lender, your agent, and the escrow team &mdash; designed to reduce friction at closing.</p>
-      </div>
-
-    </div>
-    
-    <div style="margin-top: 16px; text-align: left; max-width: 600px;">
-      <p style="font-size: var(--text-micro); color: var(--accent); font-weight: 500;">*Pending escrow-law / legal review: an advertised escrow fee reduction must be disclosed in writing and reflected in the escrow instructions.</p>
-    </div>
-  </div>
-</section>
-
 <!-- COMPARISON TABLE - structure inspired by the alt renderings, rebuilt in CSL branding + compliance-safe wording -->
-<style>
 
+<style>
+  @font-face {
+    font-family: 'Arteria Std Compress';
+    src: local('Arteria Std Compress');
+    font-display: swap;
+  }
 
 
   #compare {
@@ -331,3 +316,53 @@
     }
   }
 </style>
+<section id="compare">
+  <div class="wrap">
+    <p class="section-eyebrow">Side by Side</p>
+    <h2 class="section-title">How the program compares</h2>
+    <p class="section-sub">Here's how a coordinated exit stacks up against going it alone.</p>
+    <div class="cmp-wrap">
+      <table class="cmp">
+        <thead>
+          <tr>
+            <th class="left-header">&nbsp;</th>
+            <th class="csl-header">CSL Resale Advantage</th>
+            <th class="alone-header">Going It Alone</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Listing commission</th>
+            <td class="csl">Pre-negotiated 1% listing commission through Innovate Realty</td>
+            <td class="alone">Standard 2.5–3% listing commission</td>
+          </tr>
+          <tr>
+            <th>Escrow familiarity &amp; fees</th>
+            <td class="csl">Honest Escrow knows CSL payoffs — seller escrow as low as $500</td>
+            <td class="alone">May not know CSL payoffs — standard escrow fees</td>
+          </tr>
+          <tr>
+            <th>Marketing</th>
+            <td class="csl">InnoLaunch marketing (incl. pre-completion) — with an Innovate listing agent</td>
+            <td class="alone">Standard MLS listing, after completion</td>
+          </tr>
+          <tr>
+            <th>Coordination</th>
+            <td class="csl">One coordinated process across borrower, lender, agent &amp; escrow</td>
+            <td class="alone">You manage agent, escrow &amp; lender separately</td>
+          </tr>
+          <tr>
+            <th>When you can start</th>
+            <td class="csl">Plan earlier — 60–120 days out</td>
+            <td class="alone">After the project is fully complete</td>
+          </tr>
+          <tr>
+            <th>Your obligation</th>
+            <td class="csl">Fully optional — always your choice of providers</td>
+            <td class="alone">—</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

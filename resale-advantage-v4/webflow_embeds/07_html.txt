@@ -1,23 +1,28 @@
+</head>
+<body>
+
+
 <div class="offer-bar"><a href="#optin"><span style="display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;"><span class="offer-pulse"></span><b>EXCLUSIVE OFFER</b></span> &mdash; PRE-NEGOTIATED FOR CSL BORROWERS</a></div>
 
 <header id="sticky-header">
   <div class="wrap">
     <div class="nav-left">
-      <a class="wordmark" href="https://www.centerstreetlending.com/"><img src="https://cdn.prod.website-files.com/6875101e8b0848abe318fec3/6a515d82df26519519abc412_logo1.svg" alt="Center Street Lending" style="height: 36px; width: auto; display: block;"></a>
+      <a class="wordmark" href="https://www.centerstreetlending.com/"><img src="logo1.svg" alt="Center Street Lending" style="height: 36px; width: auto; display: block;"></a>
     </div>
   </div>
 </header>
 
 <!-- HERO -->
+
 <div class="hero">
   <div class="wrap hero-main-row">
     <div class="hero-left">
       <div class="hero-left-top">
-        <h1 style="font-family:'Bebas Neue', 'Roboto', sans-serif;"><span style="display: inline-block; white-space: nowrap;">WE MADE IT <span class="hl">EASIER & CHEAPER</span></span><br><span style="display: inline-block; white-space: nowrap;">TO EXIT YOUR INVESTMENT.</span></h1>
+        <h1 style="font-family:'Arteria Std Compress', 'Bebas Neue', sans-serif;"><span style="display: inline-block; white-space: nowrap;">WE MADE IT <span class="hl">EASIER & CHEAPER</span></span><br><span style="display: inline-block; white-space: nowrap;">TO EXIT YOUR INVESTMENT.</span></h1>
         
         <h2 class="hero-subheading">The CSL Resale Advantage</h2>
         
-        <p class="hero-lead-para">You found it, improved it, and rehabbed it. Now you can list it at 1% and close for less. We pre-negotiated exclusive deals with <strong>Innovate Realty</strong> and <strong>Honest Escrow</strong>, teams specializing in real estate investor transactions, just for CSL borrowers.</p>
+        <p class="hero-lead-para">You found it and rehab/built it&mdash;now keep more of your profit. List for discounted escrow costs and pay lower escrow fees. We&rsquo;ve pre-negotiated exclusive rates with <strong>Innovate Realty</strong> and <strong>Honest Escrow</strong>, teams that specialize in real estate investor transactions, exclusively for CSL's CA borrowers.</p>
         
       </div>
       <div class="hero-cta" style="display: flex; flex-direction: column; align-items: flex-start; gap: 32px;">
@@ -28,6 +33,7 @@
         <div style="display: flex; gap: 64px; margin-top: 24px; width: 100%; flex-wrap: wrap;">
           
           <!-- HONEST ESCROW STATS -->
+
           <div style="flex: 1; min-width: 240px; display: flex; flex-direction: column; gap: 4px;">
             <div class="metrics-eyebrow-container" style="margin-bottom: 8px;">
               <div class="me-line-left"></div>
@@ -36,17 +42,18 @@
             </div>
             <div class="hero-metrics" style="margin-top: 0; gap: 32px;">
               <div class="metric">
-                <span class="metric-num">$500</span>
                 <span class="metric-label">Seller escrow, as low as</span>
+                <span class="metric-num">$500</span>
               </div>
               <div class="metric">
-                <span class="metric-num" id="deal-ticker" data-target="100">0+</span>
                 <span class="metric-label">Properties successfully closed</span>
+                <span class="metric-num" id="deal-ticker" data-target="100">0+</span>
               </div>
             </div>
           </div>
 
           <!-- INNOVATE REALTY STATS -->
+
           <div style="flex: 1; min-width: 240px; display: flex; flex-direction: column; gap: 4px;">
             <div class="metrics-eyebrow-container" style="margin-bottom: 8px;">
               <div class="me-line-left"></div>
@@ -55,12 +62,12 @@
             </div>
             <div class="hero-metrics" style="margin-top: 0; gap: 32px;">
               <div class="metric">
-                <span class="metric-num">1%</span>
                 <span class="metric-label">Exclusive listing fee</span>
+                <span class="metric-num">1%</span>
               </div>
               <div class="metric">
-                <span class="metric-num">20K</span>
-                <span class="metric-label">Buyer views in 21 days</span>
+                <span class="metric-label">InnoLaunch generates on avg. over:</span>
+                <span class="metric-num">21K <span style="font-size: 0.5em; font-weight: 500;">Views</span></span>
               </div>
             </div>
           </div>
@@ -75,6 +82,7 @@
 
 
 <!-- WHO THIS IS FOR -->
+
 <section class="who-its-for-v2">
   <div class="who-its-for-wrap">
     
@@ -82,9 +90,9 @@
       <div class="who-left-top">
         <div>
           <p class="section-eyebrow">Who Qualifies</p>
-          <h2>CSL borrowers nearing the exit</h2>
+          <h2>CSL Borrowers Selling Their Properties</h2>
         </div>
-        <p class="who-intro">Resale Advantage is built for CSL borrowers thinking about the sale side of their project.</p>
+        <p class="who-intro">Resale Advantage is built for CSL borrowers thinking about the sale side of their property.</p>
       </div>
       
       <div class="who-items">
@@ -93,69 +101,50 @@
           <p>The earlier you start coordinating your exit, the more leverage you have — on timing, pricing, and savings. Don't wait until construction wraps to think about the sell.</p>
         </div>
         <div class="who-item">
-          <h3>You're selling this deal to fund the next one</h3>
+          <h3>You're selling this property deal to fund the next one</h3>
           <p>Every dollar saved on your exit is capital available for your next project. A clean, coordinated close keeps your momentum going — deal after deal.</p>
         </div>
         <div class="who-item">
           <h3>You don't have an agent or escrow lined up yet</h3>
-          <p>Get introductions to an agent and escrow team already familiar with CSL projects and payoff requirements — no awkward handoffs, no obligation to use them.</p>
+          <p>Get introductions to an experienced agent and escrow team who are experts with selling and payoff requirements of investment properties&mdash;no awkward handoffs between agent, escrow and lender.</p>
         </div>
       </div>
     </div>
 
     <div class="who-right">
-      <img src="https://cdn.prod.website-files.com/6875101e8b0848abe318fec3/6a515bd6ab320d0c10421561_Rectangle%2022.png" alt="Happy couple in new home">
+      <img src="Rectangle 22.png" alt="Happy couple in new home">
     </div>
 
   </div>
 </section>
 
 <!-- TRUST / PARTNER NETWORK SECTION -->
+
 <section class="trust-section">
   <div class="trust-inner">
     
     <!-- LEFT: property image cards with nested logos -->
+
     <div class="trust-images">
       <div class="trust-img-card">
-        <img src="https://cdn.prod.website-files.com/6875101e8b0848abe318fec3/6a515bd69f565305fecfe7f3_Frame%20166.png" alt="Interior living space" />
+        <img src="Frame 166.png" alt="Interior living space" />
         <div class="trust-img-stat">
-          <span class="trust-stat-num">$7.6B+</span>
+          <span class="trust-stat-num" style="white-space: nowrap; font-size: 1.7rem;">$7.8B+ <span style="font-size: 0.5em; font-weight: 400; font-style: italic; color: rgba(255,255,255,0.85);">and counting...</span></span>
           <span class="trust-stat-label">Funded by<br>Center Street Lending</span>
         </div>
       </div>
       <div class="trust-img-card">
-        <img src="https://cdn.prod.website-files.com/6875101e8b0848abe318fec3/6a515bd6f9871e13803a5386_Frame%20169.png" alt="Modern home exterior at dusk" />
+        <img src="Frame 169.png" alt="Modern home exterior at dusk" />
         <div class="trust-img-stat">
-          <span class="trust-stat-num">3,200+</span>
+          <span class="trust-stat-num" style="white-space: nowrap; font-size: 1.7rem;">3,200+ <span style="font-size: 0.5em; font-weight: 400; font-style: italic; color: rgba(255,255,255,0.85);">and counting...</span></span>
           <span class="trust-stat-label">Homes sold<br>by Innovate Realty</span>
         </div>
       </div>
       <div class="trust-img-card">
-        <img src="https://cdn.prod.website-files.com/6875101e8b0848abe318fec3/6a515bd660aba88be11b2bcb_Frame%20170.png" alt="Contemporary home with outdoor seating" />
+        <img src="Frame 170.png" alt="Contemporary home with outdoor seating" />
         <div class="trust-img-stat">
-          <span class="trust-stat-num">$1.1B+</span>
+          <span class="trust-stat-num" style="white-space: nowrap; font-size: 1.7rem;">$1.1B+ <span style="font-size: 0.5em; font-weight: 400; font-style: italic; color: rgba(255,255,255,0.85);">and counting...</span></span>
           <span class="trust-stat-label">Closed by<br>Honest Escrow</span>
         </div>
       </div>
     </div>
-
-    <!-- RIGHT: copy restored -->
-    <div class="trust-copy">
-      <p class="section-eyebrow" style="color:var(--accent)">Your Team</p>
-      <h2 class="trust-heading">A trusted network of professionals</h2>
-      <p class="trust-body">CSL Resale Advantage gives Center Street Lending borrowers access to preferred pricing and trusted real estate and escrow professionals who already know the CSL process, <strong>making the final stage of your project simpler, more coordinated, and more cost-effective.</strong></p>
-      
-      <div class="trust-logos-row" style="display: flex; gap: 40px; align-items: center; margin-top: 40px;">
-        <img src="https://cdn.prod.website-files.com/6875101e8b0848abe318fec3/6a515fc78379809575373d48_Company%20Logo.svg" alt="Center Street Lending" style="height: 64px; filter: brightness(0) invert(1);" />
-        <img src="https://cdn.prod.website-files.com/6875101e8b0848abe318fec3/6a515fc7b5dc722117959432_Innovate-1.svg" alt="Innovate Realty" style="height: 52px; filter: brightness(0) invert(1);" />
-        <img src="https://cdn.prod.website-files.com/6875101e8b0848abe318fec3/6a515fc78379809575373d62_HonestEscrow.svg" alt="Honest Escrow" style="height: 46px; filter: brightness(0) invert(1);" />
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
-
-
-

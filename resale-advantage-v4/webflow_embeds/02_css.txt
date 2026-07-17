@@ -1,29 +1,18 @@
 <style>
-
-  .tl-benefit-badge strong {
-    color: var(--accent);
-    font-weight: 700;
-  }
-  .co-name {
-    font-weight: inherit;
-  }
-  
-  .tl-step:first-child .tl-dot::before {
-    content: "";
     position: absolute;
     inset: -5px;
     border-radius: 50%;
     border: 2px solid var(--accent);
-    opacity: 1;
+    opacity: 0;
     pointer-events: none;
   }
   .tl.in .tl-step:first-child .tl-dot::before {
-    }
+    animation: tl-pulse 2.8s ease-out 1.5s infinite;
   }
   @keyframes tl-pulse {
     0% { transform: scale(.6); opacity: .7; }
-    70% { transform: scale(1.8); opacity: 1; }
-    100% { transform: scale(1.8); opacity: 1; }
+    70% { transform: scale(1.8); opacity: 0; }
+    100% { transform: scale(1.8); opacity: 0; }
   }
 
 
@@ -37,7 +26,7 @@
     border-top: 1px solid rgba(0,0,0,0.06);
   }
   .he-stars{text-align:center;margin-bottom:4px}
-  .he-stars span{display:inline-block;color:#F2BD63;font-size:var(--text-h4);margin:0 2px;opacity: 1;transform:scale(.4);transition:opacity .35s ease,transform .35s cubic-bezier(.34,1.56,.64,1)}
+  .he-stars span{display:inline-block;color:#F2BD63;font-size:var(--text-h4);margin:0 2px;opacity:0;transform:scale(.4);transition:opacity .35s ease,transform .35s cubic-bezier(.34,1.56,.64,1)}
   .he-stars span:nth-child(2){transition-delay:.08s}
   .he-stars span:nth-child(3){transition-delay:.16s}
   .he-stars span:nth-child(4){transition-delay:.24s}
@@ -59,11 +48,11 @@
   .card,.step{transition:transform .25s ease,box-shadow .25s ease}
   .card:hover,.step:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(44,56,66,.06)}
   .pending-inline{display:inline-block;font-size:var(--text-small);color:var(--pending);background:var(--pending-bg);border:1px dashed var(--pending-line);border-radius:6px;padding:8px 14px;margin-top:12px}
-  .reveal{opacity: 1;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
   .reveal.in{opacity:1;transform:none}
-  @keyframes fadeUp{from{opacity: 1;transform:translateY(16px)}to{opacity:1;transform:none}}
-  .hero .eyebrow,.hero h1,.hero p.lead,.hero p.optional,.hero a.btn,.hero a.btn-ghost,.hero .trustbar{}
-  .hero h1{}.hero p.lead{}.hero p.optional{}.hero a.btn{}.hero a.btn-ghost{}.hero .trustbar{}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+  .hero .eyebrow,.hero h1,.hero p.lead,.hero p.optional,.hero a.btn,.hero a.btn-ghost,.hero .trustbar{animation:fadeUp .7s ease both}
+  .hero h1{animation-delay:.08s}.hero p.lead{animation-delay:.16s}.hero p.optional{animation-delay:.24s}.hero a.btn{animation-delay:.32s}.hero a.btn-ghost{animation-delay:.36s}.hero .trustbar{animation-delay:.48s}
   @media(max-width:640px){
     .deck{height:270px}
     .slide img{max-width:66%}
@@ -71,7 +60,7 @@
     .slide.pos2{opacity:.18;transform:translateX(48px) scale(.87)}
     .car-btn{width:30px;height:30px}
   }
-  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.slide{transition:none}.hero .eyebrow,.hero h1,.hero p.lead,.hero p.optional,.hero a.btn,.hero a.btn-ghost,.hero .trustbar{}.benefit,.card,.step{transition:none}.tl-step,.tl-dot,.tl-line{transition:none;opacity:1;transform:none}.tl-runner,.tl-step:first-child .tl-dot::after{}display:none}.he-stars span{opacity:1;transform:none;transition:none}.hero{}.hero::before,.hero::after,.hero-glow3{}.hero h1 .hl{}}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.slide{transition:none}.hero .eyebrow,.hero h1,.hero p.lead,.hero p.optional,.hero a.btn,.hero a.btn-ghost,.hero .trustbar{animation:none}.benefit,.card,.step{transition:none}.tl-step,.tl-dot,.tl-line{transition:none;opacity:1;transform:none}.tl-runner,.tl-step:first-child .tl-dot::after{animation:none;display:none}.he-stars span{opacity:1;transform:none;transition:none}.hero{animation:none}.hero::before,.hero::after,.hero-glow3{animation:none}.hero h1 .hl{animation:none}}
 
   /* honest escrow brand moment (Refactored to match user's custom design) */
   .honest {
@@ -250,4 +239,9 @@
       max-width: 480px;
     }
   }
+
+  /* internal review strip — DELETE BEFORE PUBLISH */
+  #internal-review-strip{background:var(--pending-bg);border-bottom:2px dashed var(--pending-line);padding:12px 24px;font-size:var(--text-small);color:var(--pending)}
+  #internal-review-strip strong{text-transform:uppercase;letter-spacing:.05em}
+
 </style>

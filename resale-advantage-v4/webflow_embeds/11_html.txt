@@ -1,36 +1,5 @@
-<section style="padding: 80px 0;">
-  <div class="wrap">
-    <div style="text-align: center; margin-bottom: 48px;">
-      <p class="section-eyebrow">FAQ</p>
-      <h2 class="section-title" style="margin-bottom: 0;">Common questions</h2>
-    </div>
-    <div class="faq-wrap">
-      <details>
-        <summary>Am I required to use Innovate Realty or Honest Escrow?</summary>
-        <div class="a">No. Use of any introduced provider is completely optional. You are free to choose your own real estate broker, escrow company, title company, lender, and other service providers.</div>
-      </details>
-      <details>
-        <summary>Does opting in affect my CSL loan?</summary>
-        <div class="a">No. Use of any introduced provider is not required as a condition of obtaining, maintaining, or paying off a CSL loan. Requesting information has no effect on your loan terms or servicing.</div>
-      </details>
-      <details>
-        <summary>What does it cost to request information?</summary>
-        <div class="a">Nothing. Requesting information is free. If you later choose to work with any provider, applicable fees are subject to eligibility, transaction details, party agreement, written disclosure, and escrow instructions.</div>
-      </details>
-      <details>
-        <summary>What happens after I submit the form?</summary>
-        <div class="a">A team member reaches out within 24 hours with the information you selected. If you chose &ldquo;follow up later,&rdquo; we'll simply check back closer to your timeline.</div>
-      </details>
-      <details>
-        <summary>Who is eligible?</summary>
-        <!-- PENDING #3: replace with the approved eligibility definition before launch -->
-        <div class="a"><span class="pending-chip">Pending</span> Eligibility definition to be confirmed by leadership before launch (active borrowers vs. past investors; geographic scope).</div>
-      </details>
-    </div>
-  </div>
-</section>
-
 <!-- OPT-IN FORM -->
+
 <section id="optin">
   <div class="wrap">
     <div style="text-align: center; display: flex; flex-direction: column; align-items: center; margin-bottom: 48px;">
@@ -90,12 +59,14 @@
       </fieldset>
 
       <!-- PENDING #5: consent language needs legal review before launch -->
+
       <label class="consent">
         <input type="checkbox" name="consent" id="consent" required>
         <span>I agree that Center Street Lending and its affiliates may contact me about the CSL Resale Advantage program by phone, email, or text at the information provided. Consent is not a condition of any loan. <em>(Pending legal review.)</em></span>
       </label>
 
       <!-- honeypot anti-spam field -->
+
       <input class="hp" type="text" name="company_website" tabindex="-1" autocomplete="off" aria-hidden="true">
 
       <button type="submit" class="btn" id="submit-btn">Request information</button>
@@ -113,6 +84,7 @@
 
 
 <!-- DISCLOSURE — LOCKED COPY from readiness doc. Do not edit ad hoc. -->
+
 <section class="disclosure">
   <div class="wrap">
     <h2>Important disclosure</h2>
@@ -120,3 +92,50 @@
   </div>
 </section>
 
+<footer>
+  <div class="wrap">
+
+    <div class="innovate-footer" style="text-align: left; margin-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 40px;">
+      <h3 style="color: #fff; font-size: 1.25rem; margin-bottom: 24px; font-weight: 700;">Innovate Realty</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; margin-bottom: 24px;">
+        <div>
+          <h4 style="color: rgba(255,255,255,0.6); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px;">Contact</h4>
+          <p style="color: rgba(255,255,255,0.8); font-size: 0.95rem; line-height: 1.6; margin: 0;">(949) 617-2875<br>info@innovaterealty.com</p>
+        </div>
+        <div>
+          <h4 style="color: rgba(255,255,255,0.6); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px;">Address</h4>
+          <p style="color: rgba(255,255,255,0.8); font-size: 0.95rem; line-height: 1.6; margin: 0;">18201 Von Karman Ave, Ste 480<br>Irvine CA 92612</p>
+        </div>
+      </div>
+      <div style="color: rgba(255,255,255,0.6); font-size: 0.85rem; line-height: 1.6; margin-bottom: 24px;">
+        E. Dora Austin &nbsp;|&nbsp; CA DRE# 01227878<br>
+        Innovate Realty, Inc. &nbsp;|&nbsp; CA DRE# 02215206
+      </div>
+      <p style="color: rgba(255,255,255,0.5); font-size: 0.75rem; line-height: 1.5; margin: 0; max-width: 900px;">
+        Bay East &copy;2026. CCAR &copy;2026. bridgeMLS &copy;2026. Information Deemed Reliable But Not Guaranteed. This information is being provided by the Bay East MLS, or CCAR MLS, or bridgeMLS. The listings presented here may or may not be listed by the Broker/Agent operating this website. This information is intended for the personal use of consumers and may not be used for any purpose other than to identify prospective properties consumers may be interested in purchasing. Data last updated March 13, 2026.
+      </p>
+    </div>
+
+    <div class="honest-escrow-footer" style="text-align: left; margin-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 40px;">
+      <h3 style="color: #fff; font-size: 1.25rem; margin-bottom: 16px; font-weight: 700;">Honest Escrow</h3>
+      <div style="color: rgba(255,255,255,0.6); font-size: 0.85rem; line-height: 1.6;">
+        &copy; 2026 Honest Escrow. All rights reserved.<br>
+        DFPI License Nos. 96DBO-188503 and 96DBO-216287. Irvine and Westlake Village, California.
+      </div>
+    </div>
+    
+    <h3 style="color: #fff; font-size: 1.25rem; margin-bottom: 16px; font-weight: 700;">Center Street Lending</h3>
+    <div class="licenses">
+      <div>CFL License No. 60DBO-57755</div>
+      <div>AZ MBL# 0930263</div>
+      <div>OR Lic #ML-5838</div>
+      <div>Florida Mortgage Lender<br>Servicer #MLD1180</div>
+      <div>CA DRE - License #01883377</div>
+      <div>NMLS 905781</div>
+    </div>
+    
+    <div class="divider"></div>
+    
+    <p style="margin:0;">&copy; 2025 Center Street Lending. All rights reserved.</p>
+  </div>
+</footer>

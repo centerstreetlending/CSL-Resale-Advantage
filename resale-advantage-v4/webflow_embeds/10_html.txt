@@ -1,66 +1,15 @@
-<section id="compare">
-  <div class="wrap">
-    <p class="section-eyebrow">Side by Side</p>
-    <h2 class="section-title">How the program compares</h2>
-    <p class="section-sub">Here's how a coordinated exit stacks up against going it alone.</p>
-    <div class="cmp-wrap">
-      <table class="cmp">
-        <thead>
-          <tr>
-            <th class="left-header">&nbsp;</th>
-            <th class="csl-header">CSL Resale Advantage</th>
-            <th class="alone-header">Going It Alone</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th>Listing commission</th>
-            <td class="csl">Pre-negotiated 1% listing commission through Innovate Realty</td>
-            <td class="alone">Standard 2.5–3% listing commission</td>
-          </tr>
-          <tr>
-            <th>Escrow familiarity &amp; fees</th>
-            <td class="csl">Honest Escrow knows CSL payoffs — seller escrow as low as $500</td>
-            <td class="alone">May not know CSL payoffs — standard escrow fees</td>
-          </tr>
-          <tr>
-            <th>Marketing</th>
-            <td class="csl">InnoLaunch marketing (incl. pre-completion) — with an Innovate listing agent</td>
-            <td class="alone">Standard MLS listing, after completion</td>
-          </tr>
-          <tr>
-            <th>Coordination</th>
-            <td class="csl">One coordinated process across borrower, lender, agent &amp; escrow</td>
-            <td class="alone">You manage agent, escrow &amp; lender separately</td>
-          </tr>
-          <tr>
-            <th>When you can start</th>
-            <td class="csl">Plan earlier — 60–120 days out</td>
-            <td class="alone">After the project is fully complete</td>
-          </tr>
-          <tr>
-            <th>Your obligation</th>
-            <td class="csl">Fully optional — always your choice of providers</td>
-            <td class="alone">—</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
-
-
-
 <!-- HONEST ESCROW BRAND MOMENT — PENDING #10: confirm honestescrow.com live + Honest approves copy -->
+
 <section class="honest">
   <div class="wrap">
     <div class="honest-brand-inner">
       
       <!-- Left side: copy and CTA -->
+
       <div class="honest-brand-left">
         <p class="section-eyebrow">Your escrow option</p>
         <h2 class="he-brand-heading">Meet Honest Escrow.</h2>
-        <img src="https://cdn.prod.website-files.com/6875101e8b0848abe318fec3/6a515fc78379809575373d62_HonestEscrow.svg" alt="Honest Escrow" class="he-brand-logo" />
+        <img src="HonestEscrow.svg" alt="Honest Escrow" class="he-brand-logo" />
         <p class="he-brand-text">An independent Southern California escrow team that keeps the closing process clear, calm, and human — and is familiar with CSL payoff and closing requirements.</p>
         
         <div class="he-brand-cta-group">
@@ -72,9 +21,10 @@
       </div>
 
       <!-- Right side: image and floating checklist badges -->
+
       <div class="honest-brand-right">
         <div class="he-img-wrap">
-          <img src="https://cdn.prod.website-files.com/6875101e8b0848abe318fec3/6a515bd6ab320d0c10421561_Rectangle%2022.png" alt="Modern kitchen interior showcasing home styling" />
+          <img src="Rectangle 22.png" alt="Modern kitchen interior showcasing home styling" />
           
           <div class="he-badges-list">
             
@@ -122,6 +72,7 @@
 </section>
 
 <!-- MARKETING EXPERTISE -->
+
 <section id="innolaunch" class="soft" style="padding: 80px 0;">
   <style>
     @media (max-width: 900px) {
@@ -133,31 +84,34 @@
   <div class="wrap" style="display: flex; gap: 64px; align-items: center; flex-wrap: wrap;">
     
     <!-- Left: Image Grid -->
+
     <div style="flex: 1; min-width: 320px;">
       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
-        <img src="https://cdn.prod.website-files.com/6875101e8b0848abe318fec3/6a515bd66aee0d0a81fa8ee8_innolaunch-campaign-app.jpg" alt="Campaign App" style="width: 100%; aspect-ratio: 4/3; object-fit: cover;" />
-        <img src="https://cdn.prod.website-files.com/6875101e8b0848abe318fec3/6a515bd6c3758e22331cfa5a_innolaunch-brochure.jpg" alt="Brochure" style="width: 100%; aspect-ratio: 4/3; object-fit: cover;" />
-        <img src="https://cdn.prod.website-files.com/6875101e8b0848abe318fec3/6a515bd6440e3e36c2027a6c_Frame%20129.png" alt="Living Room" style="width: 100%; aspect-ratio: 4/3; object-fit: cover;" />
-        <img src="https://cdn.prod.website-files.com/6875101e8b0848abe318fec3/6a515bd611a6c9167e8f3406_innolaunch-postcard.jpg" alt="Postcard" style="width: 100%; aspect-ratio: 4/3; object-fit: cover;" />
-        <img src="https://cdn.prod.website-files.com/6875101e8b0848abe318fec3/6a515bd6ab320d0c10421547_innolaunch-ipad-debut.jpg" alt="iPad Debut" style="width: 100%; aspect-ratio: 4/3; object-fit: cover;" />
-        <img src="https://cdn.prod.website-files.com/6875101e8b0848abe318fec3/6a515bd6df26519519ab2c10_innolaunch-flyer.jpg" alt="Flyer Stand" style="width: 100%; aspect-ratio: 4/3; object-fit: cover;" />
+        <img src="innolaunch-campaign-app.jpg" alt="Campaign App" style="width: 100%; aspect-ratio: 4/3; object-fit: cover;" />
+        <img src="innolaunch-brochure.jpg" alt="Brochure" style="width: 100%; aspect-ratio: 4/3; object-fit: cover;" />
+        <img src="Frame 129.png" alt="Living Room" style="width: 100%; aspect-ratio: 4/3; object-fit: cover;" />
+        <img src="innolaunch-postcard.jpg" alt="Postcard" style="width: 100%; aspect-ratio: 4/3; object-fit: cover;" />
+        <img src="innolaunch-ipad-debut.jpg" alt="iPad Debut" style="width: 100%; aspect-ratio: 4/3; object-fit: cover;" />
+        <img src="innolaunch-flyer.jpg" alt="Flyer Stand" style="width: 100%; aspect-ratio: 4/3; object-fit: cover;" />
       </div>
     </div>
 
     <!-- Right: Copy -->
+
     <div style="flex: 1; min-width: 320px; max-width: 520px; padding-top: 16px;">
       <p class="section-eyebrow" style="color: var(--accent); text-align: left; margin-bottom: 16px; letter-spacing: 0.1em; text-transform: uppercase;">Marketing and sales expertise</p>
       <h2 style="font-size: 36px; font-weight: 700; color: var(--navy-darkest); margin-bottom: 24px; font-family: 'Roboto', sans-serif; letter-spacing: -0.02em;">Meet Innovate Realty.</h2>
-      <img src="https://cdn.prod.website-files.com/6875101e8b0848abe318fec3/6a515fc7b5dc722117959432_Innovate-1.svg" alt="Innovate Realty" style="height: 64px; margin-bottom: 24px; display: block;" />
+      <img src="Innovate.svg" alt="Innovate Realty" style="height: 64px; margin-bottom: 24px; display: block;" />
       
-      <p style="font-size: 16px; line-height: 1.6; color: var(--navy-darkest); margin-bottom: 24px;">These sample marketing materials prepared for an Innovate Realty listing demonstrate the kind of launch support included when you list with an Innovate Realty agent.</p>
+      <p style="font-size: 16px; line-height: 1.6; color: var(--navy-darkest); margin-bottom: 16px;">These sample marketing materials prepared for an Innovate Realty listing demonstrate the kind of launch support included when you list with an Innovate Realty agent.</p>
       
-      <ul style="list-style: disc; padding-left: 20px; margin: 0; color: var(--navy-darkest);">
-        <li style="margin-bottom: 12px; font-size: 16px; line-height: 1.6;"><strong>20,000 buyer views in 21 days</strong> &mdash; a coordinated launch built to get eyes on your property fast</li>
-        <li style="margin-bottom: 12px; font-size: 16px; line-height: 1.6;"><strong>Email marketing &amp; targeted digital ads</strong></li>
-        <li style="margin-bottom: 12px; font-size: 16px; line-height: 1.6;"><strong>A dedicated property website</strong></li>
-        <li style="margin-bottom: 12px; font-size: 16px; line-height: 1.6;"><strong>Printed brochures, flyers &amp; postcards</strong></li>
-        <li style="margin-bottom: 12px; font-size: 16px; line-height: 1.6;"><strong>Get a head start with marketing before construction is complete</strong></li>
+      <p style="font-size: 16px; line-height: 1.6; color: var(--navy-darkest); margin-bottom: 16px;"><strong>InnoLaunch, on average, produces 21,000 views resulting in sales that close 4 days quicker.</strong></p>
+      
+      <ul style="list-style: disc; padding-left: 40px; margin: 0; color: var(--navy-darkest);">
+        <li style="margin-bottom: 12px; font-size: 16px; line-height: 1.6;">Email marketing &amp; targeted digital ads</li>
+        <li style="margin-bottom: 12px; font-size: 16px; line-height: 1.6;">A dedicated property website</li>
+        <li style="margin-bottom: 12px; font-size: 16px; line-height: 1.6;">Printed brochures, flyers &amp; postcards</li>
+        <li style="margin-bottom: 12px; font-size: 16px; line-height: 1.6;">Early marketing launch before construction is complete</li>
       </ul>
     </div>
 
@@ -165,3 +119,36 @@
 </section>
 
 <!-- FAQ -->
+
+<section style="padding: 80px 0;">
+  <div class="wrap">
+    <div style="text-align: center; margin-bottom: 48px;">
+      <p class="section-eyebrow">FAQ</p>
+      <h2 class="section-title" style="margin-bottom: 0;">Common questions</h2>
+    </div>
+    <div class="faq-wrap">
+      <details>
+        <summary>Am I required to use Innovate Realty or Honest Escrow?</summary>
+        <div class="a">No. Use of any introduced provider is completely optional. You are free to choose your own real estate broker, escrow company, title company, lender, and other service providers.</div>
+      </details>
+      <details>
+        <summary>Does opting in affect my CSL loan?</summary>
+        <div class="a">No. Use of any introduced provider is not required as a condition of obtaining, maintaining, or paying off a CSL loan. Requesting information has no effect on your loan terms or servicing.</div>
+      </details>
+      <details>
+        <summary>What does it cost to request information?</summary>
+        <div class="a">Nothing. Requesting information is free. If you later choose to work with any provider, applicable fees are subject to eligibility, transaction details, party agreement, written disclosure, and escrow instructions.</div>
+      </details>
+      <details>
+        <summary>What happens after I submit the form?</summary>
+        <div class="a">A team member reaches out within 24 hours with the information you selected. If you chose &ldquo;follow up later,&rdquo; we'll simply check back closer to your timeline.</div>
+      </details>
+      <details>
+        <summary>Who is eligible?</summary>
+        <!-- PENDING #3: replace with the approved eligibility definition before launch -->
+
+        <div class="a"><span class="pending-chip">Pending</span> Eligibility definition to be confirmed by leadership before launch (active borrowers vs. past investors; geographic scope).</div>
+      </details>
+    </div>
+  </div>
+</section>
