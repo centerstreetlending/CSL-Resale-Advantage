@@ -197,6 +197,8 @@
     .hero h1 { font-family: 'Bebas Neue', 'Roboto', sans-serif; font-size: 52px; line-height: 52px; }
 
   @media(max-width:640px){
+    .hide-on-mobile { display: none !important; }
+
     header a.wordmark img { height: 26px !important; }
 
     .program-title-sub { font-size: 0.65rem; }

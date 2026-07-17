@@ -1,4 +1,4 @@
-<div class="offer-bar"><a href="#optin"><span style="display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;"><span class="offer-pulse"></span><b>EXCLUSIVE OFFER</b></span> — PRE-NEGOTIATED FOR CSL BORROWERS</a></div><header id="sticky-header">
+<div class="offer-bar"><a href="#optin"><span style="display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;"><span class="offer-pulse"></span><b>EXCLUSIVE OFFER</b></span> <span class="hide-on-mobile">—</span> PRE-NEGOTIATED FOR CSL BORROWERS</a></div><header id="sticky-header">
 <div class="wrap">
 <div class="nav-left">
 <a class="wordmark" href="https://www.centerstreetlending.com/"><img alt="Center Street Lending" src="logo1.svg" style="height: 36px; width: auto; display: block;"/></a>
