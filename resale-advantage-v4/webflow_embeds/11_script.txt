@@ -213,4 +213,16 @@
     }
   });
 })();
+</script><script>
+(function(){
+  var el=document.getElementById('deal-ticker'); if(!el) return;
+  var target=parseInt(el.getAttribute('data-target'),10)||0;
+  if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches){ el.textContent=target + '+'; return; }
+  var dur=4000, raf=null;
+  function run(){ if(raf) cancelAnimationFrame(raf); var start=null; (function step(ts){ if(!start)start=ts; var p=Math.min((ts-start)/dur,1); var e=1-Math.pow(1-p,3); el.textContent=Math.round(target*e) + '+'; if(p<1) raf=requestAnimationFrame(step); })(performance.now()); }
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){ entries.forEach(function(en){ if(en.isIntersecting){ run(); } else { if(raf) cancelAnimationFrame(raf); el.textContent='0+'; } }); }, {threshold:0.4});
+    io.observe(el);
+  } else { run(); }
+})();
 </script>

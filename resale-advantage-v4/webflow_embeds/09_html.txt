@@ -1,368 +1,120 @@
-<!-- COMPARISON TABLE - structure inspired by the alt renderings, rebuilt in CSL branding + compliance-safe wording -->
-
+<section class="honest">
+<div class="wrap">
+<div class="honest-brand-inner">
+<!-- Left side: copy and CTA -->
+<div class="honest-brand-left">
+<p class="section-eyebrow">Your escrow option</p>
+<h2 class="he-brand-heading">Meet Honest Escrow.</h2>
+<img alt="Honest Escrow" class="he-brand-logo" src="HonestEscrow.svg"/>
+<p class="he-brand-text">An independent Southern California escrow team that keeps the closing process clear, calm, and human — and is familiar with CSL payoff and closing requirements.</p>
+<div class="he-brand-cta-group">
+<a class="he-brand-btn" href="#optin" id="he-escrow-cta">
+            Request escrow info
+          </a>
+</div>
+<p class="he-fineprint" style="margin-top: 20px;">Clicking “Request escrow info” pre-fills the form below — no commitment, just information.</p>
+</div>
+<!-- Right side: image and floating checklist badges -->
+<div class="honest-brand-right">
+<div class="he-img-wrap">
+<img alt="Modern kitchen interior showcasing home styling" src="Rectangle 22.png"/>
+<div class="he-badges-list">
+<div class="he-badge-item">
+<svg fill="none" height="20" viewbox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+<circle cx="10" cy="10" r="9.25" stroke="#5D6871" stroke-width="1.5"></circle>
+<path d="M6 10L9 13L14 7" stroke="#5D6871" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+</svg>
+<div class="he-badge-text">Escrow officers with more than 15 years of experience</div>
+</div>
+<div class="he-badge-item">
+<svg fill="none" height="20" viewbox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+<circle cx="10" cy="10" r="9.25" stroke="#5D6871" stroke-width="1.5"></circle>
+<path d="M6 10L9 13L14 7" stroke="#5D6871" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+</svg>
+<div class="he-badge-text">Clear communication at every milestone, from opening to closing</div>
+</div>
+<div class="he-badge-item">
+<svg fill="none" height="20" viewbox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+<circle cx="10" cy="10" r="9.25" stroke="#5D6871" stroke-width="1.5"></circle>
+<path d="M6 10L9 13L14 7" stroke="#5D6871" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+</svg>
+<div class="he-badge-text">Familiar with CSL payoff demands and closing coordination</div>
+</div>
+<div class="he-badge-item">
+<svg fill="none" height="20" viewbox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+<circle cx="10" cy="10" r="9.25" stroke="#5D6871" stroke-width="1.5"></circle>
+<path d="M6 10L9 13L14 7" stroke="#5D6871" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+</svg>
+<div class="he-badge-text">Optional — you are always free to choose your own escrow company</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section> MARKETING EXPERTISE <section class="soft" id="innolaunch" style="padding: 80px 0;">
 <style>
-  @font-face {
-    font-family: 'Arteria Std Compress';
-    src: local('Arteria Std Compress');
-    font-display: swap;
-  }
-
-
-  #compare {
-    text-align: center;
-  }
-  #compare .section-sub {
-    margin-left: auto;
-    margin-right: auto;
-  }
-  #compare .cmp-wrap {
-    margin-top: 40px;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    border: none;
-    border-radius: 0;
-  }
-  #compare table.cmp {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: var(--text-body);
-    min-width: 768px;
-    border-bottom: 1.5px solid var(--line);
-  }
-  #compare .cmp thead th {
-    font-size: 1.3rem; /* Enlarged header labels */
-    font-weight: 700;
-    padding: 24px;
-    background: transparent;
-    border-top: 1.5px solid var(--line);
-    border-bottom: 1.5px solid var(--line);
-    text-align: center;
-    color: var(--navy);
-    font-family: 'Roboto', sans-serif;
-  }
-  #compare .cmp thead th.left-header {
-    width: 25%;
-    border-top: none;
-    border-bottom: 1.5px solid var(--line);
-  }
-  #compare .cmp thead th.csl-header {
-    background: rgba(70, 131, 179, 0.12); /* Light CSL brand blue tint */
-    width: 43%;
-    border-top: none;
-    color: #4683B3; /* CSL brand accent blue */
-  }
-  #compare .cmp thead th.alone-header {
-    width: 32%;
-    color: var(--navy);
-  }
-  #compare .cmp tbody th {
-    font-weight: 400; /* Regular label style from screenshot */
-    color: #5D6871; /* Muted slate */
-    font-size: 0.92rem;
-    padding: 20px 24px;
-    border-bottom: 1px solid var(--line);
-    text-align: left;
-    vertical-align: middle;
-    background: transparent;
-    width: 25%;
-    font-family: 'Roboto', sans-serif;
-  }
-  #compare .cmp tbody td {
-    padding: 20px 24px;
-    border-bottom: 1px solid var(--line);
-    vertical-align: middle;
-    font-family: 'Roboto', sans-serif;
-    text-align: center; /* Center comparison text */
-    line-height: 1.5;
-  }
-  
-  /* Highlighted CSL column: soft blue background, bold dark text */
-  #compare .cmp td.csl {
-    background: rgba(70, 131, 179, 0.12); /* Light brand blue tint */
-    color: var(--navy);
-    font-weight: 700; /* Bold text in highlighted column */
-  }
-  
-  /* Alone column: regular dark grey text, centered */
-  #compare .cmp td.alone {
-    color: #5D6871;
-    font-weight: 400;
-  }
-  
-  @media(max-width:768px){
-    #compare .cmp-wrap {
-      overflow-x: visible;
-      border: none;
-      border-radius: 0;
+    @media (max-width: 900px) {
+      #innolaunch .wrap {
+        flex-direction: column-reverse !important;
+      }
     }
-    #compare table.cmp {
-      min-width: 0;
-      border-bottom: none;
-    }
-    #compare .cmp thead {
-      display: none;
-    }
-    #compare .cmp tbody tr {
-      display: block;
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      margin-bottom: 16px;
-      background: #fff;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
-    }
-    #compare .cmp tbody th {
-      display: block;
-      width: auto;
-      background: var(--navy);
-      color: #fff;
-      font-size: var(--text-body);
-      padding: 12px 18px;
-      border: none;
-    }
-    #compare .cmp tbody td {
-      display: block;
-      width: auto;
-      border: none;
-      border-top: 1px solid var(--line);
-      padding: 14px 18px;
-      font-size: 0.92rem;
-      text-align: left; /* Reset center align on mobile cards */
-    }
-    #compare .cmp td.csl {
-      background: rgba(70, 131, 179, 0.08);
-      color: var(--navy);
-      border-top: 1px solid var(--line);
-    }
-    #compare .cmp td.alone::before {
-      content: "Going It Alone";
-      display: block;
-      font-size: 0.68rem;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 6px;
-      text-align: left;
-    }
-    #compare .cmp td.csl::before {
-      content: "CSL Resale Advantage";
-      display: block;
-      font-size: 0.68rem;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      color: #4683B3;
-      margin-bottom: 6px;
-      text-align: left;
-    }
-  }
-
-  /* ===== marketing section ===== */
-  .marketing-section {
-    background: var(--Color-Neutral-Lightest, #EFF6FE);
-    padding: 80px 0;
-  }
-  .marketing-inner {
-    display: grid;
-    grid-template-columns: 1fr 1.15fr; /* Flipped from honest section's 1.15fr 1fr */
-    gap: 56px;
-    align-items: center;
-    width: 100%;
-  }
-  .marketing-left {
-    display: flex;
-    justify-content: flex-start;
-    width: 100%;
-  }
-  .m-img-wrap {
-    position: relative;
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-  }
-  .m-img-wrap img {
-    width: 82%; /* Matches honest section's image width */
-    height: auto;
-    aspect-ratio: 456 / 606;
-    object-fit: cover;
-    display: block;
-    border-radius: 6px;
-    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
-  }
-  .marketing-cards {
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    width: 64%; /* Matches honest section's badge width */
-    z-index: 5;
-  }
-  .m-card {
-    background: #fff;
-    padding: 16px 20px;
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.06);
-    border-radius: 6px;
-    box-sizing: border-box;
-    width: 100%;
-  }
-  .m-card-icon {
-    width: 20px;
-    height: 20px;
-    color: var(--navy-darkest, #2C3842);
-    flex-shrink: 0;
-  }
-  .m-card-text {
-    color: var(--navy, #2C3842);
-    font-size: var(--text-small);
-    font-weight: 500;
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.4;
-    margin: 0;
-  }
-  .m-card-text strong {
-    font-weight: 700;
-  }
-  .marketing-right {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .m-eyebrow {
-    color: var(--accent, #4683B3);
-    font-size: var(--text-micro);
-    font-weight: 700;
-    letter-spacing: 2.4px;
-    text-transform: uppercase;
-    margin-bottom: 16px;
-    display: block;
-    font-family: 'Roboto', sans-serif;
-  }
-  .m-logo {
-    height: 62px; /* Matches honest section's logo height */
-    width: auto;
-    display: block;
-    margin-bottom: 24px;
-  }
-  .m-desc {
-    font-size: var(--text-lead);
-    line-height: 1.55;
-    color: var(--navy);
-    margin: 0 0 32px 0;
-    font-family: 'Roboto', sans-serif;
-  }
-  .m-cta-group {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    flex-wrap: wrap;
-  }
-  .m-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: var(--accent, #4683B3);
-    color: #fff;
-    font-weight: 700;
-    padding: 14px 28px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-size: var(--text-body);
-    box-shadow: 0 4px 12px rgba(70, 131, 179, 0.25);
-    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
-  }
-  .m-btn:hover {
-    background-color: var(--accent-dark);
-    transform: translateY(-1px);
-    box-shadow: 0 6px 16px rgba(70, 131, 179, 0.35);
-  }
-  .m-link {
-    font-size: var(--text-body);
-    color: var(--navy);
-    font-weight: 700;
-    text-decoration: underline;
-    font-family: 'Roboto', sans-serif;
-  }
-  .m-link:hover {
-    color: var(--navy-darkest, #2C3842);
-  }
-  @media(max-width: 900px) {
-    .marketing-inner {
-      grid-template-columns: 1fr;
-      gap: 40px;
-    }
-    .m-img-wrap {
-      flex-direction: column;
-      align-items: center;
-      gap: 24px;
-    }
-    .m-img-wrap img {
-      width: 100%;
-      max-width: 480px;
-    }
-    .marketing-cards {
-      position: relative;
-      right: auto;
-      top: auto;
-      transform: none;
-      width: 100%;
-      max-width: 480px;
-    }
-  }
-</style>
-<section id="compare">
-  <div class="wrap">
-    <p class="section-eyebrow">Side by Side</p>
-    <h2 class="section-title">How the program compares</h2>
-    <p class="section-sub">Here's how a coordinated exit stacks up against going it alone.</p>
-    <div class="cmp-wrap">
-      <table class="cmp">
-        <thead>
-          <tr>
-            <th class="left-header">&nbsp;</th>
-            <th class="csl-header">CSL Resale Advantage</th>
-            <th class="alone-header">Going It Alone</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th>Listing commission</th>
-            <td class="csl">Pre-negotiated 1% listing commission through Innovate Realty</td>
-            <td class="alone">Standard 2.5–3% listing commission</td>
-          </tr>
-          <tr>
-            <th>Escrow familiarity &amp; fees</th>
-            <td class="csl">Honest Escrow knows CSL payoffs — seller escrow as low as $500</td>
-            <td class="alone">May not know CSL payoffs — standard escrow fees</td>
-          </tr>
-          <tr>
-            <th>Marketing</th>
-            <td class="csl">InnoLaunch marketing (incl. pre-completion) — with an Innovate listing agent</td>
-            <td class="alone">Standard MLS listing, after completion</td>
-          </tr>
-          <tr>
-            <th>Coordination</th>
-            <td class="csl">One coordinated process across borrower, lender, agent &amp; escrow</td>
-            <td class="alone">You manage agent, escrow &amp; lender separately</td>
-          </tr>
-          <tr>
-            <th>When you can start</th>
-            <td class="csl">Plan earlier — 60–120 days out</td>
-            <td class="alone">After the project is fully complete</td>
-          </tr>
-          <tr>
-            <th>Your obligation</th>
-            <td class="csl">Fully optional — always your choice of providers</td>
-            <td class="alone">—</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
+  </style>
+<div class="wrap" style="display: flex; gap: 64px; align-items: center; flex-wrap: wrap;">
+<!-- Left: Image Grid -->
+<div style="flex: 1; min-width: 320px;">
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+<img alt="Campaign App" src="innolaunch-campaign-app.jpg" style="width: 100%; aspect-ratio: 4/3; object-fit: cover;"/>
+<img alt="Brochure" src="innolaunch-brochure.jpg" style="width: 100%; aspect-ratio: 4/3; object-fit: cover;"/>
+<img alt="Living Room" src="Frame 129.png" style="width: 100%; aspect-ratio: 4/3; object-fit: cover;"/>
+<img alt="Postcard" src="innolaunch-postcard.jpg" style="width: 100%; aspect-ratio: 4/3; object-fit: cover;"/>
+<img alt="iPad Debut" src="innolaunch-ipad-debut.jpg" style="width: 100%; aspect-ratio: 4/3; object-fit: cover;"/>
+<img alt="Flyer Stand" src="innolaunch-flyer.jpg" style="width: 100%; aspect-ratio: 4/3; object-fit: cover;"/>
+</div>
+</div>
+<!-- Right: Copy -->
+<div style="flex: 1; min-width: 320px; max-width: 520px; padding-top: 16px;">
+<p class="section-eyebrow" style="color: var(--accent); text-align: left; margin-bottom: 16px; letter-spacing: 0.1em; text-transform: uppercase;">Marketing and sales expertise</p>
+<h2 style="font-size: 36px; font-weight: 700; color: var(--navy-darkest); margin-bottom: 24px; font-family: 'Roboto', sans-serif; letter-spacing: -0.02em;">Meet Innovate Realty.</h2>
+<img alt="Innovate Realty" src="Innovate.svg" style="height: 64px; margin-bottom: 24px; display: block;"/>
+<p style="font-size: 16px; line-height: 1.6; color: var(--navy-darkest); margin-bottom: 16px;">These sample marketing materials prepared for an Innovate Realty listing demonstrate the kind of launch support included when you list with an Innovate Realty agent.</p>
+<p style="font-size: 16px; line-height: 1.6; color: var(--navy-darkest); margin-bottom: 16px;"><strong>InnoLaunch, on average, produces 21,000 views resulting in sales that close 4 days quicker.</strong></p>
+<ul style="list-style: disc; padding-left: 40px; margin: 0; color: var(--navy-darkest);">
+<li style="margin-bottom: 12px; font-size: 16px; line-height: 1.6;">Email marketing &amp; targeted digital ads</li>
+<li style="margin-bottom: 12px; font-size: 16px; line-height: 1.6;">A dedicated property website</li>
+<li style="margin-bottom: 12px; font-size: 16px; line-height: 1.6;">Printed brochures, flyers &amp; postcards</li>
+<li style="margin-bottom: 12px; font-size: 16px; line-height: 1.6;">Early marketing launch before construction is complete</li>
+</ul>
+</div>
+</div>
+</section> FAQ <section style="padding: 80px 0;">
+<div class="wrap">
+<div style="text-align: center; margin-bottom: 48px;">
+<p class="section-eyebrow">FAQ</p>
+<h2 class="section-title" style="margin-bottom: 0;">Common questions</h2>
+</div>
+<div class="faq-wrap">
+<details>
+<summary>Am I required to use Innovate Realty or Honest Escrow?</summary>
+<div class="a">No. Use of any introduced provider is completely optional. You are free to choose your own real estate broker, escrow company, title company, lender, and other service providers.</div>
+</details>
+<details>
+<summary>Does opting in affect my CSL loan?</summary>
+<div class="a">No. Use of any introduced provider is not required as a condition of obtaining, maintaining, or paying off a CSL loan. Requesting information has no effect on your loan terms or servicing.</div>
+</details>
+<details>
+<summary>What does it cost to request information?</summary>
+<div class="a">Nothing. Requesting information is free. If you later choose to work with any provider, applicable fees are subject to eligibility, transaction details, party agreement, written disclosure, and escrow instructions.</div>
+</details>
+<details>
+<summary>What happens after I submit the form?</summary>
+<div class="a">A team member reaches out within 24 hours with the information you selected. If you chose “follow up later,” we'll simply check back closer to your timeline.</div>
+</details>
+<details>
+<summary>Who is eligible?</summary>
+<!-- PENDING #3: replace with the approved eligibility definition before launch -->
+<div class="a"><span class="pending-chip">Pending</span> Eligibility definition to be confirmed by leadership before launch (active borrowers vs. past investors; geographic scope).</div>
+</details>
+</div>
+</div>
+</section> OPT-IN FORM 

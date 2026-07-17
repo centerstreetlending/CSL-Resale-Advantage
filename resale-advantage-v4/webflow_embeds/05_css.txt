@@ -1,59 +1,19 @@
 <style>
-  .who-item h3 { font-size: var(--text-h3); font-weight: 700; color: var(--navy-darkest, #2C3842); line-height: 27.6px; margin: 0; }
-  .who-item p { font-size: var(--text-body); font-weight: 400; color: #5D6871; line-height: 25px; margin: 0; }
 
-  .who-right { width: 544px; flex-shrink: 0; }
-  .who-right img { width: 100%; height: 460px; object-fit: cover; border-radius: 16px; display: block; }
-  
-  @media(max-width: 1100px) {
-    .who-its-for-v2 { padding: 60px 24px; }
-    .who-its-for-wrap { flex-direction: column; }
-    .who-right { width: 100%; max-width: 544px; }
-  }
-  @media(max-width: 640px) {
-    .who-item h3 { font-size: 20px; line-height: 24px; }
-    .who-item p, .who-intro { font-size: 16px; line-height: 24px; }
-    .who-right { display: none; }
-  }
-
-
-
-
-
-  /* Hero Brand Tag Styles */
-  .hero-brand-row {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    margin-bottom: 24px;
-  }
-  .brand-divider {
-    color: rgba(255, 255, 255, 0.4);
-    font-size: 1.15rem;
-    font-weight: 300;
-  }
-  .brand-text {
-    color: rgba(255, 255, 255, 0.85);
-    font-size: 1.15rem;
-    font-weight: 300;
-    font-family: 'Roboto', sans-serif;
-    letter-spacing: 0.02em;
-  }
-
-
-
-  .hero { background: linear-gradient(90deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.15) 100%), url('https://cdn.prod.website-files.com/6875101e8b0848abe318fec3/6a515bd6440e3e36c2027a6c_Frame%20129.png') no-repeat center center; background-size: cover; padding: 72px 0 60px; display: flex; flex-direction: column; align-items: center; gap: 64px; animation: none; color: #fff; }
-  .hero-main-row { display: flex; align-items: center; justify-content: space-between; width: 100%; max-width: 1200px; }
   .hero-left { flex: 1; max-width: 800px; display: flex; flex-direction: column; gap: 24px; }
+
   .hero-left-top { display: flex; flex-direction: column; }
+
   
-  .hero h1 { font-family: 'Arteria Std Compress', 'Bebas Neue', sans-serif; font-size: 72px; font-weight: 300; line-height: 1.15; color: #fff; margin: 0 0 8px 0; letter-spacing: 0.02em; }
+  .hero h1 { font-family: 'Bebas Neue', 'Roboto', sans-serif; font-size: 72px; font-weight: 300; line-height: 1.15; color: #fff; margin: 0 0 8px 0; letter-spacing: 0.02em; }
+
   .hero h1 span.hl { 
     color: var(--accent); 
     font-weight: 400; 
     position: relative;
     display: inline-block;
   }
+
   .hero h1 span.hl::after {
     content: '';
     position: absolute;
@@ -66,23 +26,39 @@
     background-size: 100% 100%;
     z-index: -1;
   }
+
   .hero h2 { color: #fff; font-size: 1.7rem; font-weight: 700; line-height: 1.2; margin: 0 0 20px 0; }
+
   .hero p.lead { font-size: 1.15rem; font-weight: 400; line-height: 1.6; color: rgba(255,255,255,.85); margin: 0; max-width: 620px; }
+
   .hero p.lead strong { font-weight: 700; }
+
   .metrics-eyebrow-container { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; width: 100%; }
+
   .me-line-left { height: 1px; background: rgba(255,255,255,0.2); width: 32px; }
+
   .me-text { font-size: 15px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em; font-family: 'Roboto', sans-serif; white-space: nowrap; }
+
   .me-line-right { height: 1px; background: rgba(255,255,255,0.2); flex: 1; max-width: 200px; }
+
   
   .hero-metrics { display: flex; gap: 48px; margin-top: 16px; align-items: flex-start; }
+
   .metric { display: flex; flex-direction: column; gap: 6px; }
+
   .metric-num { font-size: 48px; font-weight: 800; color: #fff; line-height: 1; font-family: 'Roboto', sans-serif; letter-spacing: -0.02em; }
+
   .metric-label { font-size: 15px; color: rgba(255, 255, 255, 0.65); font-weight: 400; white-space: nowrap; line-height: 1.3; }
+
   ul.bullets { font-size: 1.15rem; font-weight: 700; line-height: 1.6; color: #fff; margin: 0; padding-left: 20px; list-style-type: disc; }
+
   ul.bullets li { margin-bottom: 8px; }
+
   
   .hero-cta { display: flex; align-items: center; gap: 16px; }
+
   .hero-cta-group { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+
   .hero-cta .btn { 
     font-size: 1rem; 
     font-weight: 700; 
@@ -96,16 +72,20 @@
     box-shadow: 0 6px 20px rgba(70, 131, 179, 0.4);
     transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
   }
+
   .hero-cta .btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 24px rgba(70, 131, 179, 0.55);
     background-color: var(--accent-dark);
   }
+
   .hero-cta .btn:active {
     transform: translateY(0);
     box-shadow: 0 4px 12px rgba(70, 131, 179, 0.4);
   }
+
   .hero-cta .btn-ghost { color: rgba(255,255,255,.92); font-size: 1rem; font-weight: 600; text-decoration: underline; padding: 0; }
+
   .hero-logos {
     display: flex;
     align-items: center;
@@ -117,18 +97,24 @@
     max-width: 480px;
     flex-wrap: wrap;
   }
+
   .hero-logos img {
     width: auto;
     opacity: 0.8;
     filter: brightness(0) invert(1);
     transition: opacity 0.2s ease;
   }
+
   .hero-logos img:hover {
     opacity: 1;
   }
+
   .hero-logo-csl { height: 38px !important; }
+
   .hero-logo-innovate { height: 30px !important; }
+
   .hero-logo-honest { height: 26px !important; }
+
 
   .hero-right { 
     width: 350px; 
@@ -147,6 +133,7 @@
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
   }
+
   .tk-label { 
     display: block; 
     font-size: 0.8rem; 
@@ -156,6 +143,7 @@
     color: rgba(255, 255, 255, 0.85); 
     text-align: center; 
   }
+
   .tk-num { 
     display: block; 
     font-size: 5rem; 
@@ -168,6 +156,7 @@
     letter-spacing: -0.03em;
     text-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
   }
+
   .tk-sub { 
     font-size: var(--text-body); 
     color: rgba(255, 255, 255, 0.9); 
@@ -176,55 +165,165 @@
     font-weight: 400;
   }
 
+
   .stat-card { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+
   .stat-card .num { font-family: 'Roboto', sans-serif; font-size: 64px; font-weight: 700; line-height: 64px; color: #fff; }
+
   .stat-card .sub { color: rgba(255,255,255,.82); font-size: .84rem; font-weight: 400; line-height: 1.4; text-align: center; max-width: 400px; }
+
 
   .hero-optional { color: rgba(255, 255, 255, 0.45); font-size: 12px; line-height: 1.45; text-align: left; max-width: 620px; margin-top: 32px; font-weight: 400; }
 
+
   .color-bar { display: flex; flex-direction: column; }
+
   .color-bar-white { height: 12px; background: #fff; }
+
   .color-bar-blue { height: 12px; background: var(--accent); }
+
   
   @media(max-width:1100px){
     header { padding: 16px 0; height: auto !important; }
+
     header .wrap { padding: 0 24px; }
+
     .hero { padding: 40px 0; }
+
     .hero-main-row { flex-direction: column; align-items: center; }
+
     .hero-right { width: 100%; max-width: 572px; padding: 40px 24px; margin-top: 24px; }
-    .hero h1 { font-family: 'Arteria Std Compress', 'Bebas Neue', sans-serif; font-size: 52px; line-height: 52px; }
-  }
+
+    .hero h1 { font-family: 'Bebas Neue', 'Roboto', sans-serif; font-size: 52px; line-height: 52px; }
+
   @media(max-width:640px){
     header a.wordmark img { height: 26px !important; }
+
     .program-title-sub { font-size: 0.65rem; }
+
     .offer-bar { 
       font-size: var(--text-micro); 
       padding: 10px 16px; 
-      line-height: 1.4;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 6px 8px;
     }
+
+    .offer-bar a {
+      flex-wrap: wrap;
+      text-align: center;
+      line-height: 1.4;
+    }
+
     .offer-pulse {
       flex-shrink: 0;
     }
+
     header { padding: 12px 0; height: auto !important; }
+
     header .wrap { padding: 0 16px; }
+
     header a.phone { font-size: var(--text-small); font-weight: 700; }
+
     
     
     /* Mobile H1 Overlap & Sizing fixes */
     .hero h1 { font-size: 52px !important; line-height: 1.15 !important; }
+
     .hero h1 span { white-space: normal !important; display: inline-block !important; }
+
     .hero h1 span.hl::after { height: 10px; bottom: 4px; }
+
     
     /* Hide Properties Sold on mobile */
     .hero-right { display: none !important; }
+
     
     /* Mobile Brand Tag & Eyebrow stacking */
     .hero-eyebrow { margin-bottom: 12px !important; }
+
     .hero-brand-row { flex-direction: column; align-items: flex-start; gap: 8px; margin-bottom: 16px; }
+
     .brand-divider { display: none; }
+
     .brand-text { font-size: 0.95rem !important; }
+
     
+    .hero-cta { flex-direction: column; gap: 24px; align-items: stretch; width: 100%; }
+
+    .hero-cta-group { flex-direction: column; align-items: stretch; width: 100%; gap: 12px; }
+
+    .hero-cta-group .btn { justify-content: center; width: 100%; }
+
+    .hero-cta-group .btn-ghost { text-align: center; width: 100%; padding: 12px 0; }
+
+    
+    /* Eyebrow scaling */
+    .me-text { font-size: 12px; letter-spacing: 0.05em; }
+
+    .me-line-left { width: 16px; }
+
+    
+    .hero-metrics { flex-wrap: wrap; gap: 24px 16px; justify-content: space-between; }
+
+    .metric { flex: 1 1 45%; min-width: 120px; }
+
+    .metric-num { font-size: 40px; }
+
+    .metric-label { font-size: 13px; white-space: normal; line-height: 1.4; padding-right: 8px; }
+
+    
+    .hero-logos { justify-content: center; margin-top: 12px; border-top: 1px solid rgba(255, 255, 255, 0.15); padding-top: 16px; }
+
+    .stat-card .num { font-size: 48px; line-height: 48px; }
+
+  @media(max-width:380px){
+    
+    header a.phone { font-size: var(--text-micro); }
+
+    .offer-bar { font-size: var(--text-micro); padding: 8px 10px; }
+
+
+
+
+
+  #compare {
+    text-align: center;
+  }
+
+  #compare .section-sub {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #compare .cmp-wrap {
+    margin-top: 40px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border: none;
+    border-radius: 0;
+  }
+
+  #compare table.cmp {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--text-body);
+    min-width: 768px;
+    border-bottom: 1.5px solid var(--line);
+  }
+
+  #compare .cmp thead th {
+    font-size: 1.3rem; /* Enlarged header labels */
+    font-weight: 700;
+    padding: 24px;
+    background: transparent;
+    border-top: 1.5px solid var(--line);
+    border-bottom: 1.5px solid var(--line);
+    text-align: center;
+    color: var(--navy);
+    font-family: 'Roboto', sans-serif;
+  }
+
+  #compare .cmp thead th.left-header {
+    width: 25%;
+    border-top: none;
+    border-bottom: 1.5px solid var(--line);
+  }
 </style>

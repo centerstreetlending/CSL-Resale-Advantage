@@ -1,150 +1,128 @@
-</head>
-<body>
-
-
-<div class="offer-bar"><a href="#optin"><span style="display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;"><span class="offer-pulse"></span><b>EXCLUSIVE OFFER</b></span> &mdash; PRE-NEGOTIATED FOR CSL BORROWERS</a></div>
-
-<header id="sticky-header">
-  <div class="wrap">
-    <div class="nav-left">
-      <a class="wordmark" href="https://www.centerstreetlending.com/"><img src="logo1.svg" alt="Center Street Lending" style="height: 36px; width: auto; display: block;"></a>
-    </div>
-  </div>
-</header>
-
-<!-- HERO -->
-
-<div class="hero">
-  <div class="wrap hero-main-row">
-    <div class="hero-left">
-      <div class="hero-left-top">
-        <h1 style="font-family:'Arteria Std Compress', 'Bebas Neue', sans-serif;"><span style="display: inline-block; white-space: nowrap;">WE MADE IT <span class="hl">EASIER & CHEAPER</span></span><br><span style="display: inline-block; white-space: nowrap;">TO EXIT YOUR INVESTMENT.</span></h1>
-        
-        <h2 class="hero-subheading">The CSL Resale Advantage</h2>
-        
-        <p class="hero-lead-para">You found it and rehab/built it&mdash;now keep more of your profit. List for discounted escrow costs and pay lower escrow fees. We&rsquo;ve pre-negotiated exclusive rates with <strong>Innovate Realty</strong> and <strong>Honest Escrow</strong>, teams that specialize in real estate investor transactions, exclusively for CSL's CA borrowers.</p>
-        
-      </div>
-      <div class="hero-cta" style="display: flex; flex-direction: column; align-items: flex-start; gap: 32px;">
-        <div class="hero-cta-group">
-          <a class="btn" href="#optin">Request Information <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z" fill="currentColor"/></svg></a>
-        </div>
-        
-        <div style="display: flex; gap: 64px; margin-top: 24px; width: 100%; flex-wrap: wrap;">
-          
-          <!-- HONEST ESCROW STATS -->
-
-          <div style="flex: 1; min-width: 240px; display: flex; flex-direction: column; gap: 4px;">
-            <div class="metrics-eyebrow-container" style="margin-bottom: 8px;">
-              <div class="me-line-left"></div>
-              <span class="me-text">Honest Escrow</span>
-              <div class="me-line-right"></div>
-            </div>
-            <div class="hero-metrics" style="margin-top: 0; gap: 32px;">
-              <div class="metric">
-                <span class="metric-label">Seller escrow, as low as</span>
-                <span class="metric-num">$500</span>
-              </div>
-              <div class="metric">
-                <span class="metric-label">Properties successfully closed</span>
-                <span class="metric-num" id="deal-ticker" data-target="100">0+</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- INNOVATE REALTY STATS -->
-
-          <div style="flex: 1; min-width: 240px; display: flex; flex-direction: column; gap: 4px;">
-            <div class="metrics-eyebrow-container" style="margin-bottom: 8px;">
-              <div class="me-line-left"></div>
-              <span class="me-text">Innovate Realty</span>
-              <div class="me-line-right"></div>
-            </div>
-            <div class="hero-metrics" style="margin-top: 0; gap: 32px;">
-              <div class="metric">
-                <span class="metric-label">Exclusive listing fee</span>
-                <span class="metric-num">1%</span>
-              </div>
-              <div class="metric">
-                <span class="metric-label">InnoLaunch generates on avg. over:</span>
-                <span class="metric-num">21K <span style="font-size: 0.5em; font-weight: 500;">Views</span></span>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="hero-optional">* This pre-negotiated program is entirely optional. You are always free to choose your own broker, escrow company, and other providers.</div>
-      </div>
-    </div>
-  </div>
+<div class="offer-bar"><a href="#optin"><span style="display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;"><span class="offer-pulse"></span><b>EXCLUSIVE OFFER</b></span> — PRE-NEGOTIATED FOR CSL BORROWERS</a></div><header id="sticky-header">
+<div class="wrap">
+<div class="nav-left">
+<a class="wordmark" href="https://www.centerstreetlending.com/"><img alt="Center Street Lending" src="logo1.svg" style="height: 36px; width: auto; display: block;"/></a>
 </div>
-
-
-<!-- WHO THIS IS FOR -->
-
-<section class="who-its-for-v2">
-  <div class="who-its-for-wrap">
-    
-    <div class="who-left">
-      <div class="who-left-top">
-        <div>
-          <p class="section-eyebrow">Who Qualifies</p>
-          <h2>CSL Borrowers Selling Their Properties</h2>
-        </div>
-        <p class="who-intro">Resale Advantage is built for CSL borrowers thinking about the sale side of their property.</p>
-      </div>
-      
-      <div class="who-items">
-        <div class="who-item">
-          <h3>Your project is 60–120 days from completion</h3>
-          <p>The earlier you start coordinating your exit, the more leverage you have — on timing, pricing, and savings. Don't wait until construction wraps to think about the sell.</p>
-        </div>
-        <div class="who-item">
-          <h3>You're selling this property deal to fund the next one</h3>
-          <p>Every dollar saved on your exit is capital available for your next project. A clean, coordinated close keeps your momentum going — deal after deal.</p>
-        </div>
-        <div class="who-item">
-          <h3>You don't have an agent or escrow lined up yet</h3>
-          <p>Get introductions to an experienced agent and escrow team who are experts with selling and payoff requirements of investment properties&mdash;no awkward handoffs between agent, escrow and lender.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="who-right">
-      <img src="Rectangle 22.png" alt="Happy couple in new home">
-    </div>
-
-  </div>
+</div>
+</header> HERO <div class="hero">
+<div class="wrap hero-main-row">
+<div class="hero-left">
+<div class="hero-left-top">
+<h1 style="font-family:'Bebas Neue', 'Roboto', sans-serif;"><span style="display: inline-block; white-space: nowrap;">WE MADE IT <span class="hl">EASIER &amp; CHEAPER</span></span><br/><span style="display: inline-block; white-space: nowrap;">TO EXIT YOUR INVESTMENT.</span></h1>
+<h2 class="hero-subheading">The CSL Resale Advantage</h2>
+<p class="hero-lead-para">You found it and rehab/built it—now keep more of your profit. List for discounted escrow costs and pay lower escrow fees. We’ve pre-negotiated exclusive rates with <strong>Innovate Realty</strong> and <strong>Honest Escrow</strong>, teams that specialize in real estate investor transactions, exclusively for CSL's CA borrowers.</p>
+</div>
+<div class="hero-cta" style="display: flex; flex-direction: column; align-items: flex-start; gap: 32px;">
+<div class="hero-cta-group">
+<a class="btn" href="#optin">Request Information <svg fill="none" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z" fill="currentColor"></path></svg></a>
+</div>
+<div style="display: flex; gap: 64px; margin-top: 24px; width: 100%; flex-wrap: wrap;">
+<!-- HONEST ESCROW STATS -->
+<div style="flex: 1; min-width: 240px; display: flex; flex-direction: column; gap: 4px;">
+<div class="metrics-eyebrow-container" style="margin-bottom: 8px;">
+<div class="me-line-left"></div>
+<span class="me-text">Honest Escrow</span>
+<div class="me-line-right"></div>
+</div>
+<div class="hero-metrics" style="margin-top: 0; gap: 32px;">
+<div class="metric">
+<span class="metric-label">Seller escrow, as low as</span>
+<span class="metric-num">$500</span>
+</div>
+<div class="metric">
+<span class="metric-label">Properties successfully closed</span>
+<span class="metric-num" data-target="100" id="deal-ticker">0+</span>
+</div>
+</div>
+</div>
+<!-- INNOVATE REALTY STATS -->
+<div style="flex: 1; min-width: 240px; display: flex; flex-direction: column; gap: 4px;">
+<div class="metrics-eyebrow-container" style="margin-bottom: 8px;">
+<div class="me-line-left"></div>
+<span class="me-text">Innovate Realty</span>
+<div class="me-line-right"></div>
+</div>
+<div class="hero-metrics" style="margin-top: 0; gap: 32px;">
+<div class="metric">
+<span class="metric-label">Exclusive listing fee</span>
+<span class="metric-num">1%</span>
+</div>
+<div class="metric">
+<span class="metric-label">InnoLaunch generates on avg. over:</span>
+<span class="metric-num">21K <span style="font-size: 0.5em; font-weight: 500;">Views</span></span>
+</div>
+</div>
+</div>
+</div>
+<div class="hero-optional">* This pre-negotiated program is entirely optional. You are always free to choose your own broker, escrow company, and other providers.</div>
+</div>
+</div>
+</div>
+</div> WHO THIS IS FOR <section class="who-its-for-v2">
+<div class="who-its-for-wrap">
+<div class="who-left">
+<div class="who-left-top">
+<div>
+<p class="section-eyebrow">Who Qualifies</p>
+<h2>CSL Borrowers Selling Their Properties</h2>
+</div>
+<p class="who-intro">Resale Advantage is built for CSL borrowers thinking about the sale side of their property.</p>
+</div>
+<div class="who-items">
+<div class="who-item">
+<h3>Your project is 60–120 days from completion</h3>
+<p>The earlier you start coordinating your exit, the more leverage you have — on timing, pricing, and savings. Don't wait until construction wraps to think about the sell.</p>
+</div>
+<div class="who-item">
+<h3>You're selling this property deal to fund the next one</h3>
+<p>Every dollar saved on your exit is capital available for your next project. A clean, coordinated close keeps your momentum going — deal after deal.</p>
+</div>
+<div class="who-item">
+<h3>You don't have an agent or escrow lined up yet</h3>
+<p>Get introductions to an experienced agent and escrow team who are experts with selling and payoff requirements of investment properties—no awkward handoffs between agent, escrow and lender.</p>
+</div>
+</div>
+</div>
+<div class="who-right">
+<img alt="Happy couple in new home" src="Rectangle 22.png"/>
+</div>
+</div>
+</section> TRUST / PARTNER NETWORK SECTION <section class="trust-section">
+<div class="trust-inner">
+<!-- LEFT: property image cards with nested logos -->
+<div class="trust-images">
+<div class="trust-img-card">
+<img alt="Interior living space" src="Frame 166.png"/>
+<div class="trust-img-stat">
+<span class="trust-stat-num" style="white-space: nowrap; font-size: 1.7rem;">$7.8B+ <span style="font-size: 0.5em; font-weight: 400; font-style: italic; color: rgba(255,255,255,0.85);">and counting...</span></span>
+<span class="trust-stat-label">Funded by<br/>Center Street Lending</span>
+</div>
+</div>
+<div class="trust-img-card">
+<img alt="Modern home exterior at dusk" src="Frame 169.png"/>
+<div class="trust-img-stat">
+<span class="trust-stat-num" style="white-space: nowrap; font-size: 1.7rem;">3,200+ <span style="font-size: 0.5em; font-weight: 400; font-style: italic; color: rgba(255,255,255,0.85);">and counting...</span></span>
+<span class="trust-stat-label">Homes sold<br/>by Innovate Realty</span>
+</div>
+</div>
+<div class="trust-img-card">
+<img alt="Contemporary home with outdoor seating" src="Frame 170.png"/>
+<div class="trust-img-stat">
+<span class="trust-stat-num" style="white-space: nowrap; font-size: 1.7rem;">$1.1B+ <span style="font-size: 0.5em; font-weight: 400; font-style: italic; color: rgba(255,255,255,0.85);">and counting...</span></span>
+<span class="trust-stat-label">Closed by<br/>Honest Escrow</span>
+</div>
+</div>
+</div>
+<!-- RIGHT: copy restored -->
+<div class="trust-copy">
+<p class="section-eyebrow" style="color:var(--accent)">Your Team</p>
+<h2 class="trust-heading">A trusted network of professionals</h2>
+<p class="trust-body">CSL Resale Advantage gives Center Street Lending borrowers access to preferred pricing and trusted real estate and escrow professionals <strong>making the final stage of your project simpler, more coordinated, and more cost-effective.</strong></p>
+<div class="trust-logos-row" style="display: flex; gap: 40px; align-items: center; margin-top: 40px;">
+<img alt="Center Street Lending" src="Company Logo.svg" style="height: 64px; filter: brightness(0) invert(1);"/>
+<img alt="Innovate Realty" src="Innovate.svg" style="height: 52px; filter: brightness(0) invert(1);"/>
+<img alt="Honest Escrow" src="HonestEscrow.svg" style="height: 46px; filter: brightness(0) invert(1);"/>
+</div>
+</div>
+</div>
 </section>
-
-<!-- TRUST / PARTNER NETWORK SECTION -->
-
-<section class="trust-section">
-  <div class="trust-inner">
-    
-    <!-- LEFT: property image cards with nested logos -->
-
-    <div class="trust-images">
-      <div class="trust-img-card">
-        <img src="Frame 166.png" alt="Interior living space" />
-        <div class="trust-img-stat">
-          <span class="trust-stat-num" style="white-space: nowrap; font-size: 1.7rem;">$7.8B+ <span style="font-size: 0.5em; font-weight: 400; font-style: italic; color: rgba(255,255,255,0.85);">and counting...</span></span>
-          <span class="trust-stat-label">Funded by<br>Center Street Lending</span>
-        </div>
-      </div>
-      <div class="trust-img-card">
-        <img src="Frame 169.png" alt="Modern home exterior at dusk" />
-        <div class="trust-img-stat">
-          <span class="trust-stat-num" style="white-space: nowrap; font-size: 1.7rem;">3,200+ <span style="font-size: 0.5em; font-weight: 400; font-style: italic; color: rgba(255,255,255,0.85);">and counting...</span></span>
-          <span class="trust-stat-label">Homes sold<br>by Innovate Realty</span>
-        </div>
-      </div>
-      <div class="trust-img-card">
-        <img src="Frame 170.png" alt="Contemporary home with outdoor seating" />
-        <div class="trust-img-stat">
-          <span class="trust-stat-num" style="white-space: nowrap; font-size: 1.7rem;">$1.1B+ <span style="font-size: 0.5em; font-weight: 400; font-style: italic; color: rgba(255,255,255,0.85);">and counting...</span></span>
-          <span class="trust-stat-label">Closed by<br>Honest Escrow</span>
-        </div>
-      </div>
-    </div>
