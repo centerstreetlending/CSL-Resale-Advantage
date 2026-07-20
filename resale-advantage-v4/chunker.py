@@ -1,53 +1,90 @@
-with open("csl-investor-exit-advantage-v3.html", "r") as f:
-    content = f.read()
-
 import re
+import os
 
-# Split by top-level tags/sections
-sections = []
+with open("csl-investor-exit-advantage-v4.html", "r") as f:
+    html = f.read()
 
-# CSS
-css_match = re.search(r'<style>.*?</style>', content, re.DOTALL)
+# 1. Extract CSS safely
+css_match = re.search(r'<style>(.*?)</style>', html, re.DOTALL)
 if css_match:
-    css = css_match.group(0)
-    print("Total CSS size:", len(css))
-    # We will need to chunk CSS into 10k chunks
-    lines = css.split('\n')
-    chunk = ""
-    chunk_idx = 1
-    for line in lines:
-        if len(chunk) + len(line) > 9000:
-            print(f"CSS Chunk {chunk_idx}: {len(chunk)}")
-            chunk = "<style>\n" + line + "\n"
-            chunk_idx += 1
-        else:
-            chunk += line + "\n"
-    if chunk:
-        print(f"CSS Chunk {chunk_idx}: {len(chunk)}")
+    css_content = css_match.group(1)
+else:
+    css_content = ""
 
-# HTML body
-body_match = re.search(r'</style>\n*(.*)\n*<script>', content, re.DOTALL)
-if body_match:
-    body = body_match.group(1)
-    print("Total Body HTML size:", len(body))
-    # chunk body HTML by top-level <section> or <header> or <nav>
-    # Actually, we can just split by <!-- COMMENTS -->
-    parts = re.split(r'(<!--.*?-->)', body)
-    chunk = ""
-    chunk_idx = 1
-    for part in parts:
-        if len(chunk) + len(part) > 9000:
-            print(f"HTML Chunk {chunk_idx}: {len(chunk)}")
-            chunk = part
-            chunk_idx += 1
-        else:
-            chunk += part
-    if chunk:
-        print(f"HTML Chunk {chunk_idx}: {len(chunk)}")
+# Strip the font-face block from css
+css_content = re.sub(r'^\s*@font-face\s*\{\s*font-family:\s*\'Arteria Std Compress\';\s*src:\s*local\(\'Arteria Std Compress\'\);\s*font-display:\s*swap;\s*\}', '', css_content, flags=re.MULTILINE)
+css_content = css_content.replace("'Arteria Std Compress', 'Bebas Neue', sans-serif", "'Bebas Neue', 'Roboto', sans-serif")
 
-# Script
-script_match = re.search(r'<script>.*?</script>', content, re.DOTALL)
-if script_match:
-    script = script_match.group(0)
-    print("Script size:", len(script))
+css_chunks = []
+current_chunk = "<style>\n@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Cormorant+Garamond:wght@600;700&family=Bebas+Neue&family=Inter:wght@400;700&display=swap');\n@import url('https://use.typekit.net/sjt3vdj.css');\n"
 
+bracket_count = 0
+start = 0
+for i, char in enumerate(css_content):
+    if char == '{':
+        bracket_count += 1
+    elif char == '}':
+        bracket_count -= 1
+        if bracket_count == 0:
+            rule = css_content[start:i+1]
+            if len(current_chunk) + len(rule) > 9500:
+                current_chunk += "</style>"
+                css_chunks.append(current_chunk)
+                current_chunk = "<style>\n" + rule
+            else:
+                current_chunk += rule
+            start = i+1
+
+if current_chunk != "<style>\n" and current_chunk != "<style>\n</style>":
+    current_chunk += css_content[start:]
+    current_chunk += "\n</style>"
+    css_chunks.append(current_chunk)
+
+
+# 2. Extract HTML Body safely
+from bs4 import BeautifulSoup
+soup = BeautifulSoup(html, 'html.parser')
+body = soup.find("body")
+html_chunks = []
+current_html = ""
+
+for child in body.children:
+    if child.name in ["style", "script", "link"]:
+        continue
+    
+    addition = str(child)
+    if not addition.strip():
+        continue
+        
+    if len(current_html) + len(addition) > 9500:
+        if current_html:
+            html_chunks.append(current_html)
+        current_html = addition
+    else:
+        current_html += addition
+
+if current_html:
+    html_chunks.append(current_html)
+
+# Extract Script
+script_match = re.search(r'(<script>.*?</script>)', html, re.DOTALL)
+script_content = script_match.group(1) if script_match else ""
+
+# Save all chunks
+os.system("rm -f webflow_embeds/*.txt")
+idx = 1
+for chunk in css_chunks:
+    with open(f"webflow_embeds/{idx:02d}_css.txt", "w") as f:
+        f.write(chunk)
+    idx += 1
+
+for chunk in html_chunks:
+    with open(f"webflow_embeds/{idx:02d}_html.txt", "w") as f:
+        f.write(chunk)
+    idx += 1
+
+if script_content:
+    with open(f"webflow_embeds/{idx:02d}_script.txt", "w") as f:
+        f.write(script_content)
+
+print(f"Generated {idx-1} safe chunks!")
