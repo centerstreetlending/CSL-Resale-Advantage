@@ -2423,9 +2423,13 @@
 
 <script>
   // Send height to parent window for iframe resizing
+  var lastHeight = 0;
   function sendHeight() {
     var height = document.body.scrollHeight;
-    window.parent.postMessage({ 'frameHeight': height }, '*');
+    if (height !== lastHeight) {
+      lastHeight = height;
+      window.parent.postMessage({ 'frameHeight': height }, '*');
+    }
   }
   window.addEventListener('load', sendHeight);
   window.addEventListener('resize', sendHeight);
