@@ -2422,5 +2422,20 @@
   } else { run(); }
 })();
 </script>
+
+<script>
+  // Send height to parent window for iframe resizing
+  function sendHeight() {
+    var height = document.body.scrollHeight;
+    window.parent.postMessage({ 'frameHeight': height }, '*');
+  }
+  window.addEventListener('load', sendHeight);
+  window.addEventListener('resize', sendHeight);
+  
+  // Create a MutationObserver to watch for DOM changes (like accordions opening)
+  const observer = new MutationObserver(sendHeight);
+  observer.observe(document.body, { childList: true, subtree: true, attributes: true });
+</script>
 </body>
+
 </html>
