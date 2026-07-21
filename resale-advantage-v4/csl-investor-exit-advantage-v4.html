@@ -2430,9 +2430,22 @@
   window.addEventListener('load', sendHeight);
   window.addEventListener('resize', sendHeight);
   
-  // Create a MutationObserver to watch for DOM changes (like accordions opening)
+  // Create a MutationObserver to watch for DOM changes
   const observer = new MutationObserver(sendHeight);
   observer.observe(document.body, { childList: true, subtree: true, attributes: true });
+
+  // Intercept anchor clicks to scroll the parent window
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href').substring(1);
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        const offsetTop = targetElement.offsetTop;
+        window.parent.postMessage({ 'scrollToOffset': offsetTop }, '*');
+      }
+    });
+  });
 </script>
 </body>
 
