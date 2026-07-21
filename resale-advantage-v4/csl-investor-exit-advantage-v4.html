@@ -77,11 +77,11 @@
   h2{font-size:var(--text-h2);margin-bottom:.5rem}
   .sub{color:var(--muted);max-width:640px}
   section{padding:80px 0}
-  .btn{display:inline-block;background:var(--accent);color:#fff;font-weight:600;padding:14px 32px;border-radius:6px;text-decoration:none;border:none;font-size:var(--text-body);cursor:pointer;transition:background .15s}
-  .btn:hover{background:var(--accent-dark)}
-  .btn-ghost{display:inline-block;color:var(--navy);font-weight:600;padding:14px 20px;text-decoration:none}
-  .hero .btn-ghost{color:rgba(255,255,255,.92)}
-  .hero .btn-ghost:hover{color:#fff;text-decoration:underline}
+  .csl-btn{display:inline-block;background:var(--accent);color:#fff;font-weight:600;padding:14px 32px;border-radius:6px;text-decoration:none;border:none;font-size:var(--text-body);cursor:pointer;transition:background .15s}
+  .csl-btn:hover{background:var(--accent-dark)}
+  .csl-btn-ghost{display:inline-block;color:var(--navy);font-weight:600;padding:14px 20px;text-decoration:none}
+  .hero .csl-btn-ghost{color:rgba(255,255,255,.92)}
+  .hero .csl-btn-ghost:hover{color:#fff;text-decoration:underline}
 
   @media (max-width: 768px) {
     :root {
@@ -357,8 +357,8 @@
   .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
   .reveal.in{opacity:1;transform:none}
   @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
-  .hero .eyebrow,.hero h1,.hero p.lead,.hero p.optional,.hero a.btn,.hero a.btn-ghost,.hero .trustbar{animation:fadeUp .7s ease both}
-  .hero h1{animation-delay:.08s}.hero p.lead{animation-delay:.16s}.hero p.optional{animation-delay:.24s}.hero a.btn{animation-delay:.32s}.hero a.btn-ghost{animation-delay:.36s}.hero .trustbar{animation-delay:.48s}
+  .hero .eyebrow,.hero h1,.hero p.lead,.hero p.optional,.hero a.csl-btn,.hero a.csl-btn-ghost,.hero .trustbar{animation:fadeUp .7s ease both}
+  .hero h1{animation-delay:.08s}.hero p.lead{animation-delay:.16s}.hero p.optional{animation-delay:.24s}.hero a.csl-btn{animation-delay:.32s}.hero a.csl-btn-ghost{animation-delay:.36s}.hero .trustbar{animation-delay:.48s}
   @media(max-width:640px){
     .deck{height:270px}
     .slide img{max-width:66%}
@@ -366,7 +366,7 @@
     .slide.pos2{opacity:.18;transform:translateX(48px) scale(.87)}
     .car-btn{width:30px;height:30px}
   }
-  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.slide{transition:none}.hero .eyebrow,.hero h1,.hero p.lead,.hero p.optional,.hero a.btn,.hero a.btn-ghost,.hero .trustbar{animation:none}.benefit,.card,.step{transition:none}.tl-step,.tl-dot,.tl-line{transition:none;opacity:1;transform:none}.tl-runner,.tl-step:first-child .tl-dot::after{animation:none;display:none}.he-stars span{opacity:1;transform:none;transition:none}.hero{animation:none}.hero::before,.hero::after,.hero-glow3{animation:none}.hero h1 .hl{animation:none}}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.slide{transition:none}.hero .eyebrow,.hero h1,.hero p.lead,.hero p.optional,.hero a.csl-btn,.hero a.csl-btn-ghost,.hero .trustbar{animation:none}.benefit,.card,.step{transition:none}.tl-step,.tl-dot,.tl-line{transition:none;opacity:1;transform:none}.tl-runner,.tl-step:first-child .tl-dot::after{animation:none;display:none}.he-stars span{opacity:1;transform:none;transition:none}.hero{animation:none}.hero::before,.hero::after,.hero-glow3{animation:none}.hero h1 .hl{animation:none}}
 
   /* honest escrow brand moment (Refactored to match user's custom design) */
   .honest {
@@ -1072,7 +1072,7 @@
   
   .hero-cta { display: flex; align-items: center; gap: 16px; }
   .hero-cta-group { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
-  .hero-cta .btn { 
+  .hero-cta .csl-btn { 
     font-size: 1rem; 
     font-weight: 700; 
     padding: 16px 36px; 
@@ -1085,16 +1085,16 @@
     box-shadow: 0 6px 20px rgba(70, 131, 179, 0.4);
     transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
   }
-  .hero-cta .btn:hover {
+  .hero-cta .csl-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 24px rgba(70, 131, 179, 0.55);
     background-color: var(--accent-dark);
   }
-  .hero-cta .btn:active {
+  .hero-cta .csl-btn:active {
     transform: translateY(0);
     box-shadow: 0 4px 12px rgba(70, 131, 179, 0.4);
   }
-  .hero-cta .btn-ghost { color: rgba(255,255,255,.92); font-size: 1rem; font-weight: 600; text-decoration: underline; padding: 0; }
+  .hero-cta .csl-btn-ghost { color: rgba(255,255,255,.92); font-size: 1rem; font-weight: 600; text-decoration: underline; padding: 0; }
   .hero-logos {
     display: flex;
     align-items: center;
@@ -1223,8 +1223,8 @@
     
     .hero-cta { flex-direction: column; gap: 24px; align-items: stretch; width: 100%; }
     .hero-cta-group { flex-direction: column; align-items: stretch; width: 100%; gap: 12px; }
-    .hero-cta-group .btn { justify-content: center; width: 100%; }
-    .hero-cta-group .btn-ghost { text-align: center; width: 100%; padding: 12px 0; }
+    .hero-cta-group .csl-btn { justify-content: center; width: 100%; }
+    .hero-cta-group .csl-btn-ghost { text-align: center; width: 100%; padding: 12px 0; }
     
     /* Eyebrow scaling */
     .me-text { font-size: 12px; letter-spacing: 0.05em; }
@@ -1272,7 +1272,7 @@
       </div>
       <div class="hero-cta" style="display: flex; flex-direction: column; align-items: flex-start; gap: 32px;">
         <div class="hero-cta-group">
-          <a class="btn" href="#optin">Request Information <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z" fill="currentColor"/></svg></a>
+          <a class="csl-btn" href="#optin">Request Information <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z" fill="currentColor"/></svg></a>
         </div>
         
         <div style="display: flex; gap: 64px; margin-top: 24px; width: 100%; flex-wrap: wrap;">
@@ -2121,7 +2121,7 @@
       <!-- honeypot anti-spam field -->
       <input class="hp" type="text" name="company_website" tabindex="-1" autocomplete="off" aria-hidden="true">
 
-      <button type="submit" class="btn" id="submit-btn">Request information</button>
+      <button type="submit" class="csl-btn" id="submit-btn">Request information</button>
 
       <div id="success-panel" role="status">
         <h3>Thank you &mdash; we've received your request.</h3>
