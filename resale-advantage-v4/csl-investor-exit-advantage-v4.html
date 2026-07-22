@@ -2328,11 +2328,24 @@
       }
 
       var timelineRadio = form.querySelector('input[name="timeline_radio"]:checked');
-      var timelineText = timelineRadio ? timelineRadio.nextElementSibling.innerText : "";
-      var timelineValue = timelineRadio ? timelineRadio.value : ""; 
+      var timelineValue = timelineRadio ? timelineRadio.value : "";
+      var timelineMap = {
+        "now": "I'm ready to list now",
+        "1-3mo": "In 1-3 months",
+        "3-6mo": "In 3-6 months",
+        "6mo+": "6+ months out",
+        "unsure": "Not sure yet"
+      };
+      var timelineText = timelineMap[timelineValue] || ""; 
       
       var intentRadio = form.querySelector('input[name="intent"]:checked');
-      var intentText = intentRadio ? intentRadio.nextElementSibling.innerText : "";
+      var intentValue = intentRadio ? intentRadio.value : "";
+      var intentMap = {
+        "details": "Yes — send me details about the program",
+        "escrow": "I already have an agent, but I'd like escrow information",
+        "later": "I'm not ready yet — follow up with me later"
+      };
+      var intentText = intentMap[intentValue] || "";
       
       var consentText = "I agree that Center Street Lending and its affiliates may contact me about the Investor Exit Advantage program by phone, email, or text at the information provided. Consent is not a condition of any loan. (Pending legal review.)";
       
