@@ -2327,9 +2327,9 @@
         return; // honeypot
       }
 
-      var timelineSelect = form.querySelector('#timeline');
-      var timelineText = timelineSelect.options[timelineSelect.selectedIndex].text;
-      if (timelineSelect.value === "") timelineText = ""; 
+      var timelineRadio = form.querySelector('input[name="timeline_radio"]:checked');
+      var timelineText = timelineRadio ? timelineRadio.nextElementSibling.innerText : "";
+      var timelineValue = timelineRadio ? timelineRadio.value : ""; 
       
       var intentRadio = form.querySelector('input[name="intent"]:checked');
       var intentText = intentRadio ? intentRadio.nextElementSibling.innerText : "";
@@ -2398,7 +2398,7 @@
       window.dataLayer.push({
         event: 'exit_advantage_optin',
         ea_intent: intentText,
-        ea_timeline: timelineSelect.value
+        ea_timeline: timelineValue
       });
 
       // Hide all form fields, button, and notes, and show only the success panel
