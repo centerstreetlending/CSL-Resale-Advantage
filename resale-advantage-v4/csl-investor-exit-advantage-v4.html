@@ -611,7 +611,7 @@
   .step .pending-note{margin-top:12px;font-size:.8rem}
 
   /* form */
-  #optin{background:var(--navy);color:#fff}
+  #optin{background:var(--navy);color:#fff;padding-bottom:250px}
   #optin h2{color:#fff}
   #optin .sub{color:rgba(255,255,255,.75)}
   .form-card{background:#fff;border-radius:12px;padding:40px;margin:0 auto;color:var(--ink);max-width:720px;box-sizing:border-box;}
@@ -2425,6 +2425,9 @@
   // Send height to parent window for iframe resizing
   var lastHeight = 0;
   function sendHeight() {
+    if (document.activeElement && document.activeElement.tagName === 'SELECT') {
+      return;
+    }
     var height = document.body.scrollHeight;
     if (height !== lastHeight) {
       lastHeight = height;
