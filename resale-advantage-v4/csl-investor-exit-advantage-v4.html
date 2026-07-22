@@ -2425,6 +2425,10 @@
   // Send height to parent window for iframe resizing
   var lastHeight = 0;
   function sendHeight() {
+    // If a select is focused, ignore height changes so the dropdown doesn't close!
+    if (document.activeElement && document.activeElement.tagName === 'SELECT') {
+      return;
+    }
     var height = document.body.scrollHeight;
     if (height !== lastHeight) {
       lastHeight = height;
