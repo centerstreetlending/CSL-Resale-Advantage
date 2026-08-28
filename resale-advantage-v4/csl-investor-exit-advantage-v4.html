@@ -763,6 +763,24 @@
     transform: scale(1.2);
   }
   .offer-bar b { color: var(--accent); font-weight: 700; text-transform: uppercase; }
+  .offer-tag {
+    color: #60a5fa;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 13.5px;
+  }
+  .offer-tag::after {
+    content: " — ";
+    color: rgba(255, 255, 255, 0.4);
+    margin: 0 4px;
+  }
+  .offer-sub {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+  }
 
   /* Lightbox Modal CSS */
   .lightbox-modal {
@@ -1606,6 +1624,9 @@ ul.bullets li { margin-bottom: 8px; }
       font-weight: 800 !important;
       font-size: 13.5px !important;
       letter-spacing: 1px !important;
+    }
+    .offer-tag::after {
+      display: none !important;
     }
     .offer-sub {
       display: block !important;
