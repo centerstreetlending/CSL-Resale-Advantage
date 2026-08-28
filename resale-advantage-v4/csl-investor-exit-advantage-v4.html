@@ -763,6 +763,85 @@
     transform: scale(1.2);
   }
   .offer-bar b { color: var(--accent); font-weight: 700; text-transform: uppercase; }
+
+  /* Lightbox Modal CSS */
+  .lightbox-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+  .lightbox-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  .lightbox-content {
+    position: relative;
+    z-index: 2;
+    max-width: 90vw;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .lightbox-content img {
+    max-width: 100%;
+    max-height: 82vh;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    animation: lightboxZoomIn 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  @keyframes lightboxZoomIn {
+    from { opacity: 0; transform: scale(0.85); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  .lightbox-close {
+    position: absolute;
+    top: -44px;
+    right: -10px;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: #ffffff;
+    font-size: 32px;
+    line-height: 1;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease;
+  }
+  .lightbox-close:hover {
+    background: rgba(255, 255, 255, 0.4);
+  }
+  .lightbox-caption {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 14px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  /* Add cursor zoom-in hint to gallery images */
+  #innolaunch img, .he-img-wrap img, .trust-card img {
+    cursor: zoom-in;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  #innolaunch img:hover, .he-img-wrap img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+  }
   .offer-pulse {
     display: inline-block;
     width: 8px;
@@ -3025,6 +3104,58 @@ ul.bullets li { margin-bottom: 8px; }
     var io=new IntersectionObserver(function(entries){ entries.forEach(function(en){ if(en.isIntersecting){ run(); } else { if(raf) cancelAnimationFrame(raf); el.textContent='0+'; } }); }, {threshold:0.4});
     io.observe(el);
   } else { run(); }
+})();
+</script>
+<!-- IMAGE LIGHTBOX MODAL -->
+<div id="image-lightbox-modal" class="lightbox-modal" role="dialog" aria-hidden="true" style="display:none;">
+  <div class="lightbox-backdrop" id="lightbox-backdrop"></div>
+  <div class="lightbox-content">
+    <button type="button" class="lightbox-close" id="lightbox-close" aria-label="Close image">&times;</button>
+    <img id="lightbox-img" src="" alt="Enlarged preview" />
+    <div id="lightbox-caption" class="lightbox-caption"></div>
+  </div>
+</div>
+
+<script>
+// --- Image Lightbox Modal Controller ---
+(function() {
+  var modal = document.getElementById('image-lightbox-modal');
+  var modalImg = document.getElementById('lightbox-img');
+  var modalCaption = document.getElementById('lightbox-caption');
+  var closeBtn = document.getElementById('lightbox-close');
+  var backdrop = document.getElementById('lightbox-backdrop');
+
+  function openModal(src, alt) {
+    modalImg.src = src;
+    modalCaption.textContent = alt || '';
+    modal.style.display = 'flex';
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    modal.style.display = 'none';
+    modal.setAttribute('aria-hidden', 'true');
+    modalImg.src = '';
+    document.body.style.overflow = '';
+  }
+
+  // Attach click listener to all gallery images
+  var galleryImages = document.querySelectorAll('#innolaunch img, .he-img-wrap img, .trust-card img');
+  galleryImages.forEach(function(img) {
+    img.addEventListener('click', function() {
+      openModal(this.src, this.alt);
+    });
+  });
+
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
+  if (backdrop) backdrop.addEventListener('click', closeModal);
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && modal.style.display === 'flex') {
+      closeModal();
+    }
+  });
 })();
 </script>
 </body>
