@@ -2395,39 +2395,62 @@ ul.bullets li { margin-bottom: 8px; }
   </style>
   <div class="wrap" style="display: flex; gap: 64px; align-items: center; flex-wrap: wrap;">
 
-    <!-- Left: Image Grid -->
+    <!-- Left: Asymmetric Hero Mockup Gallery Showcase -->
     <div style="flex: 1; min-width: 320px;">
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
-        <img src="innolaunch-campaign-app.jpg" alt="Campaign App" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 6px;" />
-        <img src="innolaunch-brochure.jpg" alt="Brochure" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 6px;" />
-        <img src="Frame 129.png" alt="Living Room" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 6px;" />
-        <img src="innolaunch-postcard.jpg" alt="Postcard" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 6px;" />
-        <img src="innolaunch-ipad-debut.jpg" alt="iPad Debut" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 6px;" />
-        <img src="innolaunch-flyer.jpg" alt="Flyer Stand" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 6px;" />
+      <!-- Primary Featured Asset: InnoLaunch iPad Market Debut -->
+      <div style="position: relative; margin-bottom: 14px; border-radius: 12px; overflow: hidden; box-shadow: 0 16px 40px rgba(44,56,66,0.14); border: 1px solid rgba(0,0,0,0.06);">
+        <img src="innolaunch-ipad-debut.jpg" alt="InnoLaunch Market Debut" style="width: 100%; aspect-ratio: 16/10; object-fit: cover; display: block;" />
+        <div style="position: absolute; bottom: 12px; left: 12px; background: rgba(15,23,42,0.85); backdrop-filter: blur(8px); color: #ffffff; font-size: 12px; font-weight: 700; padding: 6px 14px; border-radius: 20px; letter-spacing: 0.5px; display: inline-flex; align-items: center; gap: 6px;">
+          <span style="display: inline-block; width: 6px; height: 6px; background: #60a5fa; border-radius: 50%;"></span> Primary Marketing Debut
+        </div>
+      </div>
+
+      <!-- Supporting Secondary Assets Row -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px;">
+        <div style="border-radius: 8px; overflow: hidden; box-shadow: 0 4px 14px rgba(0,0,0,0.06); border: 1px solid #DCE5EC;">
+          <img src="innolaunch-brochure.jpg" alt="Printed Brochure" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block;" />
+        </div>
+        <div style="border-radius: 8px; overflow: hidden; box-shadow: 0 4px 14px rgba(0,0,0,0.06); border: 1px solid #DCE5EC;">
+          <img src="innolaunch-postcard.jpg" alt="Direct Mail Postcard" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block;" />
+        </div>
+        <div style="border-radius: 8px; overflow: hidden; box-shadow: 0 4px 14px rgba(0,0,0,0.06); border: 1px solid #DCE5EC;">
+          <img src="innolaunch-flyer.jpg" alt="Flyer Stand" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block;" />
+        </div>
       </div>
     </div>
 
-    <!-- Right: Copy -->
-    <div style="flex: 1; min-width: 320px; max-width: 520px; padding-top: 16px;">
-      <p class="section-eyebrow" style="color: var(--accent); text-align: left; margin-bottom: 16px; letter-spacing: 0.1em; text-transform: uppercase;">Marketing and sales expertise</p>
-      <h2 style="font-size: 36px; font-weight: 700; color: var(--navy-darkest, #2C3842); margin-bottom: 24px; font-family: 'Roboto', sans-serif; letter-spacing: -0.02em;">Meet Innovate Realty.</h2>
-      <img src="Innovate.svg" alt="Innovate Realty" style="height: 64px; margin-bottom: 24px; display: block;" />
+    <!-- Right: High-Impact Copy & Connected Workflow -->
+    <div style="flex: 1; min-width: 320px; max-width: 540px;">
+      <p class="section-eyebrow" style="color: var(--accent); text-align: left; margin-bottom: 12px; letter-spacing: 0.12em; text-transform: uppercase;">Marketing and sales expertise</p>
+      <h2 style="font-size: 38px; font-weight: 800; color: #2C3842; margin-bottom: 20px; font-family: 'Roboto', sans-serif; letter-spacing: -0.02em; line-height: 1.2;">Meet Innovate Realty.</h2>
+      <img src="Innovate.svg" alt="Innovate Realty" style="height: 52px; margin-bottom: 24px; display: block;" />
 
-      <p style="font-size: 16px; line-height: 1.6; color: var(--muted); margin-bottom: 16px;"><strong style="color: var(--navy);">What is InnoLaunch?</strong> It's Innovate's launch campaign for your property &mdash; and it starts <em>before</em> construction is finished. While your project is being completed, buyers are already seeing it (the sample materials shown here are from a real InnoLaunch listing):</p>
+      <p style="font-size: 16px; line-height: 1.6; color: var(--muted); margin-bottom: 16px;"><strong style="color: #2C3842;">What is InnoLaunch?</strong> It's Innovate's launch campaign for your property &mdash; and it starts <em>before</em> construction is finished. While your project is being completed, buyers are already seeing it (the sample materials shown here are from a real InnoLaunch listing):</p>
 
-      <ul class="inno-points">
+      <ul class="inno-points" style="margin-bottom: 24px;">
         <li>A dedicated property website</li>
         <li>Email marketing &amp; targeted digital ads</li>
         <li>Printed brochures, flyers &amp; postcards</li>
         <li>Early launch &mdash; marketing begins before construction is complete</li>
       </ul>
 
-      <p style="font-size: 16px; line-height: 1.6; color: var(--navy); margin-bottom: 24px;"><strong>The result: InnoLaunch campaigns average 20,000+ views, and those listings close about 4 days quicker than comparable listings.</strong> Included free when you list with an Innovate agent.</p>
+      <!-- High-Impact Stat Highlight Card Box -->
+      <div style="background: #EFF6FE; border: 1.5px solid #4683B3; border-radius: 12px; padding: 18px 24px; margin-bottom: 28px; display: flex; align-items: center; gap: 20px; box-shadow: 0 4px 16px rgba(70, 131, 179, 0.12);">
+        <div style="flex: 1; border-right: 1px solid rgba(70, 131, 179, 0.25); padding-right: 16px;">
+          <span style="font-size: 26px; font-weight: 800; color: #2C3842; line-height: 1; display: block; margin-bottom: 4px;">20,000+</span>
+          <span style="font-size: 13px; color: #5D6871; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Average Views</span>
+        </div>
+        <div style="flex: 1; padding-left: 4px;">
+          <span style="font-size: 26px; font-weight: 800; color: #4683B3; line-height: 1; display: block; margin-bottom: 4px;">~4 Days</span>
+          <span style="font-size: 13px; color: #5D6871; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Faster Close</span>
+        </div>
+      </div>
 
-      <h3 style="font-size: 22px; font-weight: 700; color: var(--navy-darkest, #2C3842); margin-bottom: 8px; font-family: 'Roboto', sans-serif;">Your agent, matched &mdash; not negotiated</h3>
-      <p style="font-size: 16px; line-height: 1.6; color: var(--muted); margin-bottom: 4px;">No interviewing agents, no negotiating commissions. Opt in and Innovate pairs you with the agent who has the deepest track record in <strong style="color: var(--navy);">your asset type and your area</strong> &mdash; a specialist in what you're selling, not a generalist.</p>
+      <h3 style="font-size: 22px; font-weight: 700; color: #2C3842; margin-bottom: 8px; font-family: 'Roboto', sans-serif;">Your agent, matched &mdash; not negotiated</h3>
+      <p style="font-size: 16px; line-height: 1.6; color: var(--muted); margin-bottom: 16px;">No interviewing agents, no negotiating commissions. Opt in and Innovate pairs you with the agent who has the deepest track record in <strong style="color: #2C3842;">your asset type and your area</strong> &mdash; a specialist in what you're selling, not a generalist.</p>
 
-      <div class="match-flow">
+      <!-- Connected Step Workflow -->
+      <div class="match-flow" style="margin-bottom: 28px;">
         <div class="mf-node"><span class="mf-num">1</span><span>You opt in</span></div>
         <div class="mf-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4683B3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg></div>
         <div class="mf-node"><span class="mf-num">2</span><span>Innovate reviews your asset type &amp; area</span></div>
@@ -2435,9 +2458,9 @@ ul.bullets li { margin-bottom: 8px; }
         <div class="mf-node mf-final"><span class="mf-num">3</span><span>You're matched with the specialist agent for that market</span></div>
       </div>
 
-      <p style="font-size: 16px; line-height: 1.6; color: var(--navy); margin-bottom: 24px;">Innovate's agents have represented <strong>one of the largest publicly traded real-estate companies in the country</strong> on its Southern California investor exits.</p>
+      <p style="font-size: 15px; line-height: 1.6; color: var(--muted); margin-bottom: 24px;">Innovate's agents have represented <strong style="color: #2C3842;">one of the largest publicly traded real-estate companies in the country</strong> on its Southern California investor exits.</p>
 
-      <a class="he-brand-btn" href="#optin" data-intent="listing">Request listing info</a>
+      <a class="csl-btn" href="#optin" data-intent="listing">Request listing info &rarr;</a>
     </div>
   </div>
 </section>
