@@ -1662,6 +1662,16 @@ ul.bullets li { margin-bottom: 8px; }
       margin-left: auto !important;
       margin-right: auto !important;
     }
+    .hero-callout-line {
+      font-size: 15px !important;
+      line-height: 1.4 !important;
+      text-align: center !important;
+      max-width: 100% !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      padding: 0 8px !important;
+      box-sizing: border-box !important;
+    }
     .hero-actions-row {
       justify-content: center !important;
       flex-direction: column !important;
@@ -1685,18 +1695,27 @@ ul.bullets li { margin-bottom: 8px; }
       display: none !important;
     }
 
-    /* 2. Section 2 Path Cards Centering */
+    /* 2. Section 2 Path Cards Centering & Full Width */
     .choose-path-section {
       padding: 48px 0 !important;
     }
     .choose-path-section .wrap {
-      padding: 0 16px !important;
+      padding: 0 12px !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+    .path-cards-grid {
+      gap: 16px !important;
+      width: 100% !important;
     }
     .path-card {
       text-align: center !important;
       align-items: center !important;
-      padding: 28px 18px !important;
+      padding: 24px 14px !important;
+      width: 100% !important;
+      max-width: 100% !important;
       box-sizing: border-box !important;
+      border-radius: 16px !important;
     }
     .path-card-tag, .path-card-headline, .path-card-subrate, .path-card-rate-container, .path-card-savebox {
       text-align: center !important;
@@ -1772,6 +1791,31 @@ ul.bullets li { margin-bottom: 8px; }
       justify-content: center !important;
       gap: 24px !important;
       margin-top: 16px !important;
+    }
+
+    /* Brand Cards Mobile Centering */
+    .inno-brand-right {
+      text-align: center !important;
+      align-items: center !important;
+      display: flex !important;
+      flex-direction: column !important;
+      max-width: 100% !important;
+    }
+    .inno-eyebrow, .inno-brand-right h2, .inno-brand-right p, .inno-brand-right ul {
+      text-align: center !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+    .inno-brand-right img {
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+    .inno-brand-right .csl-btn {
+      width: 100% !important;
+      max-width: 320px !important;
+      justify-content: center !important;
+      text-align: center !important;
+      margin: 0 auto !important;
     }
 
     /* Honest Escrow Mobile Centering */
@@ -1948,7 +1992,7 @@ ul.bullets li { margin-bottom: 8px; }
     </p>
 
     <!-- Callout line -->
-    <p style="font-size: 18px; font-weight: 600; color: #ffffff; margin-bottom: 28px;">
+    <p class="hero-callout-line" style="font-size: 18px; font-weight: 600; color: #ffffff; margin-bottom: 28px;">
       Don’t leave <span style="color: #4985b8; font-weight: 800;">$40K+</span> on the table on your next flip.*
     </p>
 
@@ -2827,8 +2871,8 @@ ul.bullets li { margin-bottom: 8px; }
     </div>
 
     <!-- Right: High-Impact Copy & Connected Workflow -->
-    <div style="flex: 1; min-width: 320px; max-width: 540px;">
-      <p class="section-eyebrow" style="color: var(--accent); text-align: left; margin-bottom: 12px; letter-spacing: 0.12em; text-transform: uppercase;">Marketing and sales expertise</p>
+    <div class="inno-brand-right" style="flex: 1; min-width: 320px; max-width: 540px;">
+      <p class="section-eyebrow inno-eyebrow" style="color: var(--accent); margin-bottom: 12px; letter-spacing: 0.12em; text-transform: uppercase;">Marketing and sales expertise</p>
       <h2 style="font-size: 38px; font-weight: 800; color: #2C3842; margin-bottom: 20px; font-family: 'Roboto', sans-serif; letter-spacing: -0.02em; line-height: 1.2;">Meet Innovate Realty.</h2>
       <img src="Innovate.svg" alt="Innovate Realty" style="height: 52px; margin-bottom: 24px; display: block;" />
 
