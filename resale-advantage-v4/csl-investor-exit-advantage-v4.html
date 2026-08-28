@@ -2830,30 +2830,35 @@ ul.bullets li { margin-bottom: 8px; }
     e.preventDefault();
     try {
       var form = e.target;
-      if (!form.reportValidity()) return;
-      if (form.company_website.value) {
+      if (!form.checkValidity()) {
+        for (var i = 0; i < steps.length; i++) {
+          var bad = firstInvalidIn(steps[i]);
+          if (bad) { showStep(i); bad.reportValidity(); return; }
+        }
+        return;
+      }
+      if (form.company_website && form.company_website.value) {
         return; // honeypot
       }
 
-      var timelineSelect = form.querySelector('#timeline');
-      var timelineText = timelineSelect.options[timelineSelect.selectedIndex].text;
-      if (timelineSelect.value === "") timelineText = ""; 
+      var timelineRadio = form.querySelector('input[name="timeline"]:checked');
+      var timelineText = timelineRadio ? timelineRadio.nextElementSibling.innerText.trim() : "";
       
       var intentRadio = form.querySelector('input[name="intent"]:checked');
-      var intentText = intentRadio ? intentRadio.nextElementSibling.innerText : "";
+      var intentText = intentRadio ? intentRadio.nextElementSibling.innerText.replace(/\s+/g, ' ').trim() : "";
       
-      var consentText = "I agree that Center Street Lending and its affiliates may contact me about the Investor Exit Advantage program by phone, email, or text at the information provided. Consent is not a condition of any loan. (Pending legal review.)";
+      var consentText = "I agree that Center Street Lending and its affiliates may contact me about the CSL Resale Advantage program by phone, email, or text at the information provided. Consent is not a condition of any loan.";
       
       var formData = new URLSearchParams();
-      formData.append("entry.1281752874", form.first_name.value);
-      formData.append("entry.511625773", form.last_name.value);
-      formData.append("entry.1714112113", form.email.value);
-      formData.append("entry.1515225399", form.phone.value);
-      formData.append("entry.964880898", form.property_address.value);
-      formData.append("entry.510331880", form.loan_number.value);
+      if (form.first_name) formData.append("entry.1281752874", form.first_name.value);
+      if (form.last_name) formData.append("entry.511625773", form.last_name.value);
+      if (form.email) formData.append("entry.1714112113", form.email.value);
+      if (form.phone) formData.append("entry.1515225399", form.phone.value);
+      if (form.property_address) formData.append("entry.964880898", form.property_address.value);
+      if (form.loan_number) formData.append("entry.510331880", form.loan_number.value);
       formData.append("entry.289374821", timelineText);
       formData.append("entry.1894957803", intentText);
-      if (form.consent.checked) formData.append("entry.2092099687", consentText);
+      if (form.consent && form.consent.checked) formData.append("entry.2092099687", consentText);
 
       // Check for team member URL parameter (e.g. ?rep=gmontoya or ?source=gmontoya)
       var urlParams = new URLSearchParams(window.location.search);
@@ -2906,21 +2911,19 @@ ul.bullets li { margin-bottom: 8px; }
       window.dataLayer.push({
         event: 'exit_advantage_optin',
         ea_intent: intentText,
-        ea_timeline: timelineSelect.value
+        ea_timeline: timelineText
       });
 
-      // Hide all form fields, button, and notes, and show only the success panel
-      Array.from(form.children).forEach(function(child) {
-        if (child.id !== 'success-panel') {
-          child.style.display = 'none';
-        }
+      // Hide form steps and progress bar, and show success panel
+      form.querySelectorAll('.form-step, .form-progress, .form-note').forEach(function (el) {
+        el.style.display = 'none';
       });
       document.getElementById('success-panel').style.display = 'block';
       document.getElementById('success-panel').scrollIntoView({block:'center'});
 
       // Clean up the hidden form after submit
       setTimeout(function() {
-        document.body.removeChild(hiddenForm);
+        if (hiddenForm.parentNode) document.body.removeChild(hiddenForm);
       }, 1000);
 
     } catch(err) {
