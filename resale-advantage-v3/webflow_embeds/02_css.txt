@@ -1,0 +1,253 @@
+<style>
+
+  .tl-benefit-badge strong {
+    color: var(--accent);
+    font-weight: 700;
+  }
+  .co-name {
+    font-weight: inherit;
+  }
+  
+  .tl-step:first-child .tl-dot::before {
+    content: "";
+    position: absolute;
+    inset: -5px;
+    border-radius: 50%;
+    border: 2px solid var(--accent);
+    opacity: 1;
+    pointer-events: none;
+  }
+  .tl.in .tl-step:first-child .tl-dot::before {
+    }
+  }
+  @keyframes tl-pulse {
+    0% { transform: scale(.6); opacity: .7; }
+    70% { transform: scale(1.8); opacity: 1; }
+    100% { transform: scale(1.8); opacity: 1; }
+  }
+
+
+
+
+  /* honest escrow five-star reviews */
+  .he-reviews {
+    max-width: 1000px;
+    margin: 64px auto 0 auto;
+    padding-top: 48px;
+    border-top: 1px solid rgba(0,0,0,0.06);
+  }
+  .he-stars{text-align:center;margin-bottom:4px}
+  .he-stars span{display:inline-block;color:#F2BD63;font-size:var(--text-h4);margin:0 2px;opacity: 1;transform:scale(.4);transition:opacity .35s ease,transform .35s cubic-bezier(.34,1.56,.64,1)}
+  .he-stars span:nth-child(2){transition-delay:.08s}
+  .he-stars span:nth-child(3){transition-delay:.16s}
+  .he-stars span:nth-child(4){transition-delay:.24s}
+  .he-stars span:nth-child(5){transition-delay:.32s}
+  .he-stars.in span{opacity:1;transform:scale(1)}
+  .he-stars-label{text-align:center;font-size:var(--text-body);color:var(--navy);margin-bottom:40px;font-family:'Roboto', sans-serif;}
+  .he-stars-label strong{color:var(--navy-darkest, #2C3842); font-weight: 700;}
+  .he-quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:16px;}
+  .he-quote{background:#fff;border:none;border-radius:12px;padding:32px;box-shadow:0 12px 32px rgba(0,0,0,0.04);display:flex;flex-direction:column;justify-content:space-between;transition:transform 0.25s ease,box-shadow 0.25s ease;}
+  .he-quote:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,0.08);}
+  .he-quote .q-stars{color:#F2BD63;font-size:var(--text-lead);letter-spacing:3px;margin-bottom:16px;}
+  .he-quote p{font-size:var(--text-body);color:var(--navy, #2C3842);font-family:'Inter', 'Roboto', sans-serif;line-height:1.6;margin:0;flex:1;}
+  .he-quote .who{font-size:var(--text-small);color:var(--navy-darkest, #1A242C);margin-top:24px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;border-top:1px solid rgba(0,0,0,0.06);padding-top:16px;}
+
+  /* modern card polish + subtle motion */
+  .benefit{display:flex;flex-direction:column;transition:transform .25s ease,box-shadow .25s ease}
+  .benefit:hover{transform:translateY(-3px);box-shadow:0 10px 22px rgba(44,56,66,.08)}
+  .benefit p a,.card p a{white-space:nowrap}
+  .card,.step{transition:transform .25s ease,box-shadow .25s ease}
+  .card:hover,.step:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(44,56,66,.06)}
+  .pending-inline{display:inline-block;font-size:var(--text-small);color:var(--pending);background:var(--pending-bg);border:1px dashed var(--pending-line);border-radius:6px;padding:8px 14px;margin-top:12px}
+  .reveal{opacity: 1;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+  @keyframes fadeUp{from{opacity: 1;transform:translateY(16px)}to{opacity:1;transform:none}}
+  .hero .eyebrow,.hero h1,.hero p.lead,.hero p.optional,.hero a.btn,.hero a.btn-ghost,.hero .trustbar{}
+  .hero h1{}.hero p.lead{}.hero p.optional{}.hero a.btn{}.hero a.btn-ghost{}.hero .trustbar{}
+  @media(max-width:640px){
+    .deck{height:270px}
+    .slide img{max-width:66%}
+    .slide.pos1{opacity:.45;transform:translateX(26px) scale(.93)}
+    .slide.pos2{opacity:.18;transform:translateX(48px) scale(.87)}
+    .car-btn{width:30px;height:30px}
+  }
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.slide{transition:none}.hero .eyebrow,.hero h1,.hero p.lead,.hero p.optional,.hero a.btn,.hero a.btn-ghost,.hero .trustbar{}.benefit,.card,.step{transition:none}.tl-step,.tl-dot,.tl-line{transition:none;opacity:1;transform:none}.tl-runner,.tl-step:first-child .tl-dot::after{}display:none}.he-stars span{opacity:1;transform:none;transition:none}.hero{}.hero::before,.hero::after,.hero-glow3{}.hero h1 .hl{}}
+
+  /* honest escrow brand moment (Refactored to match user's custom design) */
+  .honest {
+    background: #CADBE9; /* Soft slate-blue background from screenshot */
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 80px 0;
+  }
+  .honest-brand-inner {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 56px;
+    align-items: center;
+    width: 100%;
+  }
+  .honest-brand-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .he-brand-heading {
+    font-size: var(--text-h2);
+    font-weight: 700;
+    color: var(--navy);
+    margin: 0 0 16px 0;
+    line-height: 1.25;
+  }
+  .he-brand-eyebrow {
+    color: var(--accent, #4683B3);
+    font-size: var(--text-micro);
+    font-weight: 700;
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    display: block;
+    font-family: 'Roboto', sans-serif;
+  }
+  .he-brand-logo {
+    height: 62px;
+    width: auto;
+    display: block;
+    margin-bottom: 24px;
+    filter: brightness(0); /* Converts white SVG paths to black */
+  }
+  .he-brand-text {
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--navy);
+    margin: 0 0 32px 0;
+    font-family: 'Roboto', sans-serif;
+  }
+  .he-brand-cta-group {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .he-brand-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--accent, #4683B3);
+    color: #fff;
+    font-weight: 700;
+    padding: 14px 28px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: var(--text-body);
+    box-shadow: 0 4px 12px rgba(70, 131, 179, 0.25);
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .he-brand-btn:hover {
+    background-color: var(--accent-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(70, 131, 179, 0.35);
+  }
+  .he-brand-btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+    color: var(--navy);
+    font-weight: 700;
+    padding: 14px 28px;
+    border-radius: 6px;
+    border: 2px solid var(--navy);
+    text-decoration: none;
+    font-size: var(--text-body);
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+  .he-brand-btn-ghost:hover {
+    background: var(--navy);
+    color: #fff;
+  }
+  .he-brand-phone {
+    font-size: var(--text-body);
+    color: var(--navy);
+    font-weight: 700;
+    text-decoration: underline;
+    font-family: 'Roboto', sans-serif;
+  }
+  .he-brand-phone:hover {
+    color: var(--navy-darkest, #2C3842);
+  }
+  .honest-brand-right {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+  }
+  .he-img-wrap {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .he-img-wrap img {
+    width: 82%; /* Leaves space on the left for badges offset overlay */
+    height: auto;
+    aspect-ratio: 456 / 606;
+    object-fit: cover;
+    display: block;
+    border-radius: 6px;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
+  }
+  .he-badges-list {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 64%; /* Overlaps kitchen image on the left */
+    z-index: 5;
+  }
+  .he-badge-item {
+    background: #fff;
+    border-radius: 6px;
+    padding: 16px 20px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .he-badge-item svg {
+    flex-shrink: 0;
+  }
+  .he-badge-text {
+    font-size: 16px;
+    line-height: 1.4;
+    color: var(--navy);
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+  }
+  @media (max-width: 900px) {
+    .honest-brand-inner {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    .he-img-wrap {
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+    }
+    .he-img-wrap img {
+      display: none; /* Hide the Honest Escrow image on mobile entirely */
+    }
+    .he-badges-list {
+      position: relative;
+      left: auto;
+      top: auto;
+      transform: none;
+      width: 100%;
+      max-width: 480px;
+    }
+  }
+</style>

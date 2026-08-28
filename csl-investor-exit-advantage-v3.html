@@ -32,7 +32,7 @@
 -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Cormorant+Garamond:wght@600;700&family=Bebas+Neue&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Cormorant+Garamond:wght@600;700&family=Bebas+Neue&family=Inter:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://use.typekit.net/sjt3vdj.css">
 <style>
   @font-face {
@@ -393,7 +393,7 @@
     filter: brightness(0); /* Converts white SVG paths to black */
   }
   .he-brand-text {
-    font-size: 16px;
+    font-size: var(--text-lead);
     line-height: 1.55;
     color: var(--navy);
     margin: 0 0 32px 0;
@@ -498,7 +498,7 @@
     flex-shrink: 0;
   }
   .he-badge-text {
-    font-size: 16px;
+    font-size: var(--text-small);
     line-height: 1.4;
     color: var(--navy);
     font-weight: 500;
@@ -579,7 +579,7 @@
 
   /* benefits */
   .grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;margin-top:28px}
-  .benefit{background:#fff;border:1px solid var(--line);border-radius:0;padding:24px;border-top:3px solid var(--accent)}
+  .benefit{background:#fff;border:1px solid var(--line);border-radius:10px;padding:24px;border-top:3px solid var(--accent)}
   .benefit h3{font-size:var(--text-h3);margin-bottom:8px} /* Standardized */
   .benefit p{font-size:var(--text-body);color:var(--muted)}
   .benefit.is-pending{border:2px dashed var(--pending-line);border-top:4px solid var(--pending-line);background:var(--pending-bg)}
@@ -596,21 +596,21 @@
   #optin{background:var(--navy);color:#fff}
   #optin h2{color:#fff}
   #optin .sub{color:rgba(255,255,255,.75)}
-  .form-card{background:#fff;border-radius:12px;padding:40px;margin:0 auto;color:var(--ink);max-width:720px;box-sizing:border-box;}
-  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .form-card{background:#fff;border-radius:12px;padding:28px;margin:0 auto;color:var(--ink);max-width:720px;box-sizing:border-box;}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
   @media(max-width: 900px) {
     .form-row { grid-template-columns: 1fr; gap: 0; }
   }
-  .field{margin-bottom:24px}
-  .field label{display:block;font-size:16px;font-weight:600;color:var(--navy);margin-bottom:8px}
+  .field{margin-bottom:16px}
+  .field label{display:block;font-size:.85rem;font-weight:600;color:var(--navy);margin-bottom:5px}
   .field label .opt{font-weight:400;color:var(--muted)}
-  .field input[type=text],.field input[type=email],.field input[type=tel],.field select{width:100%;padding:14px 16px;border:1px solid var(--line);border-radius:6px;font-size:16px;font-family:inherit;background:#fff;box-sizing:border-box;}
+  .field input[type=text],.field input[type=email],.field input[type=tel],.field select{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:6px;font-size:.95rem;font-family:inherit;background:#fff}
   .field input:focus,.field select:focus{outline:2px solid var(--accent);outline-offset:0;border-color:var(--accent)}
-  fieldset{border:1px solid var(--line);border-radius:8px;padding:24px;margin-bottom:24px}
-  legend{font-size:16px;font-weight:600;color:var(--navy);padding:0 8px}
-  .radio-row{display:flex;align-items:flex-start;gap:12px;padding:8px 4px;cursor:pointer}
-  .radio-row input{margin-top:4px;width:18px;height:18px;accent-color:var(--accent)}
-  .radio-row span{font-size:16px;line-height:1.4}
+  fieldset{border:1px solid var(--line);border-radius:8px;padding:16px;margin-bottom:16px}
+  legend{font-size:.85rem;font-weight:600;color:var(--navy);padding:0 6px}
+  .radio-row{display:flex;align-items:flex-start;gap:10px;padding:8px 4px;cursor:pointer}
+  .radio-row input{margin-top:4px;accent-color:var(--accent)}
+  .radio-row span{font-size:.95rem}
   .consent{display:flex;gap:10px;align-items:flex-start;font-size:.82rem;color:var(--muted);margin-bottom:20px}
   .consent input{margin-top:3px;accent-color:var(--accent)}
   .form-note{font-size:.82rem;color:var(--muted);margin-top:14px}
@@ -619,30 +619,23 @@
   #success-panel p{font-size:.92rem;color:#2F5238}
   .hp{position:absolute;left:-9999px;opacity:0}
 
-  /* faq - premium redesign */
-  .faq-wrap { max-width: 800px; margin: 0 auto; }
-  details { border-bottom: 1px solid var(--line); margin-top: 0; background: transparent; border-radius: 0; transition: background-color 0.2s ease; }
-  details:first-of-type { border-top: 1px solid var(--line); }
-  details:hover { background-color: #f8fafc; }
-  summary { padding: 28px 16px; font-size: 18px; font-weight: 600; color: var(--navy-darkest); cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
-  summary::-webkit-details-marker { display: none; }
-  summary::after { content: ""; display: block; width: 24px; height: 24px; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23648FB5' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M12 6v12m6-6H6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: center; transition: transform 0.3s ease; flex-shrink: 0; margin-left: 16px; }
-  details[open] summary::after { transform: rotate(45deg); }
-  details[open] summary { color: var(--accent); }
-  details .a { padding: 0 16px 32px 16px; font-size: 16px; line-height: 1.65; color: #4A5568; }
+  /* faq */
+  details{border:1px solid var(--line);border-radius:8px;margin-top:12px;background:#fff}
+  summary{padding:14px 18px;font-weight:600;color:var(--navy);cursor:pointer;list-style:none}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";float:right;color:var(--accent);font-weight:700}
+  details[open] summary::after{content:"\2212"}
+  details .a{padding:0 20px 16px;font-size:.95rem;color:var(--muted)}
 
   /* disclosure + footer */
   .disclosure{background:var(--bg-soft);border-top:1px solid var(--line)}
   .disclosure h2{font-size:var(--text-h2);color:var(--muted);max-width:880px;margin-top:12px}
-  footer{background:var(--navy-deep);color:rgba(255,255,255,.85);padding:64px 0;font-size:16px}
-  footer .wrap{display:flex;flex-direction:column;gap:32px;}
-  footer .wordmark{font-size:32px;font-weight:700;color:#fff;text-decoration:none;letter-spacing:-0.02em;}
-  footer .wordmark span{color:var(--accent);}
-  footer .divider{height:1px;background:rgba(255,255,255,0.2);width:100%;}
-  footer .licenses{display:grid;grid-template-columns:repeat(3, 1fr);gap:24px 16px;}
+  footer{background:var(--navy-deep);color:rgba(255,255,255,.65);padding:40px 0;font-size:.8rem}
+  footer .wrap{display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap}
+  footer .wordmark{color:#fff}
+  footer .licenses{line-height:1.9}
   @media(max-width:640px){
-    footer .licenses{grid-template-columns:1fr;}
-  }
+    }
   .offer-bar {
     background: var(--navy-deep);
     color: #fff; 
@@ -850,7 +843,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    padding: 30px 12px 20px;
+    padding: 30px 12px 20px; /* Tighter padding for shorter card height */
     background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.4) 60%, transparent 100%);
     display: flex;
     flex-direction: column;
@@ -1013,43 +1006,18 @@
 
 
   .hero { background: linear-gradient(90deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.15) 100%), url('Frame 129.png') no-repeat center center; background-size: cover; padding: 72px 0 60px; display: flex; flex-direction: column; align-items: center; gap: 64px; animation: none; color: #fff; }
-  .hero-main-row { display: flex; align-items: center; justify-content: space-between; width: 100%; max-width: 1200px; }
-  .hero-left { flex: 1; max-width: 800px; display: flex; flex-direction: column; gap: 24px; }
-  .hero-left-top { display: flex; flex-direction: column; }
+  .hero-main-row { display: flex; align-items: center; justify-content: space-between; width: 100%; max-width: 1200px; gap: 44px; margin: 0 auto; }
   
-  .hero h1 { font-family: 'Arteria Std Compress', 'Bebas Neue', sans-serif; font-size: 72px; font-weight: 300; line-height: 1.15; color: #fff; margin: 0 0 8px 0; letter-spacing: 0.02em; }
-  .hero h1 span.hl { 
-    color: var(--accent); 
-    font-weight: 400; 
-    position: relative;
-    display: inline-block;
-  }
-  .hero h1 span.hl::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -2px;
-    width: 100%;
-    height: 16px;
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 20' preserveAspectRatio='none'><path d='M2,14 Q30,5 98,12 M8,19 Q50,9 92,15' fill='none' stroke='%234985b8' stroke-width='3' stroke-linecap='round'/></svg>");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    z-index: -1;
-  }
-  .hero h2 { color: #fff; font-size: 1.7rem; font-weight: 700; line-height: 1.2; margin: 0 0 20px 0; }
+  .hero-left { flex: 1; max-width: 800px; display: flex; flex-direction: column; gap: 24px; }
+  .hero-left-top { display: flex; flex-direction: column; gap: 16px; }
+
+  .hero h1 { font-family: 'Arteria Std Compress', 'Bebas Neue', sans-serif; font-size: 76px; font-weight: 400; text-transform: uppercase; line-height: 76px; color: #fff; margin: 0; letter-spacing: 0.03em; }
+  .hero h1 span.hl { color: var(--accent); }
+  .hero h2 { color: #fff; font-size: 1.7rem; font-weight: 700; line-height: 1.2; margin: 0; }
   .hero p.lead { font-size: 1.15rem; font-weight: 400; line-height: 1.6; color: rgba(255,255,255,.85); margin: 0; max-width: 620px; }
   .hero p.lead strong { font-weight: 700; }
-  .metrics-eyebrow-container { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; width: 100%; }
-  .me-line-left { height: 1px; background: rgba(255,255,255,0.2); width: 32px; }
-  .me-text { font-size: 15px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em; font-family: 'Roboto', sans-serif; white-space: nowrap; }
-  .me-line-right { height: 1px; background: rgba(255,255,255,0.2); flex: 1; max-width: 200px; }
-  
-  .hero-metrics { display: flex; gap: 48px; margin-top: 16px; align-items: flex-start; }
-  .metric { display: flex; flex-direction: column; gap: 6px; }
-  .metric-num { font-size: 48px; font-weight: 800; color: #fff; line-height: 1; font-family: 'Roboto', sans-serif; letter-spacing: -0.02em; }
-  .metric-label { font-size: 15px; color: rgba(255, 255, 255, 0.65); font-weight: 400; white-space: nowrap; line-height: 1.3; }
   ul.bullets { font-size: 1.15rem; font-weight: 700; line-height: 1.6; color: #fff; margin: 0; padding-left: 20px; list-style-type: disc; }
-  ul.bullets li { margin-bottom: 8px; }
+ul.bullets li { margin-bottom: 8px; }
   
   .hero-cta { display: flex; align-items: center; gap: 16px; }
   .hero-cta-group { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
@@ -1150,7 +1118,7 @@
   .stat-card .num { font-family: 'Roboto', sans-serif; font-size: 64px; font-weight: 700; line-height: 64px; color: #fff; }
   .stat-card .sub { color: rgba(255,255,255,.82); font-size: .84rem; font-weight: 400; line-height: 1.4; text-align: center; max-width: 400px; }
 
-  .hero-optional { color: rgba(255, 255, 255, 0.45); font-size: 12px; line-height: 1.45; text-align: left; max-width: 620px; margin-top: 32px; font-weight: 400; }
+  .hero-optional { color: rgba(255, 255, 255, 0.6); font-size: var(--text-small); line-height: 1.45; text-align: left; max-width: 620px; margin-top: 10px; }
 
   .color-bar { display: flex; flex-direction: column; }
   .color-bar-white { height: 12px; background: #fff; }
@@ -1184,9 +1152,8 @@
     
     
     /* Mobile H1 Overlap & Sizing fixes */
-    .hero h1 { font-size: 52px !important; line-height: 1.15 !important; }
-    .hero h1 span { white-space: normal !important; display: inline-block !important; }
-    .hero h1 span.hl::after { height: 10px; bottom: 4px; }
+    .hero h1 { font-size: 40px !important; line-height: 44px !important; }
+    .hero h1 span { white-space: normal !important; display: inline !important; }
     
     /* Hide Properties Sold on mobile */
     .hero-right { display: none !important; }
@@ -1197,20 +1164,15 @@
     .brand-divider { display: none; }
     .brand-text { font-size: 0.95rem !important; }
     
-    .hero-cta { flex-direction: column; gap: 24px; align-items: stretch; width: 100%; }
+
+    
+    .hero-cta { flex-direction: column; gap: 16px; align-items: stretch; width: 100%; }
     .hero-cta-group { flex-direction: column; align-items: stretch; width: 100%; gap: 12px; }
     .hero-cta-group .btn { justify-content: center; width: 100%; }
     .hero-cta-group .btn-ghost { text-align: center; width: 100%; padding: 12px 0; }
     
-    /* Eyebrow scaling */
-    .me-text { font-size: 12px; letter-spacing: 0.05em; }
-    .me-line-left { width: 16px; }
-    
-    .hero-metrics { flex-wrap: wrap; gap: 24px 16px; justify-content: space-between; }
-    .metric { flex: 1 1 45%; min-width: 120px; }
-    .metric-num { font-size: 40px; }
-    .metric-label { font-size: 13px; white-space: normal; line-height: 1.4; padding-right: 8px; }
-    
+    .hero-savings { flex-direction: column; gap: 16px; align-items: stretch; width: 100%; }
+    .save { width: 100%; flex: 1; text-align: left; }
     .hero-logos { justify-content: center; margin-top: 12px; border-top: 1px solid rgba(255, 255, 255, 0.15); padding-top: 16px; }
     .stat-card .num { font-size: 48px; line-height: 48px; }
   }
@@ -1231,6 +1193,7 @@
     <div class="nav-left">
       <a class="wordmark" href="https://www.centerstreetlending.com/"><img src="logo1.svg" alt="Center Street Lending" style="height: 36px; width: auto; display: block;"></a>
     </div>
+    <a class="phone" href="tel:5555555555">(555) 555-5555</a>
   </div>
 </header>
 
@@ -1243,58 +1206,28 @@
         
         <h2 class="hero-subheading">The CSL Resale Advantage</h2>
         
-        <p class="hero-lead-para">You found it, improved it, and rehabbed it. Now you can list it at 1% and close for less. We pre-negotiated exclusive deals with <strong>Innovate Realty</strong> and <strong>Honest Escrow</strong>, teams specializing in real estate investor transactions, just for CSL borrowers.</p>
+        <p class="hero-lead-para">You found it, improved it, and rehabbed it — now list it at 1% and close for less. We pre-negotiated an exclusive deal with Innovate Realty and Honest Escrow, just for CSL borrowers.</p>
+        
+        <div class="hero-savings">
+          <div class="save"><strong>1%</strong><span>Exclusive listing fee</span></div>
+          <div class="save"><strong>$500</strong><span>Seller escrow, as low as</span></div>
+          <div class="save"><strong>20K</strong><span>Buyer views in 21 days</span></div>
+        </div>
         
       </div>
-      <div class="hero-cta" style="display: flex; flex-direction: column; align-items: flex-start; gap: 32px;">
+      <div class="hero-cta" style="display: flex; flex-direction: column; align-items: flex-start; gap: 16px;">
         <div class="hero-cta-group">
           <a class="btn" href="#optin">Request Information <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z" fill="currentColor"/></svg></a>
+          <a class="btn-ghost" href="tel:5555555555">or call (555) 555-5555</a>
         </div>
-        
-        <div style="display: flex; gap: 64px; margin-top: 24px; width: 100%; flex-wrap: wrap;">
-          
-          <!-- HONEST ESCROW STATS -->
-          <div style="flex: 1; min-width: 240px; display: flex; flex-direction: column; gap: 4px;">
-            <div class="metrics-eyebrow-container" style="margin-bottom: 8px;">
-              <div class="me-line-left"></div>
-              <span class="me-text">Honest Escrow</span>
-              <div class="me-line-right"></div>
-            </div>
-            <div class="hero-metrics" style="margin-top: 0; gap: 32px;">
-              <div class="metric">
-                <span class="metric-num">$500</span>
-                <span class="metric-label">Seller escrow, as low as</span>
-              </div>
-              <div class="metric">
-                <span class="metric-num" id="deal-ticker" data-target="100">0+</span>
-                <span class="metric-label">Properties successfully closed</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- INNOVATE REALTY STATS -->
-          <div style="flex: 1; min-width: 240px; display: flex; flex-direction: column; gap: 4px;">
-            <div class="metrics-eyebrow-container" style="margin-bottom: 8px;">
-              <div class="me-line-left"></div>
-              <span class="me-text">Innovate Realty</span>
-              <div class="me-line-right"></div>
-            </div>
-            <div class="hero-metrics" style="margin-top: 0; gap: 32px;">
-              <div class="metric">
-                <span class="metric-num">1%</span>
-                <span class="metric-label">Exclusive listing fee</span>
-              </div>
-              <div class="metric">
-                <span class="metric-num">20K</span>
-                <span class="metric-label">Buyer views in 21 days</span>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="hero-optional">* This pre-negotiated program is entirely optional. You are always free to choose your own broker, escrow company, and other providers.</div>
+        <div class="hero-optional"><strong>Note:</strong> This pre-negotiated program is entirely optional. You are always free to choose your own broker, escrow company, and other providers.</div>
       </div>
+    </div>
+    
+    <div class="hero-right">
+      <span class="tk-label">Properties Sold</span>
+      <span class="tk-num" id="deal-ticker" data-target="100">0+</span>
+      <span class="tk-sub">Homes successfully closed through CSL Resale Advantage</span>
     </div>
   </div>
 </div>
@@ -1347,6 +1280,7 @@
         <div class="trust-img-stat">
           <span class="trust-stat-num">$7.6B+</span>
           <span class="trust-stat-label">Funded by<br>Center Street Lending</span>
+          <img src="Company Logo.svg" alt="Center Street Lending" class="card-logo card-logo-csl" />
         </div>
       </div>
       <div class="trust-img-card">
@@ -1354,6 +1288,7 @@
         <div class="trust-img-stat">
           <span class="trust-stat-num">3,200+</span>
           <span class="trust-stat-label">Homes sold<br>by Innovate Realty</span>
+          <img src="Innovate.svg" alt="Innovate Realty" class="card-logo card-logo-innovate" />
         </div>
       </div>
       <div class="trust-img-card">
@@ -1361,6 +1296,7 @@
         <div class="trust-img-stat">
           <span class="trust-stat-num">$1.1B+</span>
           <span class="trust-stat-label">Closed by<br>Honest Escrow</span>
+          <img src="HonestEscrow.svg" alt="Honest Escrow" class="card-logo card-logo-honest" />
         </div>
       </div>
     </div>
@@ -1370,12 +1306,6 @@
       <p class="section-eyebrow" style="color:var(--accent)">Your Team</p>
       <h2 class="trust-heading">A trusted network of professionals</h2>
       <p class="trust-body">CSL Resale Advantage gives Center Street Lending borrowers access to preferred pricing and trusted real estate and escrow professionals who already know the CSL process, <strong>making the final stage of your project simpler, more coordinated, and more cost-effective.</strong></p>
-      
-      <div class="trust-logos-row" style="display: flex; gap: 40px; align-items: center; margin-top: 40px;">
-        <img src="Company Logo.svg" alt="Center Street Lending" style="height: 64px; filter: brightness(0) invert(1);" />
-        <img src="Innovate.svg" alt="Innovate Realty" style="height: 52px; filter: brightness(0) invert(1);" />
-        <img src="HonestEscrow.svg" alt="Honest Escrow" style="height: 46px; filter: brightness(0) invert(1);" />
-      </div>
     </div>
 
   </div>
@@ -1872,6 +1802,37 @@
 
 
 
+<!-- MARKETING EXPERTISE -->
+<section id="innolaunch" class="soft">
+  <div class="wrap">
+    <p class="section-eyebrow">Marketing &amp; sales expertise</p>
+    <h2 class="section-title">What an InnoLaunch debut looks like</h2>
+    <p class="section-sub">Sample marketing materials prepared for an Innovate Realty listing — the kind of launch support included when you list with an Innovate Realty agent.</p>
+    <ul class="inno-points">
+      <li><strong>20,000 buyer views in 21 days</strong> &mdash; a coordinated launch built to get eyes on your property fast</li>
+      <li>Email marketing &amp; targeted digital ads</li>
+      <li>A dedicated property website</li>
+      <li>Printed brochures, flyers &amp; postcards</li>
+      <li>Marketing can begin before construction is complete &mdash; for a head start</li>
+    </ul>
+    <div class="inno-grid">
+      <figure class="debut-feature"><img src="innolaunch-ipad-debut.jpg" alt="InnoLaunch Market Debut title screen on a tablet: your property's premiere, perfected" loading="lazy"><figcaption>InnoLaunch Market Debut &mdash; your property's premiere, perfected</figcaption></figure>
+      <div class="carousel" id="inno-carousel" aria-roledescription="carousel" aria-label="InnoLaunch sample materials">
+        <div class="deck" id="car-track">
+          <figure class="slide"><img src="innolaunch-brochure.jpg" alt="Innovate Realty printed listing brochure: Coastal Luxury on Little Balboa" loading="lazy"><figcaption>Printed listing brochure for the property debut</figcaption></figure>
+          <figure class="slide"><img src="innolaunch-campaign-app.jpg" alt="InnoLaunch campaign tracking app showing marketing campaign completion on a phone" loading="lazy"><figcaption>Live campaign tracking &mdash; assets, metrics, showings, and open houses in one view</figcaption></figure>
+          <figure class="slide"><img src="innolaunch-postcard.jpg" alt="Innovate Realty New to Market postcard for 214 Abalone Ave, Newport Beach" loading="lazy"><figcaption>New-to-market announcement sent to the surrounding area</figcaption></figure>
+          <figure class="slide"><img src="innolaunch-flyer.jpg" alt="Innovate Realty open-house property flyer in an acrylic stand" loading="lazy"><figcaption>Open-house property flyers</figcaption></figure>
+        </div>
+        <button type="button" class="car-btn car-prev" id="car-prev" aria-label="Previous slide">&#8249;</button>
+        <button type="button" class="car-btn car-next" id="car-next" aria-label="Next slide">&#8250;</button>
+        <div class="car-dots" id="car-dots"></div>
+      </div>
+    </div>
+    <p class="gallery-note">Swipe, drag, or use the arrows to browse. Sample materials shown for illustration. Marketing plans vary by property and listing agreement.</p>
+  </div>
+</section>
+
 <!-- HONEST ESCROW BRAND MOMENT — PENDING #10: confirm honestescrow.com live + Honest approves copy -->
 <section class="honest">
   <div class="wrap">
@@ -1939,82 +1900,6 @@
     
 
     
-  </div>
-</section>
-
-<!-- MARKETING EXPERTISE -->
-<section id="innolaunch" class="soft" style="padding: 80px 0;">
-  <style>
-    @media (max-width: 900px) {
-      #innolaunch .wrap {
-        flex-direction: column-reverse !important;
-      }
-    }
-  </style>
-  <div class="wrap" style="display: flex; gap: 64px; align-items: center; flex-wrap: wrap;">
-    
-    <!-- Left: Image Grid -->
-    <div style="flex: 1; min-width: 320px;">
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
-        <img src="innolaunch-campaign-app.jpg" alt="Campaign App" style="width: 100%; aspect-ratio: 4/3; object-fit: cover;" />
-        <img src="innolaunch-brochure.jpg" alt="Brochure" style="width: 100%; aspect-ratio: 4/3; object-fit: cover;" />
-        <img src="Frame 129.png" alt="Living Room" style="width: 100%; aspect-ratio: 4/3; object-fit: cover;" />
-        <img src="innolaunch-postcard.jpg" alt="Postcard" style="width: 100%; aspect-ratio: 4/3; object-fit: cover;" />
-        <img src="innolaunch-ipad-debut.jpg" alt="iPad Debut" style="width: 100%; aspect-ratio: 4/3; object-fit: cover;" />
-        <img src="innolaunch-flyer.jpg" alt="Flyer Stand" style="width: 100%; aspect-ratio: 4/3; object-fit: cover;" />
-      </div>
-    </div>
-
-    <!-- Right: Copy -->
-    <div style="flex: 1; min-width: 320px; max-width: 520px; padding-top: 16px;">
-      <p class="section-eyebrow" style="color: var(--accent); text-align: left; margin-bottom: 16px; letter-spacing: 0.1em; text-transform: uppercase;">Marketing and sales expertise</p>
-      <h2 style="font-size: 36px; font-weight: 700; color: var(--navy-darkest); margin-bottom: 24px; font-family: 'Roboto', sans-serif; letter-spacing: -0.02em;">Meet Innovate Realty.</h2>
-      <img src="Innovate.svg" alt="Innovate Realty" style="height: 64px; margin-bottom: 24px; display: block;" />
-      
-      <p style="font-size: 16px; line-height: 1.6; color: var(--navy-darkest); margin-bottom: 24px;">These sample marketing materials prepared for an Innovate Realty listing demonstrate the kind of launch support included when you list with an Innovate Realty agent.</p>
-      
-      <ul style="list-style: disc; padding-left: 20px; margin: 0; color: var(--navy-darkest);">
-        <li style="margin-bottom: 12px; font-size: 16px; line-height: 1.6;"><strong>20,000 buyer views in 21 days</strong> &mdash; a coordinated launch built to get eyes on your property fast</li>
-        <li style="margin-bottom: 12px; font-size: 16px; line-height: 1.6;"><strong>Email marketing &amp; targeted digital ads</strong></li>
-        <li style="margin-bottom: 12px; font-size: 16px; line-height: 1.6;"><strong>A dedicated property website</strong></li>
-        <li style="margin-bottom: 12px; font-size: 16px; line-height: 1.6;"><strong>Printed brochures, flyers &amp; postcards</strong></li>
-        <li style="margin-bottom: 12px; font-size: 16px; line-height: 1.6;"><strong>Get a head start with marketing before construction is complete</strong></li>
-      </ul>
-    </div>
-
-  </div>
-</section>
-
-<!-- FAQ -->
-<section style="padding: 80px 0;">
-  <div class="wrap">
-    <div style="text-align: center; margin-bottom: 48px;">
-      <p class="section-eyebrow">FAQ</p>
-      <h2 class="section-title" style="margin-bottom: 0;">Common questions</h2>
-    </div>
-    <div class="faq-wrap">
-      <details>
-        <summary>Am I required to use Innovate Realty or Honest Escrow?</summary>
-        <div class="a">No. Use of any introduced provider is completely optional. You are free to choose your own real estate broker, escrow company, title company, lender, and other service providers.</div>
-      </details>
-      <details>
-        <summary>Does opting in affect my CSL loan?</summary>
-        <div class="a">No. Use of any introduced provider is not required as a condition of obtaining, maintaining, or paying off a CSL loan. Requesting information has no effect on your loan terms or servicing.</div>
-      </details>
-      <details>
-        <summary>What does it cost to request information?</summary>
-        <div class="a">Nothing. Requesting information is free. If you later choose to work with any provider, applicable fees are subject to eligibility, transaction details, party agreement, written disclosure, and escrow instructions.</div>
-      </details>
-      <details>
-        <summary>What happens after I submit the form?</summary>
-        <div class="a">A team member reaches out within 24 hours with the information you selected. If you chose &ldquo;follow up later,&rdquo; we'll simply check back closer to your timeline.</div>
-      </details>
-      <details>
-        <summary>Who is eligible?</summary>
-        <!-- PENDING #3: replace with the approved eligibility definition before launch -->
-        <div class="a"><span class="pending-chip">Pending</span> Eligibility definition to be confirmed by leadership before launch (active borrowers vs. past investors; geographic scope).</div>
-      </details>
-    </div>
   </div>
 </section>
 
@@ -2098,7 +1983,33 @@
   </div>
 </section>
 
-
+<!-- FAQ -->
+<section class="soft">
+  <div class="wrap">
+    <h2>Common questions</h2>
+    <details>
+      <summary>Am I required to use Innovate Realty or Honest Escrow?</summary>
+      <div class="a">No. Use of any introduced provider is completely optional. You are free to choose your own real estate broker, escrow company, title company, lender, and other service providers.</div>
+    </details>
+    <details>
+      <summary>Does opting in affect my CSL loan?</summary>
+      <div class="a">No. Use of any introduced provider is not required as a condition of obtaining, maintaining, or paying off a CSL loan. Requesting information has no effect on your loan terms or servicing.</div>
+    </details>
+    <details>
+      <summary>What does it cost to request information?</summary>
+      <div class="a">Nothing. Requesting information is free. If you later choose to work with any provider, applicable fees are subject to eligibility, transaction details, party agreement, written disclosure, and escrow instructions.</div>
+    </details>
+    <details>
+      <summary>What happens after I submit the form?</summary>
+      <div class="a">A team member reaches out within 24 hours with the information you selected. If you chose &ldquo;follow up later,&rdquo; we'll simply check back closer to your timeline.</div>
+    </details>
+    <details>
+      <summary>Who is eligible?</summary>
+      <!-- PENDING #3: replace with the approved eligibility definition before launch -->
+      <div class="a"><span class="pending-chip">Pending</span> Eligibility definition to be confirmed by leadership before launch (active borrowers vs. past investors; geographic scope).</div>
+    </details>
+  </div>
+</section>
 
 <!-- DISCLOSURE — LOCKED COPY from readiness doc. Do not edit ad hoc. -->
 <section class="disclosure">
@@ -2110,20 +2021,15 @@
 
 <footer>
   <div class="wrap">
-
-    
-    <div class="licenses">
-      <div>CFL License No. 60DBO-57755</div>
-      <div>AZ MBL# 0930263</div>
-      <div>OR Lic #ML-5838</div>
-      <div>Florida Mortgage Lender<br>Servicer #MLD1180</div>
-      <div>CA DRE - License #01883377</div>
-      <div>NMLS 905781</div>
+    <div>
+      <a class="wordmark" href="https://www.centerstreetlending.com/">CENTER STREET <span>LENDING</span></a>
+      <p style="margin-top:12px">(555) 555-5555<br>&copy; 2026 Center Street Lending. All rights reserved.</p>
     </div>
-    
-    <div class="divider"></div>
-    
-    <p style="margin:0;">&copy; 2025 Center Street Lending. All rights reserved.</p>
+    <div class="licenses">
+      CFL License No. 60DBO-57755 &middot; NMLS 905781<br>
+      CA DRE License #01883377 &middot; AZ MBL# 0930263<br>
+      OR Lic #ML-5838 &middot; FL Mortgage Lender Servicer #MLD1180
+    </div>
   </div>
 </footer>
 

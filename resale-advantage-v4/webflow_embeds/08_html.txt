@@ -1,0 +1,120 @@
+<section class="honest">
+<div class="wrap">
+<div class="honest-brand-inner">
+<!-- Left side: copy and CTA -->
+<div class="honest-brand-left">
+<p class="section-eyebrow">Your escrow option</p>
+<h2 class="he-brand-heading">Meet Honest Escrow.</h2>
+<img alt="Honest Escrow" class="he-brand-logo" src="HonestEscrow.svg"/>
+<p class="he-brand-text">An independent Southern California escrow team that keeps the closing process clear, calm, and human — and is familiar with CSL payoff and closing requirements.</p>
+<div class="he-brand-cta-group">
+<a class="he-brand-btn" href="#optin" id="he-escrow-cta">
+            Request escrow info
+          </a>
+</div>
+<p class="he-fineprint" style="margin-top: 20px;">Clicking “Request escrow info” pre-fills the form below — no commitment, just information.</p>
+</div>
+<!-- Right side: image and floating checklist badges -->
+<div class="honest-brand-right">
+<div class="he-img-wrap">
+<img alt="Modern kitchen interior showcasing home styling" src="Rectangle 22.png"/>
+<div class="he-badges-list">
+<div class="he-badge-item">
+<svg fill="none" height="20" viewbox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+<circle cx="10" cy="10" r="9.25" stroke="#5D6871" stroke-width="1.5"></circle>
+<path d="M6 10L9 13L14 7" stroke="#5D6871" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+</svg>
+<div class="he-badge-text">Escrow officers with more than 15 years of experience</div>
+</div>
+<div class="he-badge-item">
+<svg fill="none" height="20" viewbox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+<circle cx="10" cy="10" r="9.25" stroke="#5D6871" stroke-width="1.5"></circle>
+<path d="M6 10L9 13L14 7" stroke="#5D6871" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+</svg>
+<div class="he-badge-text">Clear communication at every milestone, from opening to closing</div>
+</div>
+<div class="he-badge-item">
+<svg fill="none" height="20" viewbox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+<circle cx="10" cy="10" r="9.25" stroke="#5D6871" stroke-width="1.5"></circle>
+<path d="M6 10L9 13L14 7" stroke="#5D6871" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+</svg>
+<div class="he-badge-text">Familiar with CSL payoff demands and closing coordination</div>
+</div>
+<div class="he-badge-item">
+<svg fill="none" height="20" viewbox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+<circle cx="10" cy="10" r="9.25" stroke="#5D6871" stroke-width="1.5"></circle>
+<path d="M6 10L9 13L14 7" stroke="#5D6871" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+</svg>
+<div class="he-badge-text">Optional — you are always free to choose your own escrow company</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section> MARKETING EXPERTISE <section class="soft" id="innolaunch" style="padding: 80px 0;">
+<style>
+    @media (max-width: 900px) {
+      #innolaunch .wrap {
+        flex-direction: column-reverse !important;
+      }
+    }
+  </style>
+<div class="wrap" style="display: flex; gap: 64px; align-items: center; flex-wrap: wrap;">
+<!-- Left: Image Grid -->
+<div style="flex: 1; min-width: 320px;">
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+<img alt="Campaign App" src="innolaunch-campaign-app.jpg" style="width: 100%; aspect-ratio: 4/3; object-fit: cover;"/>
+<img alt="Brochure" src="innolaunch-brochure.jpg" style="width: 100%; aspect-ratio: 4/3; object-fit: cover;"/>
+<img alt="Living Room" src="Frame 129.png" style="width: 100%; aspect-ratio: 4/3; object-fit: cover;"/>
+<img alt="Postcard" src="innolaunch-postcard.jpg" style="width: 100%; aspect-ratio: 4/3; object-fit: cover;"/>
+<img alt="iPad Debut" src="innolaunch-ipad-debut.jpg" style="width: 100%; aspect-ratio: 4/3; object-fit: cover;"/>
+<img alt="Flyer Stand" src="innolaunch-flyer.jpg" style="width: 100%; aspect-ratio: 4/3; object-fit: cover;"/>
+</div>
+</div>
+<!-- Right: Copy -->
+<div style="flex: 1; min-width: 320px; max-width: 520px; padding-top: 16px;">
+<p class="section-eyebrow" style="color: var(--accent); text-align: left; margin-bottom: 16px; letter-spacing: 0.1em; text-transform: uppercase;">Marketing and sales expertise</p>
+<h2 style="font-size: 36px; font-weight: 700; color: var(--navy-darkest); margin-bottom: 24px; font-family: 'Roboto', sans-serif; letter-spacing: -0.02em;">Meet Innovate Realty.</h2>
+<img alt="Innovate Realty" src="Innovate.svg" style="height: 64px; margin-bottom: 24px; display: block;"/>
+<p style="font-size: 16px; line-height: 1.6; color: var(--navy-darkest); margin-bottom: 16px;">These sample marketing materials prepared for an Innovate Realty listing demonstrate the kind of launch support included when you list with an Innovate Realty agent.</p>
+<p style="font-size: 16px; line-height: 1.6; color: var(--navy-darkest); margin-bottom: 16px;"><strong>InnoLaunch, on average, produces 21,000 views resulting in sales that close 4 days quicker.</strong></p>
+<ul style="list-style: disc; padding-left: 40px; margin: 0; color: var(--navy-darkest);">
+<li style="margin-bottom: 12px; font-size: 16px; line-height: 1.6;">Email marketing &amp; targeted digital ads</li>
+<li style="margin-bottom: 12px; font-size: 16px; line-height: 1.6;">A dedicated property website</li>
+<li style="margin-bottom: 12px; font-size: 16px; line-height: 1.6;">Printed brochures, flyers &amp; postcards</li>
+<li style="margin-bottom: 12px; font-size: 16px; line-height: 1.6;">Early marketing launch before construction is complete</li>
+</ul>
+</div>
+</div>
+</section> FAQ <section style="padding: 80px 0;">
+<div class="wrap">
+<div style="text-align: center; margin-bottom: 48px;">
+<p class="section-eyebrow">FAQ</p>
+<h2 class="section-title" style="margin-bottom: 0;">Common questions</h2>
+</div>
+<div class="faq-wrap">
+<details>
+<summary>Am I required to use Innovate Realty or Honest Escrow?</summary>
+<div class="a">No. Use of any introduced provider is completely optional. You are free to choose your own real estate broker, escrow company, title company, lender, and other service providers.</div>
+</details>
+<details>
+<summary>Does opting in affect my CSL loan?</summary>
+<div class="a">No. Use of any introduced provider is not required as a condition of obtaining, maintaining, or paying off a CSL loan. Requesting information has no effect on your loan terms or servicing.</div>
+</details>
+<details>
+<summary>What does it cost to request information?</summary>
+<div class="a">Nothing. Requesting information is free. If you later choose to work with any provider, applicable fees are subject to eligibility, transaction details, party agreement, written disclosure, and escrow instructions.</div>
+</details>
+<details>
+<summary>What happens after I submit the form?</summary>
+<div class="a">A team member reaches out within 24 hours with the information you selected. If you chose “follow up later,” we'll simply check back closer to your timeline.</div>
+</details>
+<details>
+<summary>Who is eligible?</summary>
+<!-- PENDING #3: replace with the approved eligibility definition before launch -->
+<div class="a"><span class="pending-chip">Pending</span> Eligibility definition to be confirmed by leadership before launch (active borrowers vs. past investors; geographic scope).</div>
+</details>
+</div>
+</div>
+</section> OPT-IN FORM 

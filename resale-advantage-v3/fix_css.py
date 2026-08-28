@@ -1,50 +1,11 @@
-import re
-with open('csl-investor-exit-advantage-v3.html', 'r') as f:
-    text = f.read()
+with open("webflow_embeds/01_css.txt", "r") as f:
+    css_content = f.read()
 
-# I messed up header a.phone by removing the brace
-text = text.replace('header a.phone{color:var(--navy);font-weight:600;text-decoration:none;font-size:var(--text-body)', 'header a.phone{color:var(--navy);font-weight:600;text-decoration:none;font-size:var(--text-body)}')
+links = """<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Cormorant+Garamond:wght@600;700&family=Bebas+Neue&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://use.typekit.net/sjt3vdj.css">
+"""
 
-# I also messed up .hero h1 matching across lines
-broken_block = """.hero h1{font-size:var(--text-h1); 
-    color: #fff; 
-    text-align: center; 
-    padding: 12px 16px; 
-    font-size: 0.92rem; 
-    letter-spacing: 0.06em; 
-    font-family: 'Roboto', sans-serif; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
-    margin: 0;
-    cursor: pointer;
-    transition: background 0.3s ease, border-color 0.3s ease;
-  }"""
-
-fixed_block = """}
-  .offer-bar {
-    background: var(--navy-deep);
-    color: #fff; 
-    text-align: center; 
-    padding: 12px 16px; 
-    font-size: var(--text-body); 
-    letter-spacing: 0.06em; 
-    font-family: 'Roboto', sans-serif; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
-    margin: 0;
-    cursor: pointer;
-    transition: background 0.3s ease, border-color 0.3s ease;
-  }"""
-
-if broken_block in text:
-    text = text.replace(broken_block, fixed_block)
-    print("Fixed offer-bar block")
-
-with open('csl-investor-exit-advantage-v3.html', 'w') as f:
-    f.write(text)
+with open("webflow_embeds/01_css.txt", "w") as f:
+    f.write(links + css_content)

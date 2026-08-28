@@ -1,0 +1,333 @@
+<section class="soft" style="padding-top:0"><div class="wrap"><div class="grid-2"><div class="benefit">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:16px;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+        <h3>Earlier resale planning</h3>
+        <p>Start planning the resale before your project is fully complete, so listing, escrow, and payoff line up instead of stacking up.</p>
+      </div>
+
+      <div class="benefit">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:16px;"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+        <h3>One coordinated process</h3>
+        <p>A more coordinated process between you, your lender, your agent, and the escrow team &mdash; designed to reduce friction at closing.</p>
+      </div>
+
+    </div>
+    
+    <div style="margin-top: 16px; text-align: left; max-width: 600px;">
+      <p style="font-size: var(--text-micro); color: var(--accent); font-weight: 500;">*Pending escrow-law / legal review: an advertised escrow fee reduction must be disclosed in writing and reflected in the escrow instructions.</p>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON TABLE - structure inspired by the alt renderings, rebuilt in CSL branding + compliance-safe wording -->
+<style>
+
+
+
+  #compare {
+    text-align: center;
+  }
+  #compare .section-sub {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #compare .cmp-wrap {
+    margin-top: 40px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border: none;
+    border-radius: 0;
+  }
+  #compare table.cmp {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--text-body);
+    min-width: 768px;
+    border-bottom: 1.5px solid var(--line);
+  }
+  #compare .cmp thead th {
+    font-size: 1.3rem; /* Enlarged header labels */
+    font-weight: 700;
+    padding: 24px;
+    background: transparent;
+    border-top: 1.5px solid var(--line);
+    border-bottom: 1.5px solid var(--line);
+    text-align: center;
+    color: var(--navy);
+    font-family: 'Roboto', sans-serif;
+  }
+  #compare .cmp thead th.left-header {
+    width: 25%;
+    border-top: none;
+    border-bottom: 1.5px solid var(--line);
+  }
+  #compare .cmp thead th.csl-header {
+    background: rgba(70, 131, 179, 0.12); /* Light CSL brand blue tint */
+    width: 43%;
+    border-top: none;
+    color: #4683B3; /* CSL brand accent blue */
+  }
+  #compare .cmp thead th.alone-header {
+    width: 32%;
+    color: var(--navy);
+  }
+  #compare .cmp tbody th {
+    font-weight: 400; /* Regular label style from screenshot */
+    color: #5D6871; /* Muted slate */
+    font-size: 0.92rem;
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--line);
+    text-align: left;
+    vertical-align: middle;
+    background: transparent;
+    width: 25%;
+    font-family: 'Roboto', sans-serif;
+  }
+  #compare .cmp tbody td {
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--line);
+    vertical-align: middle;
+    font-family: 'Roboto', sans-serif;
+    text-align: center; /* Center comparison text */
+    line-height: 1.5;
+  }
+  
+  /* Highlighted CSL column: soft blue background, bold dark text */
+  #compare .cmp td.csl {
+    background: rgba(70, 131, 179, 0.12); /* Light brand blue tint */
+    color: var(--navy);
+    font-weight: 700; /* Bold text in highlighted column */
+  }
+  
+  /* Alone column: regular dark grey text, centered */
+  #compare .cmp td.alone {
+    color: #5D6871;
+    font-weight: 400;
+  }
+  
+  @media(max-width:768px){
+    #compare .cmp-wrap {
+      overflow-x: visible;
+      border: none;
+      border-radius: 0;
+    }
+    #compare table.cmp {
+      min-width: 0;
+      border-bottom: none;
+    }
+    #compare .cmp thead {
+      display: none;
+    }
+    #compare .cmp tbody tr {
+      display: block;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      margin-bottom: 16px;
+      background: #fff;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+    }
+    #compare .cmp tbody th {
+      display: block;
+      width: auto;
+      background: var(--navy);
+      color: #fff;
+      font-size: var(--text-body);
+      padding: 12px 18px;
+      border: none;
+    }
+    #compare .cmp tbody td {
+      display: block;
+      width: auto;
+      border: none;
+      border-top: 1px solid var(--line);
+      padding: 14px 18px;
+      font-size: 0.92rem;
+      text-align: left; /* Reset center align on mobile cards */
+    }
+    #compare .cmp td.csl {
+      background: rgba(70, 131, 179, 0.08);
+      color: var(--navy);
+      border-top: 1px solid var(--line);
+    }
+    #compare .cmp td.alone::before {
+      content: "Going It Alone";
+      display: block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 6px;
+      text-align: left;
+    }
+    #compare .cmp td.csl::before {
+      content: "CSL Resale Advantage";
+      display: block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #4683B3;
+      margin-bottom: 6px;
+      text-align: left;
+    }
+  }
+
+  /* ===== marketing section ===== */
+  .marketing-section {
+    background: var(--Color-Neutral-Lightest, #EFF6FE);
+    padding: 80px 0;
+  }
+  .marketing-inner {
+    display: grid;
+    grid-template-columns: 1fr 1.15fr; /* Flipped from honest section's 1.15fr 1fr */
+    gap: 56px;
+    align-items: center;
+    width: 100%;
+  }
+  .marketing-left {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+  }
+  .m-img-wrap {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+  }
+  .m-img-wrap img {
+    width: 82%; /* Matches honest section's image width */
+    height: auto;
+    aspect-ratio: 456 / 606;
+    object-fit: cover;
+    display: block;
+    border-radius: 6px;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
+  }
+  .marketing-cards {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 64%; /* Matches honest section's badge width */
+    z-index: 5;
+  }
+  .m-card {
+    background: #fff;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+    border-radius: 6px;
+    box-sizing: border-box;
+    width: 100%;
+  }
+  .m-card-icon {
+    width: 20px;
+    height: 20px;
+    color: var(--navy-darkest, #2C3842);
+    flex-shrink: 0;
+  }
+  .m-card-text {
+    color: var(--navy, #2C3842);
+    font-size: var(--text-small);
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.4;
+    margin: 0;
+  }
+  .m-card-text strong {
+    font-weight: 700;
+  }
+  .marketing-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .m-eyebrow {
+    color: var(--accent, #4683B3);
+    font-size: var(--text-micro);
+    font-weight: 700;
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    display: block;
+    font-family: 'Roboto', sans-serif;
+  }
+  .m-logo {
+    height: 62px; /* Matches honest section's logo height */
+    width: auto;
+    display: block;
+    margin-bottom: 24px;
+  }
+  .m-desc {
+    font-size: var(--text-lead);
+    line-height: 1.55;
+    color: var(--navy);
+    margin: 0 0 32px 0;
+    font-family: 'Roboto', sans-serif;
+  }
+  .m-cta-group {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .m-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--accent, #4683B3);
+    color: #fff;
+    font-weight: 700;
+    padding: 14px 28px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: var(--text-body);
+    box-shadow: 0 4px 12px rgba(70, 131, 179, 0.25);
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .m-btn:hover {
+    background-color: var(--accent-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(70, 131, 179, 0.35);
+  }
+  .m-link {
+    font-size: var(--text-body);
+    color: var(--navy);
+    font-weight: 700;
+    text-decoration: underline;
+    font-family: 'Roboto', sans-serif;
+  }
+  .m-link:hover {
+    color: var(--navy-darkest, #2C3842);
+  }
+  @media(max-width: 900px) {
+    .marketing-inner {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    .m-img-wrap {
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+    }
+    .m-img-wrap img {
+      width: 100%;
+      max-width: 480px;
+    }
+    .marketing-cards {
+      position: relative;
+      right: auto;
+      top: auto;
+      transform: none;
+      width: 100%;
+      max-width: 480px;
+    }
+  }
+</style>
