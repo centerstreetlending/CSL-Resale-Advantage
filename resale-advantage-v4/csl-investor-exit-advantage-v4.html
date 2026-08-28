@@ -1590,29 +1590,29 @@ ul.bullets li { margin-bottom: 8px; }
   @media (max-width: 768px) {
     /* 0. Top Offer Bar Mobile */
     .offer-bar {
-      padding: 8px 12px !important;
+      padding: 10px 14px !important;
     }
     .offer-bar a {
       display: flex !important;
       flex-direction: column !important;
       align-items: center !important;
       justify-content: center !important;
-      gap: 2px !important;
+      gap: 3px !important;
       text-align: center !important;
     }
     .offer-tag {
       display: block !important;
       color: #60a5fa !important;
       font-weight: 800 !important;
-      font-size: 12.5px !important;
+      font-size: 13.5px !important;
       letter-spacing: 1px !important;
     }
     .offer-sub {
       display: block !important;
-      font-size: 11px !important;
-      color: rgba(255, 255, 255, 0.85) !important;
+      font-size: 12.5px !important;
+      color: rgba(255, 255, 255, 0.9) !important;
       font-weight: 500 !important;
-      letter-spacing: 0.3px !important;
+      letter-spacing: 0.4px !important;
     }
 
     /* 1. Hero Mobile Headline */
@@ -1622,6 +1622,10 @@ ul.bullets li { margin-bottom: 8px; }
       text-align: center !important;
       max-width: 100% !important;
       margin-bottom: 16px !important;
+    }
+    .hero-v4-title .hl-underline {
+      border-bottom: none !important;
+      padding-bottom: 0 !important;
     }
     .hero-v4-title br.hide-on-mobile {
       display: none !important;
@@ -2952,10 +2956,9 @@ ul.bullets li { margin-bottom: 8px; }
     <form class="form-card" id="exit-advantage-form" method="post">
 
       <div class="form-progress">
-        <div class="fp-top-nav" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; min-height: 40px; gap: 12px; flex-wrap: wrap;">
-          <button type="button" class="step-back fp-back-top" style="display: none; padding: 8px 16px; font-size: 13.5px; border-radius: 6px;">&larr; Back</button>
-          <span class="fp-step-title" style="font-size: 14px; font-weight: 700; color: #5D6871;">Step <span id="fp-current">1</span> of 3 &bull; <span id="fp-title" style="color: #2C3842;">What would you like?</span></span>
-          <button type="button" class="csl-btn step-next fp-next-top" style="padding: 8px 18px; font-size: 13.5px; border-radius: 6px; font-weight: 700; margin-left: auto;">Next &rarr;</button>
+        <div class="fp-labels" aria-live="polite" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+          <span style="font-size: 14px; font-weight: 700; color: #2C3842;">Step <span id="fp-current">1</span> of 3</span>
+          <span id="fp-title" style="font-size: 13.5px; font-weight: 600; color: #5D6871;">What would you like?</span>
         </div>
         <div class="fp-bar"><div class="fp-fill" id="fp-fill"></div></div>
       </div>
@@ -2970,6 +2973,9 @@ ul.bullets li { margin-bottom: 8px; }
           <label class="radio-row"><input type="radio" name="intent" id="intent-both" value="both"><span>Both &mdash; maximum savings<small>1% listing + $500 escrow in one coordinated close</small></span></label>
           <label class="radio-row"><input type="radio" name="intent" id="intent-later" value="later"><span>Not sure yet<small>Send me the details and follow up closer to my timeline</small></span></label>
         </fieldset>
+        <div class="step-nav" style="display: flex; justify-content: flex-end; align-items: center; width: 100%; margin-top: 24px;">
+          <button type="button" class="csl-btn step-next" style="width: 100%; font-weight: 700; justify-content: center;">Next &rarr;</button>
+        </div>
       </div>
 
       <!-- STEP 2: your sale -->
@@ -2991,6 +2997,10 @@ ul.bullets li { margin-bottom: 8px; }
         <div class="field">
           <label for="loan-number">CSL loan number <span class="opt">(optional &mdash; helps us pull your file faster)</span></label>
           <input type="text" id="loan-number" name="loan_number">
+        </div>
+        <div class="step-nav" style="display: flex; gap: 14px; align-items: center; width: 100%; margin-top: 24px;">
+          <button type="button" class="step-back" style="flex: 1; justify-content: center; text-align: center;">&larr; Back</button>
+          <button type="button" class="csl-btn step-next" style="flex: 1; justify-content: center; text-align: center; font-weight: 700;">Next &rarr;</button>
         </div>
       </div>
 
@@ -3020,8 +3030,9 @@ ul.bullets li { margin-bottom: 8px; }
           <input type="checkbox" name="consent" id="consent" required>
           <span>I agree that Center Street Lending and its affiliates may contact me about the CSL Resale Advantage program by phone, email, or text at the information provided. Consent is not a condition of any loan.</span>
         </label>
-        <div class="step-nav step-nav-final" style="display: flex; justify-content: flex-end; align-items: center; width: 100%; margin-top: 20px;">
-          <button type="submit" class="csl-btn" id="submit-btn" style="width: 100%; font-weight: 700;">Request information &rarr;</button>
+        <div class="step-nav step-nav-final" style="display: flex; gap: 14px; align-items: center; width: 100%; margin-top: 24px;">
+          <button type="button" class="step-back" style="flex: 1; justify-content: center; text-align: center;">&larr; Back</button>
+          <button type="submit" class="csl-btn" id="submit-btn" style="flex: 1; justify-content: center; text-align: center; font-weight: 700;">Request information &rarr;</button>
         </div>
       </div>
 
