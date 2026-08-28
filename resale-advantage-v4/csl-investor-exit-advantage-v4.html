@@ -344,11 +344,11 @@
   .inno-points { margin: 24px 0 32px 20px; display: flex; flex-direction: column; gap: 12px; font-size: 1.05rem; color: #5D6871; }
   .inno-points li { padding-left: 8px; line-height: 1.5; }
   .inno-points strong { color: var(--navy-darkest, #2C3842); }
-  .match-flow{display:flex;flex-direction:column;align-items:stretch;gap:8px;margin:18px 0 24px}
-  .mf-node{display:flex;flex-direction:row;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 16px;font-size:var(--text-small);color:var(--navy);font-weight:600;line-height:1.35}
-  .mf-node.mf-final{border-color:var(--accent);background:rgba(70,131,179,.07)}
-  .mf-num{display:inline-flex;width:24px;height:24px;border-radius:50%;background:var(--accent);color:#fff;font-weight:700;align-items:center;justify-content:center;font-size:12px;flex-shrink:0}
-  .mf-arrow{align-self:center;color:var(--accent);font-weight:700;font-size:18px;transform:rotate(90deg);margin:-2px 0}
+  .match-flow{display:flex;flex-direction:column;align-items:stretch;gap:6px;margin:20px 0 28px}
+  .mf-node{display:flex;flex-direction:row;align-items:center;gap:14px;background:#fff;border:1px solid #DCE5EC;border-radius:12px;padding:14px 20px;font-size:15px;color:#2C3842;font-weight:700;line-height:1.4;box-shadow:0 2px 8px rgba(0,0,0,0.02);}
+  .mf-node.mf-final{border:1.5px solid #4683B3;background:#EFF6FE;box-shadow:0 4px 12px rgba(70,131,179,0.14);}
+  .mf-num{display:inline-flex;width:26px;height:26px;border-radius:50%;background:#4683B3;color:#fff;font-weight:800;align-items:center;justify-content:center;font-size:13px;flex-shrink:0}
+  .mf-arrow{display:flex;justify-content:center;align-items:center;color:#4683B3;margin:2px 0;}
 
   /* modern card polish + subtle motion */
   .benefit{display:flex;flex-direction:column;transition:transform .25s ease,box-shadow .25s ease}
@@ -2429,9 +2429,9 @@ ul.bullets li { margin-bottom: 8px; }
 
       <div class="match-flow">
         <div class="mf-node"><span class="mf-num">1</span><span>You opt in</span></div>
-        <div class="mf-arrow">&rarr;</div>
+        <div class="mf-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4683B3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg></div>
         <div class="mf-node"><span class="mf-num">2</span><span>Innovate reviews your asset type &amp; area</span></div>
-        <div class="mf-arrow">&rarr;</div>
+        <div class="mf-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4683B3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg></div>
         <div class="mf-node mf-final"><span class="mf-num">3</span><span>You're matched with the specialist agent for that market</span></div>
       </div>
 
