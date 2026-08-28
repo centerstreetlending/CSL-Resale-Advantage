@@ -1588,16 +1588,40 @@ ul.bullets li { margin-bottom: 8px; }
 
   /* Master Mobile Responsive Overrides */
   @media (max-width: 768px) {
+    /* 0. Top Offer Bar Mobile */
+    .offer-bar {
+      padding: 8px 12px !important;
+      font-size: 11px !important;
+      line-height: 1.35 !important;
+      letter-spacing: 0.02em !important;
+    }
+    .offer-bar a {
+      display: inline-block !important;
+      text-align: center !important;
+    }
+    .offer-tag {
+      display: inline !important;
+      color: #4985b8 !important;
+      font-weight: 800 !important;
+    }
+    .offer-sub {
+      display: inline !important;
+    }
+
     /* 1. Hero Mobile Headline */
     .hero-v4-title {
-      font-size: clamp(26px, 6.8vw, 38px) !important;
-      line-height: 1.25 !important;
+      font-size: clamp(24px, 6.2vw, 36px) !important;
+      line-height: 1.3 !important;
       text-align: center !important;
       max-width: 100% !important;
       margin-bottom: 16px !important;
     }
     .hero-v4-title br.hide-on-mobile {
       display: none !important;
+    }
+    .hero-v4-title .hero-line-2 {
+      display: block !important;
+      margin-top: 6px !important;
     }
     .hero-content-v4 {
       text-align: center !important;
@@ -1832,7 +1856,7 @@ ul.bullets li { margin-bottom: 8px; }
 <body>
 
 
-<div class="offer-bar"><a href="#optin">★ <b>EXCLUSIVE OFFER</b> &mdash; PRE-NEGOTIATED FOR CSL BORROWERS &middot; USE ONE OR BOTH</a></div>
+<div class="offer-bar"><a href="#optin"><span class="offer-tag">EXCLUSIVE OFFER</span> <span class="offer-sub">&mdash; PRE-NEGOTIATED FOR CSL BORROWERS &middot; USE ONE OR BOTH</span></a></div>
 
 <header id="sticky-header">
   <div class="wrap">
@@ -1848,8 +1872,8 @@ ul.bullets li { margin-bottom: 8px; }
     
     <!-- Main Headline -->
     <h1 class="hero-v4-title">
-      WE MADE IT <span class="hl-underline" style="color: #4985b8; border-bottom: 3px solid #4985b8; padding-bottom: 2px;">EASIER &amp; CHEAPER</span><br class="hide-on-mobile">
-      TO EXIT YOUR INVESTMENT.
+      WE MADE IT <span class="hl-underline" style="color: #4985b8; border-bottom: 3px solid #4985b8; padding-bottom: 2px; display: inline-block;">EASIER &amp; CHEAPER</span><br class="hide-on-mobile">
+      <span class="hero-line-2">TO EXIT YOUR INVESTMENT.</span>
     </h1>
     
     <!-- Subheading -->
