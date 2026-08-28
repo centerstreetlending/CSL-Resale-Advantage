@@ -1175,11 +1175,53 @@ ul.bullets li { margin-bottom: 8px; }
     .save { width: 100%; flex: 1; text-align: left; }
     .hero-logos { justify-content: center; margin-top: 12px; border-top: 1px solid rgba(255, 255, 255, 0.15); padding-top: 16px; }
     .stat-card .num { font-size: 48px; line-height: 48px; }
-  }
-  @media(max-width:380px){
-    
-    header a.phone { font-size: var(--text-micro); }
+  }    header a.phone { font-size: var(--text-micro); }
     .offer-bar { font-size: var(--text-micro); padding: 8px 10px; }
+  }
+
+  /* V4 Header Responsive Mobile Enhancements */
+  .hero-v4-title {
+    font-family: 'Arteria Std Compress', 'Bebas Neue', 'Roboto Condensed', sans-serif;
+    font-size: clamp(34px, 6vw, 64px);
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    color: #ffffff;
+  }
+
+  @media (max-width: 768px) {
+    .hero-content-v4 {
+      text-align: center !important;
+      padding: 0 16px !important;
+    }
+    .hero-lead-para {
+      font-size: 15px !important;
+      text-align: center !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+    .hero-actions-row {
+      justify-content: center !important;
+      flex-direction: column !important;
+      width: 100% !important;
+      gap: 16px !important;
+    }
+    .btn-primary-blue {
+      width: 100% !important;
+      justify-content: center !important;
+    }
+    .cards-flex-grid {
+      flex-direction: column !important;
+      align-items: stretch !important;
+      gap: 12px !important;
+    }
+    .savings-operator {
+      display: none !important;
+    }
+    .savings-divider-wrapper div {
+      display: none !important;
+    }
   }
 </style>
 </head>
@@ -1202,7 +1244,7 @@ ul.bullets li { margin-bottom: 8px; }
   <div class="wrap hero-content-v4" style="max-width: 1000px; width: 100%;">
     
     <!-- Main Headline -->
-    <h1 style="font-family:'Arteria Std Compress', 'Bebas Neue', 'Roboto Condensed', sans-serif; font-size: 64px; line-height: 1.1; letter-spacing: 0.02em; text-transform: uppercase; margin-bottom: 24px; color: #ffffff;">
+    <h1 class="hero-v4-title">
       WE MADE IT <span class="hl-underline" style="color: #4985b8; position: relative; display: inline-block; border-bottom: 3px solid #4985b8;">EASIER & CHEAPER</span><br>
       TO EXIT YOUR INVESTMENT.
     </h1>
@@ -1258,7 +1300,7 @@ ul.bullets li { margin-bottom: 8px; }
           </div>
         </div>
 
-        <div style="font-size: 24px; font-weight: 300; color: rgba(255, 255, 255, 0.4); padding: 0 4px;">+</div>
+        <div class="savings-operator" style="font-size: 24px; font-weight: 300; color: rgba(255, 255, 255, 0.4); padding: 0 4px;">+</div>
 
         <!-- Card 2 -->
         <div style="flex: 1; min-width: 220px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 12px; padding: 20px 24px;">
@@ -1273,7 +1315,7 @@ ul.bullets li { margin-bottom: 8px; }
           </div>
         </div>
 
-        <div style="font-size: 24px; font-weight: 300; color: rgba(255, 255, 255, 0.4); padding: 0 4px;">=</div>
+        <div class="savings-operator" style="font-size: 24px; font-weight: 300; color: rgba(255, 255, 255, 0.4); padding: 0 4px;">=</div>
 
         <!-- Card 3 (Highlighted) -->
         <div style="flex: 1.1; min-width: 240px; background: rgba(73, 133, 184, 0.15); border: 1.5px solid #4985b8; border-radius: 12px; padding: 20px 24px; box-shadow: 0 8px 24px rgba(73, 133, 184, 0.25);">
@@ -1295,6 +1337,12 @@ ul.bullets li { margin-bottom: 8px; }
         <div style="display: inline-flex; align-items: center; gap: 8px; background: #0f172a; border: 1.5px solid #4985b8; border-radius: 30px; padding: 8px 20px; font-size: 12px; font-weight: 800; letter-spacing: 1px; color: #ffffff; text-transform: uppercase; box-shadow: 0 4px 14px rgba(0,0,0,0.3);">
           <span style="color: #60a5fa;">✓</span> USE ONE OR BOTH
         </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>     </div>
       </div>
 
     </div>
