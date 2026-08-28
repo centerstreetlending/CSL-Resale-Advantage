@@ -1590,15 +1590,14 @@ ul.bullets li { margin-bottom: 8px; }
   @media (max-width: 768px) {
     /* 1. Hero Mobile Headline */
     .hero-v4-title {
-      font-size: clamp(28px, 7.5vw, 42px) !important;
-      line-height: 1.18 !important;
+      font-size: clamp(26px, 6.8vw, 38px) !important;
+      line-height: 1.25 !important;
       text-align: center !important;
       max-width: 100% !important;
       margin-bottom: 16px !important;
     }
-    .hero-v4-title .line-stretch {
-      display: inline !important;
-      white-space: normal !important;
+    .hero-v4-title br.hide-on-mobile {
+      display: none !important;
     }
     .hero-content-v4 {
       text-align: center !important;
@@ -1849,7 +1848,7 @@ ul.bullets li { margin-bottom: 8px; }
     
     <!-- Main Headline -->
     <h1 class="hero-v4-title">
-      WE MADE IT <span class="hl-underline" style="color: #4985b8; border-bottom: 3px solid #4985b8; padding-bottom: 2px; display: inline-block;">EASIER &amp; CHEAPER</span><br>
+      WE MADE IT <span class="hl-underline" style="color: #4985b8; border-bottom: 3px solid #4985b8; padding-bottom: 2px;">EASIER &amp; CHEAPER</span><br class="hide-on-mobile">
       TO EXIT YOUR INVESTMENT.
     </h1>
     
