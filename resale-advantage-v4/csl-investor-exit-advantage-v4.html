@@ -631,13 +631,25 @@
   #success-panel p{font-size:.92rem;color:#2F5238}
   .hp{position:absolute;left:-9999px;opacity:0}
 
-  /* faq */
-  details{border:1px solid var(--line);border-radius:8px;margin-top:12px;background:#fff}
-  summary{padding:14px 18px;font-weight:600;color:var(--navy);cursor:pointer;list-style:none}
-  summary::-webkit-details-marker{display:none}
-  summary::after{content:"+";float:right;color:var(--accent);font-weight:700}
-  details[open] summary::after{content:"\2212"}
-  details .a{padding:0 20px 16px;font-size:.95rem;color:var(--muted)}
+  /* faq - premium redesign */
+  .faq-wrap { max-width: 800px; margin: 0 auto; }
+  details { border: none; border-bottom: 1px solid var(--line); margin-top: 0; background: transparent; border-radius: 0; transition: background-color 0.2s ease; }
+  details:first-of-type { border-top: 1px solid var(--line); }
+  details:hover { background-color: #f8fafc; }
+  summary { padding: 28px 16px; font-size: 18px; font-weight: 600; color: var(--navy-darkest, #2C3842); cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: ""; display: block; width: 24px; height: 24px; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23648FB5' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M12 6v12m6-6H6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: center; transition: transform 0.3s ease; flex-shrink: 0; margin-left: 16px; float: none; }
+  details[open] summary::after { transform: rotate(45deg); }
+  details[open] summary { color: var(--accent, #4683B3); }
+  details .a { padding: 0 16px 32px 16px; font-size: 16px; line-height: 1.65; color: #4A5568; }
+
+  /* v5: pinned a-la-carte FAQ */
+  details.faq-pinned{border:2px solid var(--accent, #4683B3);border-radius:10px;background:#EFF6FE;margin-bottom:24px}
+  details.faq-pinned:first-of-type{border-top:2px solid var(--accent, #4683B3)}
+  details.faq-pinned:hover{background:#E4F0FB}
+  details.faq-pinned[open]{background:#fff}
+  .faq-tag{display:inline-block;background:var(--accent, #4683B3);color:#fff;font-size:var(--text-micro);font-weight:800;letter-spacing:.1em;text-transform:uppercase;border-radius:4px;padding:2px 8px;margin-right:12px;flex-shrink:0}
+  details.faq-pinned summary{gap:0}
 
   /* disclosure + footer */
   .disclosure{background:var(--bg-soft);border-top:1px solid var(--line)}
@@ -2525,30 +2537,49 @@ ul.bullets li { margin-bottom: 8px; }
 </section>
 
 <!-- FAQ -->
-<section class="soft">
+<section class="soft" style="background:#fff;" id="faq">
   <div class="wrap">
-    <h2>Common questions</h2>
-    <details>
-      <summary>Am I required to use Innovate Realty or Honest Escrow?</summary>
-      <div class="a">No. Use of any introduced provider is completely optional. You are free to choose your own real estate broker, escrow company, title company, lender, and other service providers.</div>
-    </details>
-    <details>
-      <summary>Does opting in affect my CSL loan?</summary>
-      <div class="a">No. Use of any introduced provider is not required as a condition of obtaining, maintaining, or paying off a CSL loan. Requesting information has no effect on your loan terms or servicing.</div>
-    </details>
-    <details>
-      <summary>What does it cost to request information?</summary>
-      <div class="a">Nothing. Requesting information is free. If you later choose to work with any provider, applicable fees are subject to eligibility, transaction details, party agreement, written disclosure, and escrow instructions.</div>
-    </details>
-    <details>
-      <summary>What happens after I submit the form?</summary>
-      <div class="a">A team member reaches out within 24 hours with the information you selected. If you chose &ldquo;follow up later,&rdquo; we'll simply check back closer to your timeline.</div>
-    </details>
-    <details>
-      <summary>Who is eligible?</summary>
-      <!-- PENDING #3: replace with the approved eligibility definition before launch -->
-      <div class="a"><span class="pending-chip">Pending</span> Eligibility definition to be confirmed by leadership before launch (active borrowers vs. past investors; geographic scope).</div>
-    </details>
+    <p class="section-eyebrow" style="text-align:center;">FAQ</p>
+    <h2 class="section-title" style="text-align:center;">Common questions</h2>
+    <div class="faq-wrap">
+
+      <!-- v5 (Greg Fix #5): pinned a-la-carte question, open by default -->
+      <details class="faq-pinned" open>
+        <summary><span><span class="faq-tag">Most asked</span>Do I have to use an Innovate Realty agent to get the $500 escrow fee?</span></summary>
+        <div class="a"><strong>No!</strong> You can use your own real estate agent and still take advantage of the $500 flat seller-side escrow fee with Honest Escrow. Everything in this program is completely &agrave; la carte &mdash; use one service, both, or neither.</div>
+      </details>
+
+      <details>
+        <summary>Can I get the 1% listing without using Honest Escrow?</summary>
+        <div class="a">Yes &mdash; it works both ways. The 1% listing with Innovate Realty and the $500 escrow with Honest Escrow are independent deals. Choose either one on its own, or combine them for maximum savings.</div>
+      </details>
+
+      <details>
+        <summary>Am I required to use Innovate Realty or Honest Escrow?</summary>
+        <div class="a">No. Use of any introduced provider is completely optional. You are free to choose your own real estate broker, escrow company, title company, lender, and other service providers.</div>
+      </details>
+
+      <details>
+        <summary>Does opting in affect my CSL loan?</summary>
+        <div class="a">No. Use of any introduced provider is not required as a condition of obtaining, maintaining, or paying off a CSL loan. Requesting information has no effect on your loan terms or servicing.</div>
+      </details>
+
+      <details>
+        <summary>What does it cost to request information?</summary>
+        <div class="a">Nothing. Requesting information is free. If you later choose to work with any provider, applicable fees are subject to eligibility, transaction details, party agreement, written disclosure, and escrow instructions.</div>
+      </details>
+
+      <details>
+        <summary>What happens after I submit the form?</summary>
+        <div class="a">A team member reaches out within 24 hours with the information you selected. If you chose &ldquo;not sure yet,&rdquo; we'll simply check back closer to your timeline.</div>
+      </details>
+
+      <details>
+        <summary>Who is eligible?</summary>
+        <div class="a">The program is designed for Center Street Lending borrowers selling investment property in California. Not sure whether your project qualifies? Ask through the form below &mdash; requesting information is free and carries no obligation.</div>
+      </details>
+
+    </div>
   </div>
 </section>
 
