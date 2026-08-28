@@ -330,6 +330,16 @@
 
   .tl-optional{display:inline-block;background:#EFF6FE;color:var(--accent);border:1px solid rgba(70,131,179,.35);border-radius:4px;font-size:var(--text-micro);font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:2px 8px;margin-left:8px;vertical-align:middle}
 
+  /* agent matching flow (InnoLaunch section) */
+  .inno-points { margin: 24px 0 32px 20px; display: flex; flex-direction: column; gap: 12px; font-size: 1.05rem; color: #5D6871; }
+  .inno-points li { padding-left: 8px; line-height: 1.5; }
+  .inno-points strong { color: var(--navy-darkest, #2C3842); }
+  .match-flow{display:flex;flex-direction:column;align-items:stretch;gap:8px;margin:18px 0 24px}
+  .mf-node{display:flex;flex-direction:row;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 16px;font-size:var(--text-small);color:var(--navy);font-weight:600;line-height:1.35}
+  .mf-node.mf-final{border-color:var(--accent);background:rgba(70,131,179,.07)}
+  .mf-num{display:inline-flex;width:24px;height:24px;border-radius:50%;background:var(--accent);color:#fff;font-weight:700;align-items:center;justify-content:center;font-size:12px;flex-shrink:0}
+  .mf-arrow{align-self:center;color:var(--accent);font-weight:700;font-size:18px;transform:rotate(90deg);margin:-2px 0}
+
   /* modern card polish + subtle motion */
   .benefit{display:flex;flex-direction:column;transition:transform .25s ease,box-shadow .25s ease}
   .benefit:hover{transform:translateY(-3px);box-shadow:0 10px 22px rgba(44,56,66,.08)}
@@ -2307,33 +2317,60 @@ ul.bullets li { margin-bottom: 8px; }
 
 
 <!-- MARKETING EXPERTISE -->
-<section id="innolaunch" class="soft">
-  <div class="wrap">
-    <p class="section-eyebrow">Marketing &amp; sales expertise</p>
-    <h2 class="section-title">What an InnoLaunch debut looks like</h2>
-    <p class="section-sub">Sample marketing materials prepared for an Innovate Realty listing — the kind of launch support included when you list with an Innovate Realty agent.</p>
-    <ul class="inno-points">
-      <li><strong>20,000 buyer views in 21 days</strong> &mdash; a coordinated launch built to get eyes on your property fast</li>
-      <li>Email marketing &amp; targeted digital ads</li>
-      <li>A dedicated property website</li>
-      <li>Printed brochures, flyers &amp; postcards</li>
-      <li>Marketing can begin before construction is complete &mdash; for a head start</li>
-    </ul>
-    <div class="inno-grid">
-      <figure class="debut-feature"><img src="innolaunch-ipad-debut.jpg" alt="InnoLaunch Market Debut title screen on a tablet: your property's premiere, perfected" loading="lazy"><figcaption>InnoLaunch Market Debut &mdash; your property's premiere, perfected</figcaption></figure>
-      <div class="carousel" id="inno-carousel" aria-roledescription="carousel" aria-label="InnoLaunch sample materials">
-        <div class="deck" id="car-track">
-          <figure class="slide"><img src="innolaunch-brochure.jpg" alt="Innovate Realty printed listing brochure: Coastal Luxury on Little Balboa" loading="lazy"><figcaption>Printed listing brochure for the property debut</figcaption></figure>
-          <figure class="slide"><img src="innolaunch-campaign-app.jpg" alt="InnoLaunch campaign tracking app showing marketing campaign completion on a phone" loading="lazy"><figcaption>Live campaign tracking &mdash; assets, metrics, showings, and open houses in one view</figcaption></figure>
-          <figure class="slide"><img src="innolaunch-postcard.jpg" alt="Innovate Realty New to Market postcard for 214 Abalone Ave, Newport Beach" loading="lazy"><figcaption>New-to-market announcement sent to the surrounding area</figcaption></figure>
-          <figure class="slide"><img src="innolaunch-flyer.jpg" alt="Innovate Realty open-house property flyer in an acrylic stand" loading="lazy"><figcaption>Open-house property flyers</figcaption></figure>
-        </div>
-        <button type="button" class="car-btn car-prev" id="car-prev" aria-label="Previous slide">&#8249;</button>
-        <button type="button" class="car-btn car-next" id="car-next" aria-label="Next slide">&#8250;</button>
-        <div class="car-dots" id="car-dots"></div>
+<section id="innolaunch" class="soft" style="padding: 80px 0;">
+  <style>
+    @media (max-width: 900px) {
+      #innolaunch .wrap {
+        flex-direction: column-reverse !important;
+      }
+    }
+  </style>
+  <div class="wrap" style="display: flex; gap: 64px; align-items: center; flex-wrap: wrap;">
+
+    <!-- Left: Image Grid -->
+    <div style="flex: 1; min-width: 320px;">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+        <img src="innolaunch-campaign-app.jpg" alt="Campaign App" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 6px;" />
+        <img src="innolaunch-brochure.jpg" alt="Brochure" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 6px;" />
+        <img src="Frame 129.png" alt="Living Room" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 6px;" />
+        <img src="innolaunch-postcard.jpg" alt="Postcard" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 6px;" />
+        <img src="innolaunch-ipad-debut.jpg" alt="iPad Debut" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 6px;" />
+        <img src="innolaunch-flyer.jpg" alt="Flyer Stand" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 6px;" />
       </div>
     </div>
-    <p class="gallery-note">Swipe, drag, or use the arrows to browse. Sample materials shown for illustration. Marketing plans vary by property and listing agreement.</p>
+
+    <!-- Right: Copy -->
+    <div style="flex: 1; min-width: 320px; max-width: 520px; padding-top: 16px;">
+      <p class="section-eyebrow" style="color: var(--accent); text-align: left; margin-bottom: 16px; letter-spacing: 0.1em; text-transform: uppercase;">Marketing and sales expertise</p>
+      <h2 style="font-size: 36px; font-weight: 700; color: var(--navy-darkest, #2C3842); margin-bottom: 24px; font-family: 'Roboto', sans-serif; letter-spacing: -0.02em;">Meet Innovate Realty.</h2>
+      <img src="Innovate.svg" alt="Innovate Realty" style="height: 64px; margin-bottom: 24px; display: block;" />
+
+      <p style="font-size: 16px; line-height: 1.6; color: var(--muted); margin-bottom: 16px;"><strong style="color: var(--navy);">What is InnoLaunch?</strong> It's Innovate's launch campaign for your property &mdash; and it starts <em>before</em> construction is finished. While your project is being completed, buyers are already seeing it (the sample materials shown here are from a real InnoLaunch listing):</p>
+
+      <ul class="inno-points">
+        <li>A dedicated property website</li>
+        <li>Email marketing &amp; targeted digital ads</li>
+        <li>Printed brochures, flyers &amp; postcards</li>
+        <li>Early launch &mdash; marketing begins before construction is complete</li>
+      </ul>
+
+      <p style="font-size: 16px; line-height: 1.6; color: var(--navy); margin-bottom: 24px;"><strong>The result: InnoLaunch campaigns average 20,000+ views, and those listings close about 4 days quicker than comparable listings.</strong> Included free when you list with an Innovate agent.</p>
+
+      <h3 style="font-size: 22px; font-weight: 700; color: var(--navy-darkest, #2C3842); margin-bottom: 8px; font-family: 'Roboto', sans-serif;">Your agent, matched &mdash; not negotiated</h3>
+      <p style="font-size: 16px; line-height: 1.6; color: var(--muted); margin-bottom: 4px;">No interviewing agents, no negotiating commissions. Opt in and Innovate pairs you with the agent who has the deepest track record in <strong style="color: var(--navy);">your asset type and your area</strong> &mdash; a specialist in what you're selling, not a generalist.</p>
+
+      <div class="match-flow">
+        <div class="mf-node"><span class="mf-num">1</span><span>You opt in</span></div>
+        <div class="mf-arrow">&rarr;</div>
+        <div class="mf-node"><span class="mf-num">2</span><span>Innovate reviews your asset type &amp; area</span></div>
+        <div class="mf-arrow">&rarr;</div>
+        <div class="mf-node mf-final"><span class="mf-num">3</span><span>You're matched with the specialist agent for that market</span></div>
+      </div>
+
+      <p style="font-size: 16px; line-height: 1.6; color: var(--navy); margin-bottom: 24px;">Innovate's agents have represented <strong>one of the largest publicly traded real-estate companies in the country</strong> on its Southern California investor exits.</p>
+
+      <a class="he-brand-btn" href="#optin" data-intent="listing">Request listing info</a>
+    </div>
   </div>
 </section>
 
