@@ -1179,7 +1179,7 @@ ul.bullets li { margin-bottom: 8px; }
     .offer-bar { font-size: var(--text-micro); padding: 8px 10px; }
   }
 
-  /* V4 Header Responsive Mobile Enhancements */
+  /* V4 Header & Choose Your Path CSS */
   .hero-v4-title {
     font-family: 'Arteria Std Compress', 'Bebas Neue', 'Roboto Condensed', sans-serif;
     font-size: clamp(34px, 6vw, 64px);
@@ -1188,6 +1188,196 @@ ul.bullets li { margin-bottom: 8px; }
     text-transform: uppercase;
     margin-bottom: 24px;
     color: #ffffff;
+  }
+
+  /* Choose Your Path Cards CSS */
+  .path-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    align-items: stretch;
+    margin-top: 24px;
+  }
+
+  .path-card {
+    background: #ffffff;
+    border: 1px solid #DCE5EC;
+    border-radius: 16px;
+    padding: 36px 28px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .path-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+  }
+
+  .path-card-highlighted {
+    border: 2.5px solid #4985b8;
+    box-shadow: 0 16px 48px rgba(73, 133, 184, 0.18);
+    transform: scale(1.02);
+  }
+
+  .path-card-highlighted:hover {
+    transform: scale(1.02) translateY(-4px);
+  }
+
+  .max-savings-badge {
+    position: absolute;
+    top: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #4985b8;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 6px 18px;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(73, 133, 184, 0.35);
+    white-space: nowrap;
+  }
+
+  .path-card-tag {
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: #4985b8;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .path-card-headline {
+    font-size: 24px;
+    font-weight: 800;
+    color: #2C3842;
+    margin-bottom: 24px;
+    line-height: 1.25;
+  }
+
+  .path-card-rate {
+    font-size: 52px;
+    font-weight: 800;
+    color: #2C3842;
+    line-height: 1;
+    margin-bottom: 8px;
+    letter-spacing: -0.02em;
+  }
+
+  .path-card-subrate {
+    font-size: 13.5px;
+    color: #5D6871;
+    line-height: 1.45;
+    margin-bottom: 20px;
+    min-height: 42px;
+  }
+
+  .path-card-subrate strong {
+    color: #2C3842;
+  }
+
+  .path-card-savebox {
+    background: #f8fafc;
+    border-radius: 8px;
+    padding: 12px 14px;
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #2C3842;
+    margin-bottom: 28px;
+  }
+
+  .path-card-savebox.box-highlighted {
+    background: #eff6fe;
+    color: #1e3a8a;
+    border: 1px solid #bfdbfe;
+  }
+
+  .path-card-bullets {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 32px 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .path-card-bullets li {
+    font-size: 14px;
+    color: #5D6871;
+    line-height: 1.45;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .path-card-bullets li .chk {
+    color: #4985b8;
+    font-weight: 800;
+    font-size: 15px;
+    flex-shrink: 0;
+  }
+
+  .path-card-btn-wrapper {
+    margin-top: auto;
+  }
+
+  .btn-path-outline {
+    display: block;
+    width: 100%;
+    text-align: center;
+    border: 1.5px solid #4985b8;
+    background: #ffffff;
+    color: #4985b8;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 14px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .btn-path-outline:hover {
+    background: #4985b8;
+    color: #ffffff;
+  }
+
+  .btn-path-solid {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background: #4985b8;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 14.5px;
+    padding: 14px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    box-shadow: 0 4px 14px rgba(73, 133, 184, 0.35);
+    transition: all 0.2s ease;
+  }
+
+  .btn-path-solid:hover {
+    background: #3d6a8d;
+    box-shadow: 0 6px 18px rgba(73, 133, 184, 0.5);
+  }
+
+  @media (max-width: 900px) {
+    .path-cards-grid {
+      grid-template-columns: 1fr;
+      gap: 36px;
+    }
+    .path-card-highlighted {
+      transform: none;
+    }
+    .path-card-highlighted:hover {
+      transform: translateY(-4px);
+    }
   }
 
   @media (max-width: 768px) {
@@ -1348,6 +1538,122 @@ ul.bullets li { margin-bottom: 8px; }
 
   </div>
 </div>
+
+
+<!-- CHOOSE YOUR PATH / THREE WAYS SECTION -->
+<section class="choose-path-section" id="choose-path" style="padding: 80px 0; background-color: #ffffff; border-bottom: 1px solid #DCE5EC;">
+  <div class="wrap" style="max-width: 1100px; margin: 0 auto; padding: 0 24px;">
+    
+    <!-- Section Header -->
+    <div class="text-center" style="text-align: center; margin-bottom: 56px;">
+      <span style="font-size: 13px; font-weight: 800; letter-spacing: 2px; color: #4985b8; text-transform: uppercase; display: inline-block; margin-bottom: 12px;">
+        CHOOSE YOUR PATH
+      </span>
+      <h2 style="font-size: 40px; font-weight: 800; color: #2C3842; margin-bottom: 16px; letter-spacing: -0.01em; line-height: 1.15;">
+        Two deals. Three ways to use them.
+      </h2>
+      <p style="font-size: 17px; color: #5D6871; max-width: 720px; margin: 0 auto; line-height: 1.6;">
+        The 1% listing and the $500 escrow are separate, stand-alone deals. They work great together — and just as well on their own. Pick whichever fits your situation.
+      </p>
+    </div>
+
+    <!-- 3 Cards Container -->
+    <div class="path-cards-grid">
+      
+      <!-- CARD 1: ESCROW ONLY -->
+      <div class="path-card">
+        <div class="path-card-tag">ESCROW ONLY &bull; HONEST ESCROW</div>
+        <h3 class="path-card-headline">“I already have an agent.”</h3>
+        
+        <div class="path-card-rate">$500</div>
+        <div class="path-card-subrate">
+          <strong>flat seller-side escrow fee</strong><br>
+          vs. typical seller-side fees of ~$5 per $1,000
+        </div>
+
+        <div class="path-card-savebox">
+          Save ~$7,000 on a $1.5M sale*
+        </div>
+
+        <ul class="path-card-bullets">
+          <li><span class="chk">✓</span> Keep your own agent — no Innovate listing required</li>
+          <li><span class="chk">✓</span> Honest Escrow already knows CSL payoff & closing requirements</li>
+          <li><span class="chk">✓</span> Fee disclosed in writing and reflected in escrow instructions</li>
+        </ul>
+
+        <div class="path-card-btn-wrapper">
+          <a href="#optin" class="btn-path-outline">I need escrow ($500 flat fee)</a>
+        </div>
+      </div>
+
+      <!-- CARD 2: USE BOTH (HIGHLIGHTED) -->
+      <div class="path-card path-card-highlighted">
+        <div class="max-savings-badge">MAXIMUM SAVINGS</div>
+        
+        <div class="path-card-tag">USE BOTH &bull; FULL PROGRAM</div>
+        <h3 class="path-card-headline">“I want the most savings.”</h3>
+        
+        <div class="path-card-rate">1% + $500</div>
+        <div class="path-card-subrate">
+          <strong>listing commission + flat escrow</strong><br>
+          the most coordinated, cost-effective exit
+        </div>
+
+        <div class="path-card-savebox box-highlighted">
+          Save up to $37K on a $1.5M sale — plus ~1 month less carry*
+        </div>
+
+        <ul class="path-card-bullets">
+          <li><span class="chk">✓</span> Both discounts in one coordinated close</li>
+          <li><span class="chk">✓</span> Agent, escrow & CSL payoff working from the same file</li>
+          <li><span class="chk">✓</span> List earlier, sell sooner — expected ~1 month less in carrying costs (~$8–10K/mo typical)</li>
+        </ul>
+
+        <div class="path-card-btn-wrapper">
+          <a href="#optin" class="btn-path-solid">I want both — max savings</a>
+        </div>
+      </div>
+
+      <!-- CARD 3: LISTING ONLY -->
+      <div class="path-card">
+        <div class="path-card-tag">LISTING ONLY &bull; INNOVATE REALTY</div>
+        <h3 class="path-card-headline">“I need an agent to sell.”</h3>
+        
+        <div class="path-card-rate">1%</div>
+        <div class="path-card-subrate">
+          <strong>listing commission</strong><br>
+          vs. typical 2.5–3% listing commission
+        </div>
+
+        <div class="path-card-savebox">
+          Save $22–30K on a $1.5M sale*
+        </div>
+
+        <ul class="path-card-bullets">
+          <li><span class="chk">✓</span> InnoLaunch pre-completion marketing included</li>
+          <li><span class="chk">✓</span> California investor-savvy agent network</li>
+          <li><span class="chk">✓</span> Use your own escrow company if you prefer</li>
+        </ul>
+
+        <div class="path-card-btn-wrapper">
+          <a href="#optin" class="btn-path-outline">I need an agent (1% listing)</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Section Footnote -->
+    <div style="margin-top: 48px; text-align: center;">
+      <p style="font-size: 14.5px; color: #5D6871; max-width: 800px; margin: 0 auto 12px auto; line-height: 1.5;">
+        Completely à la carte — pick one path today, add the other later, or bring your own team. Requesting information is free and has no effect on your CSL loan.
+      </p>
+      <p style="font-size: 12px; color: #94A3B8; max-width: 800px; margin: 0 auto; line-height: 1.5;">
+        * Estimated savings based on the $1.5M example described above; actual amounts vary by transaction and are disclosed in writing.
+      </p>
+    </div>
+
+  </div>
+</section>
 
 
 <!-- WHO THIS IS FOR -->
