@@ -2452,26 +2452,22 @@
 
 <script>
   // Send height to parent window for iframe resizing
-  var lastHeight = 0;
   function sendHeight() {
-    if (document.activeElement && document.activeElement.tagName === 'SELECT') {
-      return;
-    }
-    var height = document.body.scrollHeight;
-    if (height !== lastHeight) {
-      lastHeight = height;
-      window.parent.postMessage({ 'frameHeight': height }, '*');
-    }
+    var height = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight, 2200);
+    window.parent.postMessage({ 'frameHeight': height }, '*');
   }
   
-  // Use ResizeObserver instead of MutationObserver to prevent infinite loops and dropdown bugs
+  sendHeight();
+  window.addEventListener('DOMContentLoaded', sendHeight);
+  window.addEventListener('load', sendHeight);
+  window.addEventListener('resize', sendHeight);
+  setTimeout(sendHeight, 100);
+  setTimeout(sendHeight, 500);
+  setTimeout(sendHeight, 1200);
+  
   if (typeof ResizeObserver !== 'undefined') {
     const resizeObserver = new ResizeObserver(() => sendHeight());
     resizeObserver.observe(document.body);
-  } else {
-    window.addEventListener('load', sendHeight);
-    window.addEventListener('resize', sendHeight);
-    setInterval(sendHeight, 500);
   }
 
   // Intercept anchor clicks to scroll the parent window
