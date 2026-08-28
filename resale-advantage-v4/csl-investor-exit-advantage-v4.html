@@ -1852,12 +1852,15 @@ ul.bullets li { margin-bottom: 8px; }
       gap: 12px !important;
     }
     .step-nav {
-      flex-direction: column-reverse !important;
+      flex-direction: row !important;
       gap: 12px !important;
       width: 100% !important;
+      display: flex !important;
     }
-    .step-back, button.step-next, #submit-btn {
-      width: 100% !important;
+    .step-nav .step-back, .step-nav button.step-next, .step-nav #submit-btn {
+      flex: 1 1 50% !important;
+      width: 50% !important;
+      min-width: 0 !important;
       justify-content: center !important;
       box-sizing: border-box !important;
     }
