@@ -1570,7 +1570,7 @@ ul.bullets li { margin-bottom: 8px; }
   @media (max-width: 960px) {
     .path-cards-grid {
       flex-direction: column;
-      gap: 36px;
+      gap: 32px;
     }
     .path-card {
       width: 100%;
@@ -1586,7 +1586,20 @@ ul.bullets li { margin-bottom: 8px; }
     }
   }
 
+  /* Master Mobile Responsive Overrides */
   @media (max-width: 768px) {
+    /* 1. Hero Mobile Headline */
+    .hero-v4-title {
+      font-size: clamp(28px, 7.5vw, 42px) !important;
+      line-height: 1.18 !important;
+      text-align: center !important;
+      max-width: 100% !important;
+      margin-bottom: 16px !important;
+    }
+    .hero-v4-title .line-stretch {
+      display: inline !important;
+      white-space: normal !important;
+    }
     .hero-content-v4 {
       text-align: center !important;
       padding: 0 16px !important;
@@ -1601,11 +1614,12 @@ ul.bullets li { margin-bottom: 8px; }
       justify-content: center !important;
       flex-direction: column !important;
       width: 100% !important;
-      gap: 16px !important;
+      gap: 14px !important;
     }
-    .btn-primary-blue {
+    .btn-primary-blue, .btn-link-req {
       width: 100% !important;
       justify-content: center !important;
+      box-sizing: border-box !important;
     }
     .cards-flex-grid {
       flex-direction: column !important;
@@ -1617,6 +1631,201 @@ ul.bullets li { margin-bottom: 8px; }
     }
     .savings-divider-wrapper div {
       display: none !important;
+    }
+
+    /* 2. Section 2 Path Cards Centering */
+    .choose-path-section {
+      padding: 48px 0 !important;
+    }
+    .choose-path-section .wrap {
+      padding: 0 16px !important;
+    }
+    .path-card {
+      text-align: center !important;
+      align-items: center !important;
+      padding: 28px 18px !important;
+      box-sizing: border-box !important;
+    }
+    .path-card-tag, .path-card-headline, .path-card-subrate, .path-card-rate-container, .path-card-savebox {
+      text-align: center !important;
+      justify-content: center !important;
+      width: 100% !important;
+    }
+    .path-card-bullets {
+      text-align: left !important;
+      margin: 0 auto 24px !important;
+      display: inline-block !important;
+    }
+    .btn-path-outline, .btn-path-solid {
+      width: 100% !important;
+      justify-content: center !important;
+      box-sizing: border-box !important;
+    }
+
+    /* 3. Section 3 Timeline Mobile Margins & Centering */
+    .timeline-section {
+      padding: 48px 0 !important;
+    }
+    .tl {
+      max-width: 100% !important;
+      width: 100% !important;
+      padding: 0 !important;
+    }
+    .tl .section-eyebrow, .tl h3.timeline-title {
+      text-align: center !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+    .tl-card {
+      width: 100% !important;
+      box-sizing: border-box !important;
+      padding: 18px !important;
+    }
+
+    /* 4. Trust Section Mobile Stack & Center */
+    .trust-section {
+      padding: 48px 0 !important;
+    }
+    .trust-inner {
+      grid-template-columns: 1fr !important;
+      gap: 36px !important;
+      padding: 0 16px !important;
+    }
+    .trust-images-grid {
+      grid-template-columns: 1fr !important;
+      height: auto !important;
+      gap: 16px !important;
+    }
+    .trust-card {
+      height: 220px !important;
+      width: 100% !important;
+    }
+    .trust-right-content {
+      text-align: center !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+    }
+    .trust-right-content h2, .trust-right-content p {
+      text-align: center !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+    .trust-logos-row {
+      justify-content: center !important;
+      gap: 24px !important;
+      margin-top: 16px !important;
+    }
+
+    /* 5. Section Comparison Mobile Cards Redesign */
+    #compare {
+      padding: 48px 0 !important;
+    }
+    #compare .cmp-wrap {
+      overflow: visible !important;
+      border: none !important;
+    }
+    #compare table.cmp {
+      display: block !important;
+      width: 100% !important;
+      border: none !important;
+    }
+    #compare .cmp thead {
+      display: none !important;
+    }
+    #compare .cmp tbody tr {
+      display: block !important;
+      border: 1.5px solid #DCE5EC !important;
+      border-radius: 14px !important;
+      margin-bottom: 20px !important;
+      background: #ffffff !important;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.04) !important;
+      overflow: hidden !important;
+    }
+    #compare .cmp tbody th {
+      display: block !important;
+      width: 100% !important;
+      background: #2C3842 !important;
+      color: #ffffff !important;
+      font-size: 16px !important;
+      font-weight: 800 !important;
+      padding: 16px 20px !important;
+      letter-spacing: 0.5px !important;
+      text-transform: uppercase !important;
+      box-sizing: border-box !important;
+      text-align: center !important;
+      border: none !important;
+    }
+    #compare .cmp tbody td {
+      display: block !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+      padding: 16px 20px !important;
+      font-size: 15px !important;
+      line-height: 1.5 !important;
+      text-align: left !important;
+    }
+    #compare .cmp td.csl {
+      background: #EFF6FE !important;
+      color: #2C3842 !important;
+      border-top: 1.5px solid #4683B3 !important;
+      font-weight: 500 !important;
+    }
+    #compare .cmp td.csl::before {
+      content: "✓ CSL RESALE ADVANTAGE" !important;
+      display: block !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      letter-spacing: 1.2px !important;
+      color: #4683B3 !important;
+      margin-bottom: 6px !important;
+      text-transform: uppercase !important;
+    }
+    #compare .cmp td.alone {
+      background: #ffffff !important;
+      color: #5D6871 !important;
+      border-top: 1px solid #DCE5EC !important;
+    }
+    #compare .cmp td.alone::before {
+      content: "✕ GOING IT ALONE" !important;
+      display: block !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      letter-spacing: 1.2px !important;
+      color: #94A3B8 !important;
+      margin-bottom: 6px !important;
+      text-transform: uppercase !important;
+    }
+
+    /* 6. FAQ Section Spacing */
+    #faq {
+      padding: 48px 0 24px !important;
+    }
+
+    /* 7. Opt-in Form Mobile Optimization */
+    #optin {
+      padding: 48px 0 64px !important;
+    }
+    #optin .form-card {
+      width: 100% !important;
+      max-width: 100% !important;
+      padding: 28px 18px !important;
+      border-radius: 16px !important;
+      box-sizing: border-box !important;
+    }
+    .timeline-radios {
+      grid-template-columns: 1fr !important;
+      gap: 12px !important;
+    }
+    .step-nav {
+      flex-direction: column-reverse !important;
+      gap: 12px !important;
+      width: 100% !important;
+    }
+    .step-back, button.step-next, #submit-btn {
+      width: 100% !important;
+      justify-content: center !important;
+      box-sizing: border-box !important;
     }
   }
 </style>
