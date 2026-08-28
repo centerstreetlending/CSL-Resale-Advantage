@@ -604,32 +604,61 @@
   .step p{font-size:var(--text-body);color:var(--muted)}
   .step .pending-note{margin-top:12px;font-size:.8rem}
 
+  /* timeline radios */
+  .timeline-radios { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .radio-btn { display: block; position: relative; cursor: pointer; }
+  .radio-btn input { position: absolute; opacity: 0; cursor: pointer; height: 0; width: 0; }
+  .radio-btn span { display: block; padding: 12px 16px; border: 1px solid var(--line); border-radius: 6px; font-size: 15px; text-align: center; background: #fff; color: var(--navy); transition: all 0.2s; }
+  .radio-btn input:checked ~ span { background: var(--accent); color: #fff; border-color: var(--accent); font-weight: 600; }
+  .radio-btn:hover span { border-color: var(--accent); }
+  .radio-btn input:focus-visible ~ span { outline: 2px solid var(--accent); outline-offset: 2px; }
+
   /* form */
-  #optin{background:var(--navy);color:#fff}
+  #optin{background:var(--navy);color:#fff;padding-bottom:100px}
   #optin h2{color:#fff}
   #optin .sub{color:rgba(255,255,255,.75)}
-  .form-card{background:#fff;border-radius:12px;padding:28px;margin:0 auto;color:var(--ink);max-width:720px;box-sizing:border-box;}
-  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .form-card{background:#fff;border-radius:12px;padding:40px;margin:0 auto;color:var(--navy);max-width:720px;box-sizing:border-box;}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:24px}
   @media(max-width: 900px) {
     .form-row { grid-template-columns: 1fr; gap: 0; }
   }
-  .field{margin-bottom:16px}
-  .field label{display:block;font-size:.85rem;font-weight:600;color:var(--navy);margin-bottom:5px}
+  .field{margin-bottom:24px}
+  .field label{display:block;font-size:16px;font-weight:600;color:var(--navy);margin-bottom:8px}
   .field label .opt{font-weight:400;color:var(--muted)}
-  .field input[type=text],.field input[type=email],.field input[type=tel],.field select{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:6px;font-size:.95rem;font-family:inherit;background:#fff}
+  .field input[type=text],.field input[type=email],.field input[type=tel],.field select{width:100%;padding:14px 16px;border:1px solid var(--line);border-radius:6px;font-size:16px;font-family:inherit;background:#fff;box-sizing:border-box;}
   .field input:focus,.field select:focus{outline:2px solid var(--accent);outline-offset:0;border-color:var(--accent)}
-  fieldset{border:1px solid var(--line);border-radius:8px;padding:16px;margin-bottom:16px}
-  legend{font-size:.85rem;font-weight:600;color:var(--navy);padding:0 6px}
-  .radio-row{display:flex;align-items:flex-start;gap:10px;padding:8px 4px;cursor:pointer}
-  .radio-row input{margin-top:4px;accent-color:var(--accent)}
-  .radio-row span{font-size:.95rem}
-  .consent{display:flex;gap:10px;align-items:flex-start;font-size:.82rem;color:var(--muted);margin-bottom:20px}
+  fieldset{border:1px solid var(--line);border-radius:8px;padding:24px;margin-bottom:24px}
+  legend{font-size:16px;font-weight:600;color:var(--navy);padding:0 8px}
+  .fieldset-hint{font-size:var(--text-small);color:var(--muted);margin:-6px 0 12px}
+  .radio-row{display:flex;align-items:flex-start;gap:12px;padding:8px 4px;cursor:pointer}
+  .radio-row input{margin-top:4px;width:18px;height:18px;accent-color:var(--accent);flex-shrink:0}
+  .radio-row span{font-size:16px;line-height:1.4;font-weight:600;color:var(--navy)}
+  .radio-row small{display:block;color:var(--muted);font-size:var(--text-small);font-weight:400;margin-top:2px}
+  .consent{display:flex;gap:10px;align-items:flex-start;font-size:var(--text-small);color:var(--muted);margin-bottom:20px}
   .consent input{margin-top:3px;accent-color:var(--accent)}
-  .form-note{font-size:.82rem;color:var(--muted);margin-top:14px}
+  .form-note{font-size:var(--text-small);color:var(--muted);margin-top:14px}
   #success-panel{display:none;background:#EDF7EE;border:1px solid #9CCFA2;border-radius:8px;padding:20px;margin-top:8px}
   #success-panel h3{color:#1E6B2E;font-size:1.05rem;margin-bottom:6px}
   #success-panel p{font-size:.92rem;color:#2F5238}
   .hp{position:absolute;left:-9999px;opacity:0}
+
+  /* multi-step form */
+  .form-progress{display:none;margin-bottom:24px}
+  form.stepped .form-progress{display:block}
+  .fp-labels{display:flex;justify-content:space-between;font-size:var(--text-small);color:var(--muted);margin-bottom:8px;font-weight:600;gap:12px}
+  #fp-title{color:var(--navy);text-align:right}
+  .fp-bar{height:8px;background:var(--bg-soft);border-radius:99px;overflow:hidden}
+  .fp-fill{height:100%;width:33.33%;background:var(--accent);border-radius:99px;transition:width .35s ease}
+  form.stepped .form-step{display:none}
+  form.stepped .form-step.active{display:block}
+  .step-nav{display:none;gap:12px;justify-content:space-between;align-items:center;margin-top:8px}
+  form.stepped .step-nav{display:flex}
+  form:not(.stepped) .step-nav-final{display:flex}
+  form:not(.stepped) .step-back,form:not(.stepped) .step-next{display:none}
+  .step-back{background:none;border:none;color:var(--muted);font-weight:600;cursor:pointer;font-size:var(--text-body);padding:12px 8px}
+  .step-back:hover{color:var(--navy)}
+  button.step-next{cursor:pointer}
+  form.stepped #submit-btn{width:auto;flex:1}
 
   /* faq - premium redesign */
   .faq-wrap { max-width: 800px; margin: 0 auto; }
@@ -2459,72 +2488,84 @@ ul.bullets li { margin-bottom: 8px; }
 <!-- OPT-IN FORM -->
 <section id="optin">
   <div class="wrap">
-    <div style="text-align: center; display: flex; flex-direction: column; align-items: center; margin-bottom: 48px;">
-      <p class="section-eyebrow" style="color:var(--accent);">CSL Resale Advantage</p>
-      <h2 style="font-family: 'Roboto', sans-serif; font-size: 42px; line-height: 1.2; margin-bottom: 16px;">Request program information</h2>
-      <p class="section-sub" style="color: rgba(255, 255, 255, 0.85); font-size: 18px; line-height: 1.5; margin-bottom: 0; max-width: 700px; text-align: center;">No obligation. You're always free to choose your own providers.</p>
-    </div>
+    <p class="section-eyebrow" style="color:var(--accent);">CSL Resale Advantage</p>
+    <h2>Request program information</h2>
+    <p class="sub" style="margin-bottom:32px;">No obligation. You're always free to choose your own providers.</p>
 
-    <form class="form-card" id="exit-advantage-form" novalidate>
-      <div class="form-row">
-        <div class="field">
-          <label for="first-name">First name</label>
-          <input type="text" id="first-name" name="first_name" autocomplete="given-name" required>
-        </div>
-        <div class="field">
-          <label for="last-name">Last name</label>
-          <input type="text" id="last-name" name="last_name" autocomplete="family-name" required>
-        </div>
+    <form class="form-card" id="exit-advantage-form" method="post">
+
+      <div class="form-progress">
+        <div class="fp-labels" aria-live="polite"><span>Step <span id="fp-current">1</span> of 3</span><span id="fp-title">What would you like?</span></div>
+        <div class="fp-bar"><div class="fp-fill" id="fp-fill"></div></div>
       </div>
-      <div class="form-row">
+
+      <!-- STEP 1: what do you want -->
+      <div class="form-step" data-step="1">
+        <fieldset>
+          <legend>What would you like information about?</legend>
+          <p class="fieldset-hint">Everything is &agrave; la carte &mdash; pick what's useful to you.</p>
+          <label class="radio-row"><input type="radio" name="intent" id="intent-listing" value="listing" required><span>Just the 1% listing fee<small>Innovate Realty &mdash; I need an agent to sell my property</small></span></label>
+          <label class="radio-row"><input type="radio" name="intent" id="intent-escrow" value="escrow"><span>Just the $500 flat escrow fee<small>Honest Escrow &mdash; I already have an agent (or I'm selling it myself)</small></span></label>
+          <label class="radio-row"><input type="radio" name="intent" id="intent-both" value="both"><span>Both &mdash; maximum savings<small>1% listing + $500 escrow in one coordinated close</small></span></label>
+          <label class="radio-row"><input type="radio" name="intent" id="intent-later" value="later"><span>Not sure yet<small>Send me the details and follow up closer to my timeline</small></span></label>
+        </fieldset>
+        <div class="step-nav"><span></span><button type="button" class="csl-btn step-next">Next &rarr;</button></div>
+      </div>
+
+      <!-- STEP 2: your sale -->
+      <div class="form-step" data-step="2">
+        <fieldset>
+          <legend>When do you expect to sell?</legend>
+          <div class="timeline-radios">
+            <label class="radio-btn"><input type="radio" name="timeline" value="now" required><span>Ready now</span></label>
+            <label class="radio-btn"><input type="radio" name="timeline" value="1-3mo"><span>1&ndash;3 months</span></label>
+            <label class="radio-btn"><input type="radio" name="timeline" value="3-6mo"><span>3&ndash;6 months</span></label>
+            <label class="radio-btn"><input type="radio" name="timeline" value="6mo+"><span>6+ months</span></label>
+            <label class="radio-btn" style="grid-column: 1 / -1;"><input type="radio" name="timeline" value="unsure"><span>Not sure yet</span></label>
+          </div>
+        </fieldset>
         <div class="field">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" autocomplete="email" required>
+          <label for="property-address">Property address <span class="opt">(optional)</span></label>
+          <input type="text" id="property-address" name="property_address" autocomplete="street-address">
         </div>
         <div class="field">
-          <label for="phone">Phone</label>
-          <input type="tel" id="phone" name="phone" autocomplete="tel" required>
-        </div>
-      </div>
-      <div class="field">
-        <label for="property-address">Property address <span class="opt">(optional)</span></label>
-        <input type="text" id="property-address" name="property_address" autocomplete="street-address">
-      </div>
-      <div class="form-row">
-        <div class="field">
-          <label for="loan-number">CSL loan number <span class="opt">(optional)</span></label>
+          <label for="loan-number">CSL loan number <span class="opt">(optional &mdash; helps us pull your file faster)</span></label>
           <input type="text" id="loan-number" name="loan_number">
         </div>
-        <div class="field">
-          <label for="timeline">When do you expect to sell?</label>
-          <select id="timeline" name="timeline" required>
-            <option value="">Select one&hellip;</option>
-            <option value="now">I'm ready to list now</option>
-            <option value="1-3mo">In 1-3 months</option>
-            <option value="3-6mo">In 3-6 months</option>
-            <option value="6mo+">6+ months out</option>
-            <option value="unsure">Not sure yet</option>
-          </select>
-        </div>
+        <div class="step-nav"><button type="button" class="step-back">&larr; Back</button><button type="button" class="csl-btn step-next">Next &rarr;</button></div>
       </div>
 
-      <fieldset>
-        <legend>What would you like?</legend>
-        <label class="radio-row"><input type="radio" name="intent" id="intent-details" value="details" required><span>Yes &mdash; send me details about the program</span></label>
-        <label class="radio-row"><input type="radio" name="intent" id="intent-escrow" value="escrow"><span>I already have an agent, but I'd like escrow information</span></label>
-        <label class="radio-row"><input type="radio" name="intent" id="intent-later" value="later"><span>I'm not ready yet &mdash; follow up with me later</span></label>
-      </fieldset>
-
-      <!-- PENDING #5: consent language needs legal review before launch -->
-      <label class="consent">
-        <input type="checkbox" name="consent" id="consent" required>
-        <span>I agree that Center Street Lending and its affiliates may contact me about the CSL Resale Advantage program by phone, email, or text at the information provided. Consent is not a condition of any loan. <em>(Pending legal review.)</em></span>
-      </label>
+      <!-- STEP 3: contact -->
+      <div class="form-step" data-step="3">
+        <div class="form-row">
+          <div class="field">
+            <label for="first-name">First name</label>
+            <input type="text" id="first-name" name="first_name" autocomplete="given-name" required>
+          </div>
+          <div class="field">
+            <label for="last-name">Last name</label>
+            <input type="text" id="last-name" name="last_name" autocomplete="family-name" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel" required>
+          </div>
+        </div>
+        <label class="consent">
+          <input type="checkbox" name="consent" id="consent" required>
+          <span>I agree that Center Street Lending and its affiliates may contact me about the CSL Resale Advantage program by phone, email, or text at the information provided. Consent is not a condition of any loan.</span>
+        </label>
+        <div class="step-nav step-nav-final"><button type="button" class="step-back">&larr; Back</button><button type="submit" class="csl-btn" id="submit-btn" style="width:100%;font-weight:700;">Request information</button></div>
+      </div>
 
       <!-- honeypot anti-spam field -->
       <input class="hp" type="text" name="company_website" tabindex="-1" autocomplete="off" aria-hidden="true">
-
-      <button type="submit" class="btn" id="submit-btn">Request information</button>
 
       <div id="success-panel" role="status">
         <h3>Thank you &mdash; we've received your request.</h3>
@@ -2702,6 +2743,74 @@ ul.bullets li { margin-bottom: 8px; }
       tl.classList.add('in');
       tlSteps.forEach(function(s){ s.classList.add('in'); });
     }
+  }
+
+  // --- Multi-step form 3-step controller ---
+  var formEl = document.getElementById('exit-advantage-form');
+  if (formEl) {
+    var steps = Array.prototype.slice.call(formEl.querySelectorAll('.form-step'));
+    var stepTitles = ['What would you like?', 'Your sale', 'How do we reach you?'];
+    var current = 0;
+
+    formEl.classList.add('stepped');
+
+    function showStep(i, silent) {
+      current = i;
+      steps.forEach(function (st, j) { st.classList.toggle('active', j === i); });
+      var fill = document.getElementById('fp-fill');
+      if (fill) fill.style.width = (((i + 1) / steps.length) * 100) + '%';
+      var cur = document.getElementById('fp-current');
+      if (cur) cur.textContent = i + 1;
+      var title = document.getElementById('fp-title');
+      if (title) title.textContent = stepTitles[i] || '';
+      if (!silent) {
+        var first = steps[i].querySelector('input, select, button');
+        if (first) { try { first.focus({ preventScroll: true }); } catch (err) { first.focus(); } }
+      }
+    }
+
+    function firstInvalidIn(stepEl) {
+      var fields = stepEl.querySelectorAll('input, select, textarea');
+      for (var k = 0; k < fields.length; k++) {
+        if (!fields[k].checkValidity()) return fields[k];
+      }
+      return null;
+    }
+
+    function scrollFormTop() {
+      var card = formEl.closest('.wrap') || formEl;
+      card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    formEl.addEventListener('click', function (e) {
+      var next = e.target.closest('.step-next');
+      var back = e.target.closest('.step-back');
+      if (next) {
+        var bad = firstInvalidIn(steps[current]);
+        if (bad) { bad.reportValidity(); return; }
+        if (current < steps.length - 1) { showStep(current + 1); scrollFormTop(); }
+      } else if (back) {
+        if (current > 0) { showStep(current - 1); scrollFormTop(); }
+      }
+    });
+
+    formEl.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' && current < steps.length - 1 && e.target && e.target.tagName !== 'TEXTAREA' && e.target.type !== 'submit') {
+        e.preventDefault();
+        var nextBtn = steps[current].querySelector('.step-next');
+        if (nextBtn) nextBtn.click();
+      }
+    });
+
+    showStep(0, true);
+
+    document.querySelectorAll('[data-intent]').forEach(function (cta) {
+      cta.addEventListener('click', function () {
+        var val = cta.getAttribute('data-intent');
+        var radio = document.querySelector('input[name="intent"][value="' + val + '"]');
+        if (radio) { radio.checked = true; showStep(1); }
+      });
+    });
   }
 
   // --- Sticky Header Scroll Transition ---
