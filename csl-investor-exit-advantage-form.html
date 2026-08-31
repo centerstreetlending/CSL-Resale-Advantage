@@ -80,6 +80,11 @@
     --pending-line:#F0C36D;
   }
   *{margin:0;padding:0;box-sizing:border-box}
+  html, body {
+    min-height: 4800px !important;
+    width: 100% !important;
+    overflow-x: hidden !important;
+  }
   body{font-family:'Roboto','Segoe UI',-apple-system,BlinkMacSystemFont,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased;}
   .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
   h1,h2,h3,h4,h5,h6{font-family:'Roboto',sans-serif;font-weight:700;line-height:1.25;color:var(--navy)}
@@ -3549,7 +3554,7 @@ ul.bullets li { margin-bottom: 8px; }
 <script>
   // Send height to parent window for iframe resizing
   function sendHeight() {
-    var height = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight, 4200);
+    var height = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight, 4800);
     window.parent.postMessage({ 'frameHeight': height }, '*');
   }
   
