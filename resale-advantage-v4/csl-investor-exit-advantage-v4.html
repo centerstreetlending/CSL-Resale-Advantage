@@ -3545,5 +3545,40 @@ ul.bullets li { margin-bottom: 8px; }
   });
 })();
 </script>
+
+<script>
+  // Send height to parent window for iframe resizing
+  function sendHeight() {
+    var height = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight, 4200);
+    window.parent.postMessage({ 'frameHeight': height }, '*');
+  }
+  
+  sendHeight();
+  window.addEventListener('DOMContentLoaded', sendHeight);
+  window.addEventListener('load', sendHeight);
+  window.addEventListener('resize', sendHeight);
+  setTimeout(sendHeight, 100);
+  setTimeout(sendHeight, 500);
+  setTimeout(sendHeight, 1200);
+  setTimeout(sendHeight, 2500);
+  
+  if (typeof ResizeObserver !== 'undefined') {
+    const resizeObserver = new ResizeObserver(() => sendHeight());
+    resizeObserver.observe(document.body);
+  }
+
+  // Intercept anchor clicks to scroll the parent window
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href').substring(1);
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        const offsetTop = targetElement.offsetTop;
+        window.parent.postMessage({ 'scrollToOffset': offsetTop }, '*');
+      }
+    });
+  });
+</script>
 </body>
 </html>
