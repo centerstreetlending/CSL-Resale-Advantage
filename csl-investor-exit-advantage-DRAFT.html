@@ -81,7 +81,7 @@
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html, body {
-    min-height: 4800px !important;
+    min-height: 7200px !important;
     width: 100% !important;
     overflow-x: hidden !important;
   }
@@ -3554,7 +3554,7 @@ ul.bullets li { margin-bottom: 8px; }
 <script>
   // Send height to parent window for iframe resizing
   function sendHeight() {
-    var height = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight, 4800);
+    var height = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight, 7200);
     window.parent.postMessage({ 'frameHeight': height }, '*');
   }
   
